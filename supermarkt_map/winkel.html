@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="winkel.js"></script>
+  <title>winkel</title>
+</head>
+<body>
+  <a-scene id="js--scene">
+    <a-assets>
+
+      <a-asset-item id="kassa-obj" src="./blender/kassa.obj"></a-asset-item>
+      <a-asset-item id="kassa-mtl" src="./blender/kassa.mtl"></a-asset-item>
+    </a-assets>
+
+
+
+
+<!--  ============================ camera ================================ -->
+    <a-camera id="js--camera" position="6 1.6 11">
+      <a-entity
+        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+        animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+        cursor = "fuse: true; fuseTimeout: 2000"
+        material = "color: black; shader: flat"
+        geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+        position = "0 0 -0.5"
+        raycaster = "objects: .js--interact"
+      ></a-entity>
+
+      <!-- <a-box position=" 0 -0.6 -1" height="0.1" width="2" depth="0.5" color="lightblue"></a-box>  -->
+      <!-- <a-box id="js--hold" width="0.3" height="0.3" depth="0.3" class="js--pickup js--interact" color="green" position="0.7 -0.4 -1"></a-box> -->
+    </a-camera>
+
+
+
+
+<!--  ============================ gebouw / grond en muren ================================ -->
+    <a-plane color="gray" rotation="-90 0 0" width="16" height="24" position="0 0 0"></a-plane>
+
+    <a-plane color="blue" rotation="0 0 0" width="16" height="3" position="0 1.5 -12"></a-plane>
+    <a-plane color="green" rotation="0 -90 0" width="24" height="3" position="8 1.5 0"></a-plane>
+    <a-plane color="green" rotation="0 90 0" width="24" height="3" position="-8 1.5 0"></a-plane>
+    <a-plane color="blue" rotation="0 180 0" width="16" height="3" position="0 1.5 12"></a-plane>
+
+    <a-plane color="gray" rotation="90 0 0" width="16" height="24" position="0 3 0"></a-plane>
+
+
+
+
+<!--  ============================ poorten ================================ -->
+    <a-box color="black" position="7.5 0.6 10" width="1" height="1.2" depth="0.2"></a-box>
+    <a-box color="black" position="2.75 0.6 10" width="4.5" height="1.2" depth="0.2"></a-box>
+    <a-box color="black" position="2.75 0.6 10" width="4.5" height="1.2" depth="0.2"></a-box>
+
+    <!-- <a-box color="red" position="2.75 0.6 10" width="4.5" height="0.2" depth="0.2"></a-box> -->
+
+
+
+
+<!--  ============================ schappen ================================ -->
+    <a-box color="orange" position="7.75 1.25 -1.5" width="0.5" height="2.5" depth="19"></a-box>
+
+    <a-box color="orange" position="0 1.25 -11.75" width="0.5" height="2.5" depth="14.5" rotation="0 90 0"></a-box>
+
+    <a-box color="orange" position="-7.75 1.25 -3" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box>
+
+    <a-box color="orange" position="-3 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 0 0"></a-box>
+    <a-box color="yellow" position="-2.5 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 180 0"></a-box>
+
+    <a-box color="orange" position="2.5 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 0 0"></a-box>
+    <a-box color="yellow" position="3 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box>
+
+
+
+<!--  ============================ kassa's ================================ -->
+    <a-obj-model id="js--pin-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-6 0 9" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
+    <a-obj-model id="js--contant-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-2 0 9" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
+
+
+
+<!--  ============================ momevement boxes ================================ -->
+    <!-- <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 11"></a-box> -->
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 -10"></a-box>
+
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 -10"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 6"></a-box>
+
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 -10"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 6"></a-box>
+
+
+
+
+
+<!--  ============================ oude code ================================ -->
+    <!-- <a-box class="js--place js--interact" color="blue" position="0 1.5 0"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="-5 1.5 -5"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="5 1.5 -5"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="-5 1.5 5"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="5 1.5 5"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="-25 1.5 -25"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="25 1.5 -25"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="-25 1.5 25"></a-box>
+    <a-box class="js--place js--interact" color="blue" position="25 1.5 25"></a-box> -->
+
+
+
+    <!-- <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="-2 0.5 -2"></a-box>
+    <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="1 0.5 -2"></a-box>
+    <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="-1 0.5 -2"></a-box>
+    <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="0 0.5 -2"></a-box> -->
+
+    <!-- <a-box class="js--placeholder js--interact" color="red" height="1" position="2 0.6 0"> -->
+      <!-- <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="0.3 0.65 0.3"></a-box> -->
+    <!-- </a-box> -->
+
+    <!-- <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="0 0 4"></a-cylinder>
+    <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="0 0 -4"></a-cylinder>
+    <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="4 0 0"></a-cylinder>
+    <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="-4 0 0"></a-cylinder> -->
+
+
+    <a-sky color="skyblue"></a-sky>
+
+  </a-scene>
+</body>
+</html>
