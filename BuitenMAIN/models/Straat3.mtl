@@ -20,7 +20,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\Buiten\\img\\grass.jpg
+map_Kd img/grass.jpg
 
 newmtl Lamp
 Ns 323.999994
@@ -79,7 +79,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\Buiten\\img\\sidewalk.jpg
+map_Kd img/sidewalk.jpg
 
 newmtl StoepA
 Ns 225.000000
@@ -90,7 +90,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\Buiten\\img\\sidewalk.jpg
+map_Kd img/sidewalk.jpg
 
 newmtl Stoeprand
 Ns 225.000000
