@@ -2780,7 +2780,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\VR-project\\BuitenMAIN\\img\\Brick texture_turned.jpg
+map_Kd img/Brick texture_turned.jpg
 
 newmtl Material.137
 Ns 323.999994
@@ -3161,7 +3161,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\VR-project\\BuitenMAIN\\img\\Heg.jpg
+map_Kd img/Heg.jpg
 
 newmtl Material.178
 Ns 225.000000
@@ -3202,7 +3202,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\VR-project\\BuitenMAIN\\img\\grass.jpg
+map_Kd img/grass.jpg
 
 newmtl Material.182
 Ns 225.000000
@@ -3273,7 +3273,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\VR-project\\BuitenMAIN\\img\\grass.jpg
+map_Kd img/grass.jpg
 
 newmtl None
 Ns 500
@@ -3312,7 +3312,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\school\\ipmedt3\\VR-project\\BuitenMAIN\\img\\sidewalk.jpg
+map_Kd img/sidewalk.jpg
 
 newmtl StoepA
 Ns 323.999994
