@@ -258,7 +258,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd img/sidewalk.jpg
+map_Kd D:\\school\\ipmedt3\\VR-project\\BuitenMAIN\\img\\sidewalk.jpg
 
 newmtl Pilaar
 Ns 225.000000
@@ -359,7 +359,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd img/Brick texture_turned.jpg
+map_Kd D:\\school\\ipmedt3\\VR-project\\BuitenMAIN\\img\\Brick texture_turned.jpg
 
 newmtl Schors
 Ns 225.000000
