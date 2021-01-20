@@ -66,8 +66,8 @@ window.onload = () =>{
       var afstand = Math.sqrt(Math.pow((this.getAttribute('position').x - camera.getAttribute("position").x), 2) + Math.pow((this.getAttribute('position').z - camera.getAttribute("position").z), 2));
       // console.log(afstand);
       var snelheid = 333 * afstand;
-      // var speed = snelheid;
-      var speed = 1000;
+      var speed = snelheid;
+      // var speed = 1000;
 
       att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 1.6 " + this.getAttribute('position').z;
       camera.setAttribute('animation', att.value);
