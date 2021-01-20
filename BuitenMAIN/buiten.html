@@ -45,8 +45,8 @@
 
             </a-assets>
             <a-sky src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
-            <!-- <a-camera position="-24.5 6 -3" id="js--camera"> -->
-            <a-camera position="0 5 230" id="js--camera">
+            <a-camera position="-24.5 6 -3" id="js--camera" wasd-controls="acceleration: 600">
+            <!-- <a-camera position="25 5 295" aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaid="js--camera" wasd-controls="acceleration: 600"> -->
                 <a-entity
                   animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                   animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -73,7 +73,7 @@
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 292"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 315"></a-obj-model>
 
-            <a-obj-model src="#supermarkt-obj" mtl="#supermarkt-mtl" position="30 0.5 295"></a-obj-model>
+            <a-obj-model class="js--place js--interact" src="#supermarkt-obj" mtl="#supermarkt-mtl" position="59 -0.5 295" rotation="0 90 0" scale="1.2 1.2 1.2"></a-obj-model>
 
             <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="30 0.5 -10" scale="0.8 0.8 0.8"></a-obj-model>
             <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="30 0.5 -20"></a-obj-model>
