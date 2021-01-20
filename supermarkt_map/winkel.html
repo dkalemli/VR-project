@@ -15,13 +15,16 @@
 
       <a-asset-item id="kassa-obj" src="./blender/kassa.obj"></a-asset-item>
       <a-asset-item id="kassa-mtl" src="./blender/kassa.mtl"></a-asset-item>
+
+      <a-asset-item id="schappen-obj" src="./blender/schappen.obj"></a-asset-item>
+      <a-asset-item id="schappen-mtl" src="./blender/schappen.mtl"></a-asset-item>
     </a-assets>
 
 
 
 
 <!--  ============================ camera ================================ -->
-    <a-camera id="js--camera" position="6 1.6 11">
+    <a-camera id="js--camera" position="6 1.6 13">
       <a-entity
         animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
         animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -41,22 +44,21 @@
 
 
 <!--  ============================ gebouw / grond en muren ================================ -->
-    <a-plane color="gray" rotation="-90 0 0" width="16" height="24" position="0 0 0"></a-plane>
+    <a-plane color="gray" rotation="-90 0 0" width="16" height="30" position="0 0 3"></a-plane>
 
-    <a-plane color="blue" rotation="0 0 0" width="16" height="3" position="0 1.5 -12"></a-plane>
-    <a-plane color="green" rotation="0 -90 0" width="24" height="3" position="8 1.5 0"></a-plane>
-    <a-plane color="green" rotation="0 90 0" width="24" height="3" position="-8 1.5 0"></a-plane>
-    <a-plane color="blue" rotation="0 180 0" width="16" height="3" position="0 1.5 12"></a-plane>
+    <a-plane color="#5656dc" rotation="0 0 0" width="16" height="3" position="0 1.5 -12"></a-plane>
+    <a-plane color="#5656dc" rotation="0 -90 0" width="30" height="3" position="8 1.5 3"></a-plane>
+    <a-plane color="#5656dc" rotation="0 90 0" width="30" height="3" position="-8 1.5 3"></a-plane>
+    <a-plane color="#5656dc" rotation="0 180 0" width="16" height="3" position="0 1.5 18"></a-plane>
 
-    <a-plane color="gray" rotation="90 0 0" width="16" height="24" position="0 3 0"></a-plane>
+    <a-plane color="#E0E0E0" rotation="90 0 0" width="16" height="30" position="0 3 3"></a-plane>
 
 
 
 
 <!--  ============================ poorten ================================ -->
-    <a-box color="black" position="7.5 0.6 10" width="1" height="1.2" depth="0.2"></a-box>
-    <a-box color="black" position="2.75 0.6 10" width="4.5" height="1.2" depth="0.2"></a-box>
-    <a-box color="black" position="2.75 0.6 10" width="4.5" height="1.2" depth="0.2"></a-box>
+    <a-box color="#eoeoeo" position="7.5 1 12" width="1" height="2" depth="0.2"></a-box>
+    <a-box color="#eoeoeo" position="2.75 1 12" width="4.5" height="2" depth="0.2"></a-box>
 
     <!-- <a-box color="red" position="2.75 0.6 10" width="4.5" height="0.2" depth="0.2"></a-box> -->
 
@@ -64,45 +66,55 @@
 
 
 <!--  ============================ schappen ================================ -->
-    <a-box color="orange" position="7.75 1.25 -1.5" width="0.5" height="2.5" depth="19"></a-box>
+    <!-- <a-box color="orange" position="7.75 1.25 -1.5" width="0.5" height="2.5" depth="19"></a-box> -->
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="7.95 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
 
-    <a-box color="orange" position="0 1.25 -11.75" width="0.5" height="2.5" depth="14.5" rotation="0 90 0"></a-box>
+    <!-- <a-box color="orange" position="0 1.25 -11.75" width="0.5" height="2.5" depth="14.5" rotation="0 90 0"></a-box> -->
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="0 1.25 -11.95" scale="0.6 0.5 0.5" rotation="0 0 0"></a-obj-model>
 
-    <a-box color="orange" position="-7.75 1.25 -3" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box>
+    <!-- <a-box color="orange" position="-7.75 1.25 -3" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box> -->
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-7.75 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
-    <a-box color="orange" position="-3 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 0 0"></a-box>
-    <a-box color="yellow" position="-2.5 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 180 0"></a-box>
+    <!-- <a-box color="orange" position="-3 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 0 0"></a-box> -->
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+    <!-- <a-box color="yellow" position="-2.5 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 180 0"></a-box> -->
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
-    <a-box color="orange" position="2.5 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 0 0"></a-box>
-    <a-box color="yellow" position="3 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box>
+    <!-- <a-box color="orange" position="2.5 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 0 0"></a-box> -->
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+    <!-- <a-box color="yellow" position="3 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box> -->
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
 
 
 <!--  ============================ kassa's ================================ -->
-    <a-obj-model id="js--pin-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-6 0 9" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
-    <a-obj-model id="js--contant-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-2 0 9" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
+    <a-obj-model id="js--pin-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-6 0 12" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
+    <a-obj-model id="js--contant-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-2 0 12" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
 
 
 
 <!--  ============================ momevement boxes ================================ -->
     <!-- <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 11"></a-box> -->
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 -2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 -6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 -10"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 8"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 -10"></a-box>
 
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 -10"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 -6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 -2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="0 0 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 -10"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 8"></a-box>
 
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 -10"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 -6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 -2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="-6 0 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 -10"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 8"></a-box>
 
 
 
