@@ -14,43 +14,37 @@
                 <!-- <a-asset-item id="building-01-mtl" src="models/Building_01.mtl"></a-asset-item>
                 <a-asset-item id="building-01-obj" src="models/Building_01.obj"></a-asset-item>  -->
                 
-                <a-asset-item id="straat-mtl" src="models/straat2.mtl"></a-asset-item>
+                <a-asset-item id="straat-mtl" src="models/straat2.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="straat-obj" src="models/straat2.obj"></a-asset-item> 
                 
-                <a-asset-item id="kruispunt-mtl" src="models/Kruispunt_Versie2.mtl"></a-asset-item>
+                <a-asset-item id="kruispunt-mtl" src="models/Kruispunt_Versie2.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="kruispunt-obj" src="models/Kruispunt_Versie2.obj"></a-asset-item> 
                
-                <a-asset-item id="auto-blauw-mtl" src="models/Auto1.mtl"></a-asset-item>
+                <a-asset-item id="auto-blauw-mtl" src="models/Auto1.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="auto-blauw-obj" src="models/Auto1.obj"></a-asset-item> 
 
-                <a-asset-item id="huis-kind-mtl" src="models/HouseOfChild.mtl"></a-asset-item>
+                <a-asset-item id="huis-kind-mtl" src="models/HouseOfChild.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="huis-kind-obj" src="models/HouseOfChild.obj"></a-asset-item> 
 
-                <a-asset-item id="boom1-mtl" src="models/boom1.mtl"></a-asset-item>
+                <a-asset-item id="boom1-mtl" src="models/boom1.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="boom1-obj" src="models/boom1.obj"></a-asset-item> 
+
+                <a-asset-item id="supermarkt-mtl" src="models/supermarkt.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
+                <a-asset-item id="supermarkt-obj" src="models/supermarkt.obj"></a-asset-item> 
                 
+                <img id="plane--stoep" src="img/sidewalk.jpg" alt="stoep"> <!--CREDTITS: TODO-->
+                <img id="plane--gras" src="img/grass.jpg" alt="gras"> <!--CREDTITS: TODO-->
+                <img id="lucht" src="img/Sky1.jpg" alt="sky"> <!--CREDTITS: TODO-->
+                <img id="plane--building" src="img/16603.jpg" alt="placeholder gebouw"> <!--CREDTITS: TODO-->
+                <img id="asset--house" src="img/16603.jpg" alt="house"> <!--CREDTITS: TODO-->
 
-                <!-- <a-asset-item id="huis-2-mtl" src="models/Huis2.mtl"></a-asset-item>
-                <a-asset-item id="huis-2-obj" src="models/Huis2.obj"></a-asset-item>  -->
-                
-                <img id="plane--stoep" src="img/sidewalk.jpg" alt="stoep">
-                <img id="plane--gras" src="img/grass.jpg" alt="gras">
-                <img id="lucht" src="img/Sky1.jpg" alt="sky">
-                <img id="plane--building" src="img/16603.jpg" alt="placeholder gebouw">
-                <img id="asset--house" src="img/16603.jpg" alt="house">
+                <audio id="achtergrond" src="sounds/Achtergrond.mp3" preload = "auto"></audio> <!--CREDTITS: YT music-->
+                <audio id="DeurSluit" src="sounds/FrontDoorClose.mp3"></audio> <!--CREDTITS: YT music-->
+                <audio id="RijdendeAuto" src="sounds/RijdendeAuto.wav"></audio> <!--CREDTITS: TODO-->
 
 
-
-                
-                <!-- <img id="plane--straat" src="img/landscapeVR.jpg" alt="weg">
-                <img id="plane--gras" src="img/sky1VR.jpeg" alt="gras">
-                <img id="sky3" src="img/sky4VR.jpg" alt="landschap">
-
-                <img id="grass" src="img/grassVR.jpg" alt="gras">
-
-                <audio id="boor" src="music/Jackhammer.mp3" preload = "auto"></audio> -->
             </a-assets>
-            <a-sky src="#lucht"></a-sky>
+            <a-sky src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
             <!-- <a-camera position="-24.5 6 -3" id="js--camera"> -->
             <a-camera position="0 5 230" id="js--camera">
                 <a-entity
@@ -79,7 +73,7 @@
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 292"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 315"></a-obj-model>
 
-            <a-box class="js--place js--interact" color="blue" height="25" width="30" position="30 0.5 295"></a-box>
+            <a-obj-model src="#supermarkt-obj" mtl="#supermarkt-mtl" position="30 0.5 295"></a-obj-model>
 
             <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="30 0.5 -10" scale="0.8 0.8 0.8"></a-obj-model>
             <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="30 0.5 -20"></a-obj-model>
@@ -117,8 +111,8 @@
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 46"></a-obj-model>
             
             <!-- <a-box class="js--place js--interact" color="red" position="12 0.5 99" height="50" width="50"></a-box> -->
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" scale="0.9 0.9 0.9"></a-obj-model>
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="14 1 18" rotation="0 180 0" scale="0.9 0.9 0.9"></a-obj-model>
+            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="14 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
 
             <!-- <a-obj-model src="#building-01-obj" mtl="#building-01-mtl" position="12 0.5 -23" scale="0.9 0.9 0.9"></a-obj-model> -->
             <!-- <a-box position="-16 0.5 -23" src="#plane--building" height="40" width="20" depth="50"></a-box> -->
