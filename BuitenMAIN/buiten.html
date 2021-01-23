@@ -91,12 +91,19 @@
                         rotation="0 180 0"
                         animation__OpEnNeer="dur: 500; easing: linear; from:0 1.8 -5; to:0 2.1 -5; loop: true; property:position"
             ></a-entity>
-            <a-entity   position = "0 2 -5"
-                        rotation = "0 180 0"
-                        geometry="primitive: plane; width: 4; height: auto"
-                        material="color: blue"
-                        text="value: This text will be 4 units wide.">
+            <a-entity   position = "0 8 -5"
+                        id = "EersteOpmerking"
+                        rotation = "0 270 0"
+                        text = "value: ;
+                                color: #212121;
+                                align: center;
+                                width: 10;
+                                size: 50;
+                                shader: msdf"
+                        geometry = "primitive: plane; width: auto; height: auto; color: white";
+            >
             </a-entity>
+            
 
             <a-box class="js--place js--interact" color="red" position="0 0.5 161" height="25" width="10"></a-box>
 

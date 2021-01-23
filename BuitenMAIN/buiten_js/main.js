@@ -1,4 +1,4 @@
-// console.log("running");
+console.log("running");
 // const places = document.getElementsByClassName('js--place');
 // const camera = document.getElementById('js--camera');
 
@@ -63,24 +63,10 @@
 //         }
 //     });
 // }
-let auto = document.getElementsByClassName("rijden");
-function RijdendeAutos(){
-    auto.setAttribute("position", "8 1 0");
-    setTimeout(function(){
-        auto.setAttribute("position", "8 1 5");
-    }, 200);
-    setTimeout(function(){
-        auto.setAttribute("position", "8 1 10");
-    }, 200);
-    setTimeout(function(){
-        auto.setAttribute("position", "8 1 15");
-    }, 200);
-    setTimeout(function(){
-        auto.setAttribute("position", "8 1 20");
-    }, 200);
-    setTimeout(function(){
-        auto.setAttribute("position", "8 1 25");
-    }, 200);
-
+let tekst = document.getElementById("EersteOpmerking");
+function Praten(){
+    tekst.setAttribute("text", "value: hallo, ik ben Rob de robot. Wat leuk om jou als nieuwe vriend te hebben. Ik ga je vandaag helpen tijdens dit avontuur. Je hebt van je moeder een boodschappenlijstje gekregen. Nu is het tijd om naar de winkel te lopen.;");
 }
-RijdendeAutos();
+Praten();
+
+
