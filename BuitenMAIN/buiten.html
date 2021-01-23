@@ -63,10 +63,11 @@
                 <audio id="RijdendeAuto" src="sounds/RijdendeAuto.wav"></audio> <!--CREDTITS: TODO-->
 
 
-            </a-assets>
-            <a-sky src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
-            <a-camera position="-24.5 6 -3" id="js--camera" wasd-controls="acceleration: 600">
-            <!-- <a-camera position="25 5 295" id="js--camera" wasd-controls="acceleration: 600"> -->
+        </a-assets>
+
+        <a-sky src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
+        <!-- <a-camera position="-25 5 -2" id="js--camera" wasd-controls="acceleration: 750"> -->
+            <a-camera position="25 5 295" id="js--camera" wasd-controls="acceleration: 750">
                 <a-entity
                   animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                   animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -92,6 +93,9 @@
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 269"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 292"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 315"></a-obj-model>
+            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 338"></a-obj-model>
+            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 361"></a-obj-model>
+            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 384"></a-obj-model>
 
             <a-obj-model class="js--place js--interact" src="#supermarkt-obj" mtl="#supermarkt-mtl" position="59 -0.5 295" rotation="0 90 0" scale="1.2 1.2 1.2"></a-obj-model>
 
@@ -131,34 +135,44 @@
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 46"></a-obj-model>
             
             <!-- <a-box class="js--place js--interact" color="red" position="12 0.5 99" height="50" width="50"></a-box> -->
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-rood-obj" mtl="#auto-rood-mtl" position="14 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-oranje-obj" mtl="#auto-rood-mtl" position="24 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-zwart-obj" mtl="#auto-rood-mtl" position="34 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-politie-obj" mtl="#auto-rood-mtl" position="40 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-groen-obj" mtl="#auto-rood-mtl" position="50 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-rood-obj" mtl="#auto-rood-mtl" position="58 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-oranje-obj" mtl="#auto-rood-mtl" position="68 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-zwart-obj" mtl="#auto-rood-mtl" position="70 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-rood-mtl" position="78 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-groen-obj" mtl="#auto-rood-mtl" position="88 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-rood-mtl" position="98 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-rood-obj" mtl="#auto-rood-mtl" position="110 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-oranje-obj" mtl="#auto-rood-mtl" position="117 1 10" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <!-- <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model> -->
+            <a-entity obj-model="obj:#auto-blauw-obj; mtl:#auto-blauw-mtl"
+                        position="8 1 0"
+                        animation__rijden="dur: 10000; easing: linear; from:8 1 -160; to: 10 1 350; loop:-1; property:position"></a-entity>
+            <a-entity obj-model="obj:#auto-groen-obj; mtl:#auto-groen-mtl"
+                        rotation="0 180 0"
+                        position="14 1 0"
+                        animation__rijden="dur: 15000; easing: linear; from:17 1 350; to: 14 1 -160; loop:-1; property:position">
+            </a-entity>
+            <a-entity obj-model="obj:#auto-zwart-obj; mtl:#auto-zwart-mtl"
+                        position="8 1 0"
+                        animation__rijden="dur: 15000; easing: linear; from:8 1 -160; to: 10 1 350; loop:-1; property:position"></a-entity>
+            <a-entity obj-model="obj:#auto-politie-obj; mtl:#auto-politie-mtl"
+                        rotation="0 180 0"
+                        position="14 1 0"
+                        animation__rijden="dur: 10000; easing: linear; from:17 1 350; to: 14 1 -160; loop:-1; property:position">
+            </a-entity>
+            <!-- <a-obj-model class="rijden" src="#auto-oranje-obj" mtl="#auto-oranje-mtl" position="8 1 -50"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-politie-obj" mtl="#auto-politie-mtl" position="8 1 -95"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-groen-obj" mtl="#auto-groen-mtl" position="8 1 -120"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-oranje-obj" mtl="#auto-oranje-mtl" position="8 1 -160"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
 
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="0 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-rood-obj" mtl="#auto-blauw-mtl" position="9 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-oranje-obj" mtl="#auto-blauw-mtl" position="18 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-oranje-obj" mtl="#auto-blauw-mtl" position="25 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-groen-obj" mtl="#auto-blauw-mtl" position="35 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="45 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-zwart-obj" mtl="#auto-blauw-mtl" position="55 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-groen-obj" mtl="#auto-blauw-mtl" position="65 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-oranje-obj" mtl="#auto-blauw-mtl" position="72 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-zwart-obj" mtl="#auto-blauw-mtl" position="80 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-politie-obj" mtl="#auto-blauw-mtl" position="90 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-rood-obj" mtl="#auto-blauw-mtl" position="102 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
-            <a-obj-model src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="110 1 18" rotation="0 180 0" scale="0.9 0.9 0.9" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-rood-obj" mtl="#auto-rood-mtl" position="9 1 20"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-zwart-obj" mtl="#auto-zwart-mtl" position="9 1 75"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-groen-obj" mtl="#auto-groen-mtl" position="9 1 120"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-groen-obj" mtl="#auto-groen-mtl" position="10 1 210"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-oranje-obj" mtl="#auto-oranje-mtl" position="10 1 290"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+
+            <a-obj-model class="rijden" src="#auto-oranje-obj" mtl="#auto-oranje-mtl" position="15 1 -25" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-zwart-obj" mtl="#auto-zwart-mtl" position="15 1 -75" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-politie-obj" mtl="#auto-politie-mtl" position="15 1 -125" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="15 1 -150" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+
+            <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="15 1 0" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-groen-obj" mtl="#auto-groen-mtl" position="15 1 50" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="15 1 150" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-groen-obj" mtl="#auto-groen-mtl" position="17 1 290" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
+            <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="17 1 240" rotation="0 180 0"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model> -->
 
             <!-- <a-obj-model src="#building-01-obj" mtl="#building-01-mtl" position="12 0.5 -23" scale="0.9 0.9 0.9"></a-obj-model> -->
             <!-- <a-box position="-16 0.5 -23" src="#plane--building" height="40" width="20" depth="50"></a-box> -->
@@ -169,7 +183,7 @@
 
             <a-box position="-16 0.5 -185" src="#plane--building" height="40" width="20" depth="50"></a-box>
 
-            <a-obj-model position="-20 0.5 25" src="#huis-kind-obj" mtl="#huis-kind-mtl" rotation="0 -90 0" scale="0.8 0.8 0.8"></a-obj-model>
+            <a-obj-model position="-20 0.5 25" src="#huis-kind-obj" mtl="#huis-kind-mtl" rotation="0 -90 0" scale="0.6 0.6 0.6"></a-obj-model>
 
             <!-- <a-box position="-16 0.5 75" src="#plane--building" height="40" width="20" depth="50"></a-box> -->
 
@@ -246,5 +260,6 @@
 
         </a-scene>
     </main>
+    <script src="buiten_js/main.js"></script>
 </body>
 </html>
