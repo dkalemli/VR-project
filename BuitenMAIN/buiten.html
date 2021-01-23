@@ -52,6 +52,9 @@
                 <a-asset-item id="boom1-mtl" src="models/boom1.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="boom1-obj" src="models/boom1.obj"></a-asset-item> 
 
+                <!--#########################      ROBOT       #####################################################-->
+                <a-asset-item id="robot-mtl" src="models/Robot.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
+                <a-asset-item id="robot-obj" src="models/Robot.obj"></a-asset-item> 
                 
                 <!--#########################      TEXTURES & IMAGES       #####################################################-->
                 <img id="plane--stoep" src="img/sidewalk.jpg" alt="stoep"> <!--CREDTITS: TODO-->
@@ -61,16 +64,16 @@
                 <img id="asset--house" src="img/16603.jpg" alt="house"> <!--CREDTITS: TODO-->
 
                 <!--#########################      GELUIDEN     #####################################################-->
-                <audio id="achtergrond" src="sounds/Achtergrond.mp3" preload = "auto"></audio> <!--CREDTITS: YT music-->
-                <audio id="DeurSluit" src="sounds/FrontDoorClose.mp3"></audio> <!--CREDTITS: YT music-->
+                <audio id="achtergrond" src="sounds/Achtergrond.mp3" preload = "auto"></audio> <!--CREDTITS: YT Music library-->
+                <audio id="DeurSluit" src="sounds/FrontDoorClose.mp3"></audio> <!--CREDTITS: YT Music library-->
                 <audio id="RijdendeAuto" src="sounds/RijdendeAuto.wav"></audio> <!--CREDTITS: TODO-->
 
 
         </a-assets>
 
         <a-sky src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
-        <!-- <a-camera position="-25 5 -2" id="js--camera" wasd-controls="acceleration: 750"> -->
-            <a-camera position="0 5 450" id="js--camera" wasd-controls="acceleration: 750">
+        <a-camera position="-25 5 -2" id="js--camera" wasd-controls="acceleration: 750"> 
+            <!-- <a-camera position="0 5 450" id="js--camera" wasd-controls="acceleration: 750"> -->
                 <a-entity
                   animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                   animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -82,6 +85,18 @@
                   raycaster = "objects: .js--interact"
                 ></a-entity>
               </a-camera>
+              
+            <a-entity class="js--robot js--interact" obj-model="obj:#robot-obj; mtl:#robot-mtl"
+                        position="0 1 -5"
+                        rotation="0 180 0"
+                        animation__OpEnNeer="dur: 500; easing: linear; from:0 1.8 -5; to:0 2.1 -5; loop: true; property:position"
+            ></a-entity>
+            <a-entity   position = "0 2 -5"
+                        rotation = "0 180 0"
+                        geometry="primitive: plane; width: 4; height: auto"
+                        material="color: blue"
+                        text="value: This text will be 4 units wide.">
+            </a-entity>
 
             <a-box class="js--place js--interact" color="red" position="0 0.5 161" height="25" width="10"></a-box>
 
@@ -189,78 +204,12 @@
 
             <a-obj-model position="-20 0.5 25" src="#huis-kind-obj" mtl="#huis-kind-mtl" rotation="0 -90 0" scale="0.6 0.6 0.6"></a-obj-model>
 
-            <!-- <a-box position="-16 0.5 75" src="#plane--building" height="40" width="20" depth="50"></a-box> -->
 
-
-            <a-box class="js--place js--interact" position="0 5 -5" color="red"></a-box>
+            <!-- <a-box class="js--place js--interact" position="0 5 -5" color="red"></a-box> -->
 
             <a-box position="-16 0.5 130" src="#plane--building" height="40" width="20" depth="50"></a-box>
 
-
-            <!-- <a-box position="16 0.5 -23" height="40" width="20" depth="100"></a-box> -->
-            <!-- <a-obj-model src="#huis-2-obj" mtl="#huis-2-mtl" position="12 20 -46"></a-obj-model> -->
-
             <a-plane id="js--plane--grassGreen" color="green" height="1000" width="1000" position="0 -0.1 0" rotation="-90 0 0"></a-plane>
-            <!--<a-plane id="js--plane--grass" src="#plane--gras" height="10" width="10" position="0 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grass1" src="#plane--gras" height="10" width="10" position="10 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grass2" src="#plane--gras" height="10" width="10" position="20 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grass3" src="#plane--gras" height="10" width="10" position="30 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grass4" src="#plane--gras" height="10" width="10" position="40 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grass5" src="#plane--gras" height="10" width="10" position="50 0 0" rotation="-90 0 0"></a-plane>
-
-            <a-plane id="js--plane--grassB1" src="#plane--gras" height="10" width="10" position="-10 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassB2" src="#plane--gras" height="10" width="10" position="-20 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassB3" src="#plane--gras" height="10" width="10" position="-30 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassB4" src="#plane--gras" height="10" width="10" position="-40 0 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassB5" src="#plane--gras" height="10" width="10" position="-50 0 0" rotation="-90 0 0"></a-plane>
-
-            <a-plane id="js--plane--grassA" src="#plane--gras" height="10" width="10" position="0 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassA1" src="#plane--gras" height="10" width="10" position="10 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassA2" src="#plane--gras" height="10" width="10" position="20 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassA3" src="#plane--gras" height="10" width="10" position="30 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassA4" src="#plane--gras" height="10" width="10" position="40 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassA5" src="#plane--gras" height="10" width="10" position="50 0 10" rotation="-90 0 0"></a-plane>
-
-            <a-plane id="js--plane--grassD" src="#plane--gras" height="10" width="10" position="0 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassD1" src="#plane--gras" height="10" width="10" position="10 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassD2" src="#plane--gras" height="10" width="10w" position="20 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassD3" src="#plane--gras" height="10" width="10" position="30 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassD4" src="#plane--gras" height="10" width="10" position="40 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassD5" src="#plane--gras" height="10" width="10" position="50 0 -10" rotation="-90 0 0"></a-plane>
-
-            <a-plane id="js--plane--grassE" src="#plane--gras" height="10" width="10" position="0 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassE1" src="#plane--gras" height="10" width="10" position="10 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassE2" src="#plane--gras" height="10" width="10" position="20 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassE3" src="#plane--gras" height="10" width="10" position="30 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassE4" src="#plane--gras" height="10" width="10" position="40 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassE5" src="#plane--gras" height="10" width="10" position="50 0 -20" rotation="-90 0 0"></a-plane>
-            
-            <a-plane id="js--plane--grassF1" src="#plane--gras" height="10" width="10" position="-10 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassF2" src="#plane--gras" height="10" width="10" position="-20 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassF3" src="#plane--gras" height="10" width="10" position="-30 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassF4" src="#plane--gras" height="10" width="10" position="-40 0 10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassF5" src="#plane--gras" height="10" width="10" position="-50 0 10" rotation="-90 0 0"></a-plane>
-
-            <a-plane id="js--plane--grassG" src="#plane--gras" height="10" width="10" position="0 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassG1" src="#plane--gras" height="10" width="10" position="-10 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassG2" src="#plane--gras" height="10" width="10" position="-20 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassG3" src="#plane--gras" height="10" width="10" position="-30 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassG4" src="#plane--gras" height="10" width="10" position="-40 0 -10" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassG5" src="#plane--gras" height="10" width="10" position="-50 0 -10" rotation="-90 0 0"></a-plane>
-
-            <a-plane id="js--plane--grassH" src="#plane--gras" height="10" width="10" position="0 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassH1" src="#plane--gras" height="10" width="10" position="-10 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassH2" src="#plane--gras" height="10" width="10" position="-20 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassH3" src="#plane--gras" height="10" width="10" position="-30 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassH4" src="#plane--gras" height="10" width="10" position="-40 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassH5" src="#plane--gras" height="10" width="10" position="-50 0 -20" rotation="-90 0 0"></a-plane> -->
-
-            <!-- <a-plane id="js--plane--stoep1" src="#plane--gras" height="25" width="25" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--stoep2" src="#plane--gras" height="25" width="25" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--stoep3" src="#plane--gras" height="25" width="25" rotation="-90 0 0"></a-plane> -->
-
-            <!-- <a-plane id="js--plane--street" color="white" height="50" width="50" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grass" color="white" height="50" width="50" rotation="-90 0 0"></a-plane> -->
 
         </a-scene>
     </main>
