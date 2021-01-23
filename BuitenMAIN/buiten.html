@@ -23,6 +23,8 @@
 
                 <a-asset-item id="wijk-mtl" src="models/straatMetKruispunt.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="wijk-obj" src="models/straatMetKruispunt.obj"></a-asset-item> 
+                <a-asset-item id="wijk" src="models/wijk.gltf"></a-asset-item> 
+
                
 
                 <!--#########################      AUTO'S       #####################################################-->
@@ -118,9 +120,9 @@
 
             <a-box class="js--place js--interact" color="red" position="0 0.5 300" height="15" width="15"></a-box>
 
-
-
-            <a-obj-model src="#wijk-obj" mtl="#wijk-mtl" position="12 0.7 300" ></a-obj-model>
+            <!-- <a-entity static gltf-model="#huis" scale=".01 .01 .01" position="0 .5 25"></a-entity> -->
+            <a-entity static gltf-model="#wijk" position="12 1 300"></a-entity>
+            <!-- <a-obj-model src="#wijk-obj" mtl="#wijk-mtl" position="12 0.7 300" ></a-obj-model> -->
             <!-- <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 246"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 269"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 292"></a-obj-model>
