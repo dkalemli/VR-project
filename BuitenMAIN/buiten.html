@@ -20,6 +20,9 @@
                 
                 <a-asset-item id="kruispunt-mtl" src="models/Kruispunt_Versie2.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="kruispunt-obj" src="models/Kruispunt_Versie2.obj"></a-asset-item> 
+
+                <a-asset-item id="wijk-mtl" src="models/straatMetKruispunt.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
+                <a-asset-item id="wijk-obj" src="models/straatMetKruispunt.obj"></a-asset-item> 
                
 
                 <!--#########################      AUTO'S       #####################################################-->
@@ -67,7 +70,7 @@
 
         <a-sky src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
         <!-- <a-camera position="-25 5 -2" id="js--camera" wasd-controls="acceleration: 750"> -->
-            <a-camera position="25 5 295" id="js--camera" wasd-controls="acceleration: 750">
+            <a-camera position="0 5 450" id="js--camera" wasd-controls="acceleration: 750">
                 <a-entity
                   animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                   animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -88,16 +91,17 @@
 
 
 
-            <a-obj-model src="#kruispunt-obj" mtl="#kruispunt-mtl" position="12.5 0.7 203" ></a-obj-model>
-            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 246"></a-obj-model>
+            <a-obj-model src="#wijk-obj" mtl="#wijk-mtl" position="12 0.7 300" ></a-obj-model>
+            <!-- <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 246"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 269"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 292"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 315"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 338"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 361"></a-obj-model>
-            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 384"></a-obj-model>
+            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 384"></a-obj-model> -->
 
-            <a-obj-model class="js--place js--interact" src="#supermarkt-obj" mtl="#supermarkt-mtl" position="59 -0.5 295" rotation="0 90 0" scale="1.2 1.2 1.2"></a-obj-model>
+            <a-obj-model src="#supermarkt-obj" mtl="#supermarkt-mtl" position="51 -.8 461" rotation="0 90 0" scale="1.2 1.2 1.2"></a-obj-model>
+            <a-obj-model src="#auto-oranje-obj" mtl="#auto-oranje-mtl" position="32 1.4 473" rotation="0 90 0"></a-obj-model>
 
             <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="30 0.5 -10" scale="0.8 0.8 0.8"></a-obj-model>
             <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="30 0.5 -20"></a-obj-model>
@@ -117,7 +121,7 @@
 
             <a-box color="green" rotation="0 90 0" position="40 0 0" height="25" width="300" depth="1"></a-box>
 
-
+<!-- 
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 -161"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 -138"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 -115"></a-obj-model>
@@ -132,7 +136,7 @@
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 115"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 92"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 69"></a-obj-model>
-            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 46"></a-obj-model>
+            <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="12 0.5 46"></a-obj-model> -->
             
             <!-- <a-box class="js--place js--interact" color="red" position="12 0.5 99" height="50" width="50"></a-box> -->
             <!-- <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model> -->
@@ -197,7 +201,7 @@
             <!-- <a-obj-model src="#huis-2-obj" mtl="#huis-2-mtl" position="12 20 -46"></a-obj-model> -->
 
             <a-plane id="js--plane--grassGreen" color="green" height="1000" width="1000" position="0 -0.1 0" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grass" src="#plane--gras" height="10" width="10" position="0 0 0" rotation="-90 0 0"></a-plane>
+            <!--<a-plane id="js--plane--grass" src="#plane--gras" height="10" width="10" position="0 0 0" rotation="-90 0 0"></a-plane>
             <a-plane id="js--plane--grass1" src="#plane--gras" height="10" width="10" position="10 0 0" rotation="-90 0 0"></a-plane>
             <a-plane id="js--plane--grass2" src="#plane--gras" height="10" width="10" position="20 0 0" rotation="-90 0 0"></a-plane>
             <a-plane id="js--plane--grass3" src="#plane--gras" height="10" width="10" position="30 0 0" rotation="-90 0 0"></a-plane>
@@ -249,7 +253,7 @@
             <a-plane id="js--plane--grassH2" src="#plane--gras" height="10" width="10" position="-20 0 -20" rotation="-90 0 0"></a-plane>
             <a-plane id="js--plane--grassH3" src="#plane--gras" height="10" width="10" position="-30 0 -20" rotation="-90 0 0"></a-plane>
             <a-plane id="js--plane--grassH4" src="#plane--gras" height="10" width="10" position="-40 0 -20" rotation="-90 0 0"></a-plane>
-            <a-plane id="js--plane--grassH5" src="#plane--gras" height="10" width="10" position="-50 0 -20" rotation="-90 0 0"></a-plane>
+            <a-plane id="js--plane--grassH5" src="#plane--gras" height="10" width="10" position="-50 0 -20" rotation="-90 0 0"></a-plane> -->
 
             <!-- <a-plane id="js--plane--stoep1" src="#plane--gras" height="25" width="25" rotation="-90 0 0"></a-plane>
             <a-plane id="js--plane--stoep2" src="#plane--gras" height="25" width="25" rotation="-90 0 0"></a-plane>
