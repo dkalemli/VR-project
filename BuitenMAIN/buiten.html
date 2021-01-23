@@ -86,12 +86,18 @@
                 ></a-entity>
               </a-camera>
               
-            <a-entity class="js--robot js--interact" obj-model="obj:#robot-obj; mtl:#robot-mtl"
+            <a-entity lopen id="js--robot" class="js--interact" obj-model="obj:#robot-obj; mtl:#robot-mtl"
                         position="0 1 -5"
                         rotation="0 180 0"
-                        animation__OpEnNeer="dur: 500; easing: linear; from:0 1.8 -5; to:0 2.1 -5; loop: true; property:position"
+                        animation__OpEnNeer="
+                        dur: 500; 
+                        easing: linear; 
+                        from:0 1.8 -5; 
+                        to:0 2.1 -5; 
+                        loop: true; 
+                        property:position"
             ></a-entity>
-            <a-entity   position = "0 8 -5"
+            <a-entity   position = "0 8 -3"
                         id = "EersteOpmerking"
                         rotation = "0 270 0"
                         text = "value: ;
@@ -100,7 +106,8 @@
                                 width: 10;
                                 size: 50;
                                 shader: msdf"
-                        geometry = "primitive: plane; width: auto; height: auto; color: white";
+                        geometry = "primitive: plane; width: auto + 5; height: auto + 5"
+                        material = "color: white";
             >
             </a-entity>
             

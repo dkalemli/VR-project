@@ -63,10 +63,52 @@ console.log("running");
 //         }
 //     });
 // }
+
 let tekst = document.getElementById("EersteOpmerking");
+let robotPos = document.getElementById("js--robot");
+function move(){
+        robotPos.setAttribute('position', {x: 0, y: 1, z: 20});
+    };
+
 function Praten(){
     tekst.setAttribute("text", "value: hallo, ik ben Rob de robot. Wat leuk om jou als nieuwe vriend te hebben. Ik ga je vandaag helpen tijdens dit avontuur. Je hebt van je moeder een boodschappenlijstje gekregen. Nu is het tijd om naar de winkel te lopen.;");
+    // setTimeout(function(){
+    //     move();
+    // }, 5000);
+    
 }
+
+
+move();
 Praten();
 
+
+
+
+
+
+
+
+
+
+
+
+AFRAME.registerComponent("lopen", {
+    init: function() {
+
+        let loopAni = document.getElementById("js--robot");
+
+        this.lopen = function() {
+            then(loopAni.setAttribute('postion', {x: 0, y: 1, z: 20}));
+        }
+        this.el.addEventListener("mouseenter", this.planeet);
+    },
+    update: function() {
+        this.lopen();
+    },
+    tick: function() {},
+    remove: function() {},
+    pause: function() {},
+    play: function() {}
+});
 
