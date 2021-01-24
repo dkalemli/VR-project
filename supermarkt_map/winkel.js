@@ -13,7 +13,7 @@ window.onload = () =>{
       mandje[i].addEventListener('click', function(evt){
         if (mandje_hold == null) {
           mandje_hold = 1;
-          camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0 -1 -1.3" scale="0.4 0.4 0.4" rotation="-20 180 0"></a-obj-model>';
+          camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.5 -1 -1" scale="0.4 0.4 0.4" rotation="0 110 10"></a-obj-model>';
         }
 
         console.log("eerst hier");
