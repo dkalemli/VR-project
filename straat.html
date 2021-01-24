@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The journey of education - Buiten</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="buiten_js/walk.js"></script>
+    <script src="js/walk.js"></script>
 </head>
 <body>
     <main>
@@ -25,9 +25,6 @@
                 <a-asset-item id="wijk-obj" src="models/straatMetKruispunt.obj"></a-asset-item> 
                 <a-asset-item id="wijk" src="models/wijk.gltf"></a-asset-item> 
                 <a-asset-item id="wijk2" src="models/GebouwenKruispunt.gltf"></a-asset-item> 
-
-
-               
 
                 <!--#########################      AUTO'S       #####################################################-->
                 <a-asset-item id="auto-blauw-mtl" src="models/Auto1.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
@@ -55,6 +52,9 @@
                 <a-asset-item id="supermarkt-mtl" src="models/supermarkt.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="supermarkt-obj" src="models/supermarkt.obj"></a-asset-item> 
 
+                <!-- Credits: https://sketchfab.com/3d-models/single-story-house-textured-with-interior-62c6fecff4ee4e24abb4080ff533e707 -->
+                <a-asset-item id="huis" src="models/scene.gltf"></a-asset-item>
+
 
                 <!--#########################      NATUUR       #####################################################-->
                 <a-asset-item id="boom1-mtl" src="models/boom1.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
@@ -65,13 +65,13 @@
                 <a-asset-item id="robot-obj" src="models/Robot.obj"></a-asset-item> 
                 
                 <!--#########################      TEXTURES & IMAGES       #####################################################-->
-                <img id="plane--stoep" src="img/sidewalk.jpg" alt="stoep"> <!--CREDTITS: TODO-->
-                <img id="plane--gras" src="img/grass.jpg" alt="gras"> <!--CREDTITS: TODO-->
+                <img id="plane--stoep" src="img/textures/sidewalk.jpg" alt="stoep"> <!--CREDTITS: TODO-->
+                <img id="plane--gras" src="img/textures/grass.jpg" alt="gras"> <!--CREDTITS: TODO-->
                 <img id="lucht" src="img/Sky1.jpg" alt="sky"> <!--CREDTITS: TODO-->
                 <img id="plane--building" src="img/16603.jpg" alt="placeholder gebouw"> <!--CREDTITS: TODO-->
                 <img id="asset--house" src="img/16603.jpg" alt="house"> <!--CREDTITS: TODO-->
-                <img id="asfalt" src="img/Weg.jpg"> <!--CREDTITS: Alex Woods - BRON: https://unsplash.com/photos/ee5Pqx_OTlQ-->
-                <img id="stoep" src="img/Stoep.jpg"> <!--CREDTITS: ArthurHidden - BRON: https://www.freepik.com/free-photo/cobblestone-pavement-road-with-edge-courses-sidewalk-texture_9859479.htm#page=1&query=sidewalk%20texture&position=0-->
+                <img id="asfalt" src="img/textures/Weg.jpg"> <!--CREDTITS: Alex Woods - BRON: https://unsplash.com/photos/ee5Pqx_OTlQ-->
+                <img id="stoep" src="img/textures/Stoep.jpg"> <!--CREDTITS: ArthurHidden - BRON: https://www.freepik.com/free-photo/cobblestone-pavement-road-with-edge-courses-sidewalk-texture_9859479.htm#page=1&query=sidewalk%20texture&position=0-->
                 
 
                 <!--#########################      GELUIDEN     #####################################################-->
@@ -121,7 +121,8 @@
                         material = "color: white";
             >
             </a-entity>
-            
+            <a-entity static gltf-model="#huis" scale=".01 .01 .01" position="0 .5 25"></a-entity>
+
 <!-- 
             <a-box class="js--place js--interact" color="red" position="0 0.5 161" height="25" width="10"></a-box>
 
@@ -331,6 +332,6 @@
 
         </a-scene>
     </main>
-    <script src="buiten_js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
