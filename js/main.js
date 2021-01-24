@@ -69,12 +69,14 @@ let groen = document.getElementById("js--stoplicht_groen");
 console.log(rood);
 
 function opGroen(){
-    rood.setAttribute('color', "black");
-    groen.setAttribute('color', "green");
+    setTimeout(function(){
+        rood.setAttribute('color', "black");
+        groen.setAttribute('color', "green");  
+        //Robot verschijnt aan overkant
+   }, 28000);
 }
-setTimeout(function(){
-         opGroen();
-    }, 5000);
+
+opGroen();
 
 
 let tekst = document.getElementById("EersteOpmerking");

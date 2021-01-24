@@ -37,14 +37,6 @@ window.onload = () =>{
       });
     }
   
-  
-  
-  
-  
-  
-  
-  
-  
     // for (let i = 0; i < places.length; i++) {
     //   places[i].addEventListener('click', function(evt){
     //     let att = document.createAttribute("animation");
@@ -52,8 +44,7 @@ window.onload = () =>{
     //     camera.setAttribute('animation', att.value);
     //   });
     // }
-  
-  
+
     for (let i = 0; i < places.length; i++) {
       places[i].addEventListener('click', function(evt){
         let att = document.createAttribute("animation");
@@ -63,9 +54,11 @@ window.onload = () =>{
   
         const snelheid = 250 * afstand;
         let speed = snelheid;
-        if(afstand < 170){
-          att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 6 " + this.getAttribute('position').z;
+        if(afstand < 250){
+          att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 5 " + this.getAttribute('position').z;
+          console.log(att.value);
           camera.setAttribute('animation', att.value);
+          
         }
   
   
