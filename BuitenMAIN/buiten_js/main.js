@@ -63,6 +63,19 @@ console.log("running");
 //         }
 //     });
 // }
+let stoplicht = document.getElementById("js--stoplicht");
+let rood = document.getElementById("js--stoplicht_rood");
+let groen = document.getElementById("js--stoplicht_groen");
+console.log(rood);
+
+function opGroen(){
+    rood.setAttribute('color', "black");
+    groen.setAttribute('color', "green");
+}
+setTimeout(function(){
+         opGroen();
+    }, 5000);
+
 
 let tekst = document.getElementById("EersteOpmerking");
 let robotPos = document.getElementById("js--robot");

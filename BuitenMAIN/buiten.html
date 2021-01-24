@@ -24,6 +24,8 @@
                 <a-asset-item id="wijk-mtl" src="models/straatMetKruispunt.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="wijk-obj" src="models/straatMetKruispunt.obj"></a-asset-item> 
                 <a-asset-item id="wijk" src="models/wijk.gltf"></a-asset-item> 
+                <a-asset-item id="wijk2" src="models/GebouwenKruispunt.gltf"></a-asset-item> 
+
 
                
 
@@ -40,6 +42,10 @@
                 <a-asset-item id="auto-oranje-obj" src="models/Car1_Oranje.obj"></a-asset-item> 
                 <a-asset-item id="auto-politie-mtl" src="models/PolitieAuto.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="auto-politie-obj" src="models/PolitieAuto.obj"></a-asset-item>
+
+                <!--#########################      VERKEER       #####################################################-->
+                <a-asset-item id="stoplicht-mtl" src="models/Stoplicht.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
+                <a-asset-item id="stoplicht-obj" src="models/Stoplicht.obj"></a-asset-item> 
 
 
                 <!--#########################      GEBOUWEN       #####################################################-->
@@ -64,6 +70,9 @@
                 <img id="lucht" src="img/Sky1.jpg" alt="sky"> <!--CREDTITS: TODO-->
                 <img id="plane--building" src="img/16603.jpg" alt="placeholder gebouw"> <!--CREDTITS: TODO-->
                 <img id="asset--house" src="img/16603.jpg" alt="house"> <!--CREDTITS: TODO-->
+                <img id="asfalt" src="img/Weg.jpg"> <!--CREDTITS: Alex Woods - BRON: https://unsplash.com/photos/ee5Pqx_OTlQ-->
+                <img id="stoep" src="img/Stoep.jpg"> <!--CREDTITS: ArthurHidden - BRON: https://www.freepik.com/free-photo/cobblestone-pavement-road-with-edge-courses-sidewalk-texture_9859479.htm#page=1&query=sidewalk%20texture&position=0-->
+                
 
                 <!--#########################      GELUIDEN     #####################################################-->
                 <audio id="achtergrond" src="sounds/Achtergrond.mp3" preload = "auto"></audio> <!--CREDTITS: YT Music library-->
@@ -74,7 +83,7 @@
         </a-assets>
 
         <a-sky src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
-        <a-camera position="-25 5 -2" id="js--camera" wasd-controls="acceleration: 750"> 
+        <a-camera position="-5 5 290" id="js--camera" wasd-controls="acceleration: 900"> 
             <!-- <a-camera position="0 5 450" id="js--camera" wasd-controls="acceleration: 750"> -->
                 <a-entity
                   animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
@@ -113,15 +122,108 @@
             >
             </a-entity>
             
-
+<!-- 
             <a-box class="js--place js--interact" color="red" position="0 0.5 161" height="25" width="10"></a-box>
 
             <a-box class="js--place js--interact" color="red" position="0 0.5 250" height="15" width="15"></a-box>
 
-            <a-box class="js--place js--interact" color="red" position="0 0.5 300" height="15" width="15"></a-box>
+            <a-box class="js--place js--interact" color="red" position="0 0.5 300" height="15" width="15"></a-box> -->
+
+            <a-obj-model id="js--stoplicht" src="#stoplicht-obj" mtl="#stoplicht-mtl" position="-5 1 310" rotation = "0 180 0"></a-obj-model>
+            <a-sphere id="js--stoplicht_rood" color="red" position="-5 7.6 310" radius=".3"></a-sphere>
+            <a-sphere id="js--stoplicht_groen" color="black" position="-5 6.7 310" radius=".3"></a-sphere>
 
             <!-- <a-entity static gltf-model="#huis" scale=".01 .01 .01" position="0 .5 25"></a-entity> -->
-            <a-entity static gltf-model="#wijk" position="12 1 300"></a-entity>
+            <a-entity static gltf-model="#wijk2" position="20 -5 300"></a-entity> <!--12-->
+            <!-- <a-box src="#stoep" position = "-1 0 300" width=8 height=2 depth="20"></a-box> -->
+            <a-box src="#stoep" position = "30 0 320" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 340" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 360" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 380" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 400" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 420" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 440" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 460" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 480" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 500" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 520" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 280" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 260" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 240" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 220" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 200" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 180" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 160" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 140" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 120" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 100" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 80" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 60" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 40" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 20" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 0" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 -20" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "30 0 -40" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 320" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 340" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 360" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 380" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 400" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 420" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 440" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 460" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 480" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 500" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 520" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 280" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 260" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 240" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 220" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 200" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 180" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 160" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 140" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 120" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 100" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 80" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 60" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 40" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 20" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 0" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 -20" width=10 height=2 depth="20"></a-box>
+            <a-box src="#stoep" position = "-2 0 -40" width=10 height=2 depth="20"></a-box>
+
+            <a-box position = "4 0 90" width="2" height="2" depth = "400" color = "darkgray"></a-box>
+            <a-box position = "4 0 410" width="2" height="2" depth = "200" color = "darkgray"></a-box>
+
+            <a-box position = "25 0 90" width="1" height="2" depth = "400" color = "darkgray"></a-box>
+            <a-box position = "25 0 410" width="1" height="2" depth = "200" color = "darkgray"></a-box>
+
+            <a-box src="#asfalt" rotation = "0 0 0" position = "0 0 300" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 0 0" position = "20 0 300" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 0 0" position = "45 0 300" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 0 0" position = "-25 0 300" width=25 height=1 depth="20"></a-box>
+
+
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 100" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 125" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 150" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 175" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 200" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 225" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 250" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 275" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 300" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 325" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 350" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 375" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 400" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 425" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 450" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 475" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 500" width=25 height=1 depth="20"></a-box>
+            <a-box src="#asfalt" rotation = "0 90 0" position = "15 0 525" width=25 height=1 depth="20"></a-box>
+
             <!-- <a-obj-model src="#wijk-obj" mtl="#wijk-mtl" position="12 0.7 300" ></a-obj-model> -->
             <!-- <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 246"></a-obj-model>
             <a-obj-model src="#straat-obj" mtl="#straat-mtl" position="13 0.4 269"></a-obj-model>
@@ -173,19 +275,19 @@
             <!-- <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model> -->
             <a-entity obj-model="obj:#auto-blauw-obj; mtl:#auto-blauw-mtl"
                         position="8 1 0"
-                        animation__rijden="dur: 10000; easing: linear; from:8 1 -160; to: 10 1 350; loop:-1; property:position"></a-entity>
+                        animation__rijden="dur: 10000; easing: linear; from:10 1 0; to: 10 1 550; loop:-1; property:position"></a-entity>
             <a-entity obj-model="obj:#auto-groen-obj; mtl:#auto-groen-mtl"
                         rotation="0 180 0"
                         position="14 1 0"
-                        animation__rijden="dur: 15000; easing: linear; from:17 1 350; to: 14 1 -160; loop:-1; property:position">
+                        animation__rijden="dur: 15000; easing: linear; from:18 1 550; to: 18 1 0; loop:-1; property:position">
             </a-entity>
             <a-entity obj-model="obj:#auto-zwart-obj; mtl:#auto-zwart-mtl"
                         position="8 1 0"
-                        animation__rijden="dur: 15000; easing: linear; from:8 1 -160; to: 10 1 350; loop:-1; property:position"></a-entity>
+                        animation__rijden="dur: 15000; easing: linear; from:10 1 0; to: 10 1 550; loop:-1; property:position"></a-entity>
             <a-entity obj-model="obj:#auto-politie-obj; mtl:#auto-politie-mtl"
                         rotation="0 180 0"
                         position="14 1 0"
-                        animation__rijden="dur: 10000; easing: linear; from:17 1 350; to: 14 1 -160; loop:-1; property:position">
+                        animation__rijden="dur: 10000; easing: linear; from:18 1 550; to: 18 1 0; loop:-1; property:position">
             </a-entity>
             <!-- <a-obj-model class="rijden" src="#auto-oranje-obj" mtl="#auto-oranje-mtl" position="8 1 -50"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
             <a-obj-model class="rijden" src="#auto-politie-obj" mtl="#auto-politie-mtl" position="8 1 -95"  sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model>
