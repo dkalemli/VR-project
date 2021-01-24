@@ -39,8 +39,7 @@
         raycaster = "objects: .js--interact"
       ></a-entity>
 
-      <!-- <a-box position=" 0 -0.6 -1" height="0.1" width="2" depth="0.5" color="lightblue"></a-box>
-      <a-box id="js--hold" width="0.3" height="0.3" depth="0.3" class="js--pickup js--interact" color="green" position="0.7 -0.4 -1"></a-box> -->
+      <!-- <a-obj-model class="js--interact js--winkelwagen" src="#winkelwagen-obj" mtl="#winkelwagen-mtl" position="0 -2 -2" scale="1 0.7 1" rotation="0 180 0"></a-obj-model> -->
     </a-camera>
 
 
@@ -68,7 +67,7 @@
 
 
 <!--  ============================ winkelwagen ================================ -->
-<a-obj-model src="#winkelwagen-obj" mtl="#winkelwagen-mtl" position="4 0 13" scale="1 0.7 1" rotation="0 180 0"></a-obj-model>
+<a-obj-model class="js--interact js--winkelwagen" src="#winkelwagen-obj" mtl="#winkelwagen-mtl" position="4 0 13" scale="1 0.7 1" rotation="0 180 0"></a-obj-model>
 
 
 <!--  ============================ schappen ================================ -->
@@ -101,57 +100,30 @@
 
 <!--  ============================ momevement boxes ================================ -->
     <!-- <a-box class="js--place js--interact" width="1" height="0.4" depth="1" color="red" position="6 0 11"></a-box> -->
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 8"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 -2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 -6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 0 -10"></a-box>
 
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 -10"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 -6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 -2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 0 8"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 100 8"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 100 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 100 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 100 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 100 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="6 100 -10"></a-box>
 
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 -10"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 -6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 -2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 2"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 6"></a-box>
-    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 0 8"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 100 -10"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 100 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 100 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 100 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 100 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="0 100 8"></a-box>
 
-
-
-
-
-<!--  ============================ oude code ================================ -->
-    <!-- <a-box class="js--place js--interact" color="blue" position="0 1.5 0"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="-5 1.5 -5"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="5 1.5 -5"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="-5 1.5 5"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="5 1.5 5"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="-25 1.5 -25"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="25 1.5 -25"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="-25 1.5 25"></a-box>
-    <a-box class="js--place js--interact" color="blue" position="25 1.5 25"></a-box> -->
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 100 -10"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 100 -6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 100 -2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 100 2"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 100 6"></a-box>
+    <a-box class="js--place js--interact" width="1" height="0.1" depth="1" color="red" position="-6 100 8"></a-box>
 
 
 
-    <!-- <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="-2 0.5 -2"></a-box>
-    <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="1 0.5 -2"></a-box>
-    <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="-1 0.5 -2"></a-box>
-    <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="0 0.5 -2"></a-box> -->
-
-    <!-- <a-box class="js--placeholder js--interact" color="red" height="1" position="2 0.6 0"> -->
-      <!-- <a-box class="js--pickup js--interact" width="0.3" height="0.3" depth="0.3" color="green" position="0.3 0.65 0.3"></a-box> -->
-    <!-- </a-box> -->
-
-    <!-- <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="0 0 4"></a-cylinder>
-    <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="0 0 -4"></a-cylinder>
-    <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="4 0 0"></a-cylinder>
-    <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="-4 0 0"></a-cylinder> -->
 
 
     <a-sky color="skyblue"></a-sky>
