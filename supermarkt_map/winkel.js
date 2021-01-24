@@ -3,17 +3,17 @@ window.onload = () =>{
   const camera = document.getElementById('js--camera');
   let places = document.getElementsByClassName("js--place");
 
-  let winkelwagen = document.getElementsByClassName('js--winkelwagen')
-  let winkelwagen_hold = null;
+  let mandje = document.getElementsByClassName('js--mandje')
+  let mandje_hold = null;
 
 
-// ======================================== winkelwagen pakken =================================
-  function pak_winkelwagen() {
-    for (let i = 0; i < winkelwagen.length; i++) {
-      winkelwagen[i].addEventListener('click', function(evt){
-        if (winkelwagen_hold == null) {
-          winkelwagen_hold = 1;
-          scene.innerHTML += '<a-obj-model class="js--interact js--winkelwagen" src="#winkelwagen-obj" mtl="#winkelwagen-mtl" position="0 -2 -2" scale="1 0.7 1" rotation="0 180 0"></a-obj-model>';
+// ======================================== mandje pakken =================================
+  function pak_mandje() {
+    for (let i = 0; i < mandje.length; i++) {
+      mandje[i].addEventListener('click', function(evt){
+        if (mandje_hold == null) {
+          mandje_hold = 1;
+          camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0 -1 -1.3" scale="0.4 0.4 0.4" rotation="-20 180 0"></a-obj-model>';
         }
 
         console.log("eerst hier");
@@ -25,7 +25,7 @@ window.onload = () =>{
     }
   }
 
-pak_winkelwagen();
+pak_mandje();
 
 
 // ======================================== al die kleine groene boxes oppakken =================================
