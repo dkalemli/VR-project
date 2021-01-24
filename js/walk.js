@@ -54,13 +54,12 @@ window.onload = () =>{
   
         const snelheid = 250 * afstand;
         let speed = snelheid;
+        
         if(afstand < 250){
           att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 5 " + this.getAttribute('position').z;
           console.log(att.value);
           camera.setAttribute('animation', att.value);
-          
         }
-  
   
         // console.log(this.getAttribute('position').x, this.getAttribute('position').z, camera.getAttribute("position").x, camera.getAttribute("position").z);
       });

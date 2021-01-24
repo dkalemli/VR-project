@@ -87,21 +87,21 @@
         <a-sky position="0 0 200" src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
 
         <!-- <a-camera position="-5 5 290" id="js--camera" wasd-controls="acceleration: 900">  --> 
-            <!-- position="0 5 300"        -->
-        <a-entity id="js--camera" position="-70 6 -5" rotation = "0 270 0" >
-            <a-camera wasd-controls="acceleration: 2000">
+            <!-- position="0 5 300" -->
+        <!-- <a-entity camera look-controls wasd-controls="acceleration: 2000" id="js--camera" position="-70 6 -5" rotation = "0 270 0"> -->
+            <a-camera id="js--camera" look-controls wasd-controls="acceleration: 2000" position="-70 6 -5">
                 <a-entity
-                animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
-                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
-                animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-                cursor = "fuse: true; fuseTimeout: 2000"
-                material = "color: black; shader: flat"
-                geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
-                position = "0 0 -0.5"
-                raycaster = "objects: .js--interact"
-                ></a-entity>
+                    animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                    animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+                    animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                    cursor = "fuse: true; fuseTimeout: 2000"
+                    material = "color: black; shader: flat"
+                    geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+                    position = "0 0 -0.5"
+                    raycaster = "objects: .js--interact">
+                </a-entity>
             </a-camera>
-        </a-entity>
+        <!-- </a-entity> -->
 
         <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="0 1 10"></a-cylinder>
               
