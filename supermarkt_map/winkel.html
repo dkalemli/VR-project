@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-  <script src="winkel.js"></script>
+  <script src="./winkel.js"></script>
   <title>winkel</title>
 </head>
 <body>
@@ -25,11 +25,14 @@
       <a-asset-item id="mandje-obj" src="./blender/mandje.obj"></a-asset-item>
       <a-asset-item id="mandje-mtl" src="./blender/mandje.mtl"></a-asset-item>
 
+      <a-asset-item id="banaan-obj" src="./blender/export_banana.obj"></a-asset-item>
+      <a-asset-item id="banaan-mtl" src="./blender/export_banana.mtl"></a-asset-item>
+
 
       <img id="muur_texture" src="./textures/muur_texture.png">
       <img id="grond_texture" src="./textures/grond_texture.png">
+      <img id="plafond_texture" src="./textures/plafond_texture.png">
     </a-assets>
-
 
 
 
@@ -55,12 +58,12 @@
 <!--  ============================ gebouw / grond en muren ================================ -->
     <a-plane static-body src="#grond_texture" rotation="-90 0 0" width="16" height="30" position="0 0 3"></a-plane>
 
-    <a-plane src="#muur_texture" rotation="0 0 0" width="16" height="3" position="0 1.5 -12"></a-plane>
-    <a-plane src="#muur_texture" rotation="0 -90 0" width="30" height="3" position="8 1.5 3"></a-plane>
-    <a-plane src="#muur_texture" rotation="0 90 0" width="30" height="3" position="-8 1.5 3"></a-plane>
-    <a-plane src="#muur_texture" rotation="0 180 0" width="16" height="3" position="0 1.5 18"></a-plane>
+    <a-plane static-body src="#muur_texture" rotation="0 0 0" width="16" height="3" position="0 1.5 -12"></a-plane>
+    <a-plane static-body src="#muur_texture" rotation="0 -90 0" width="30" height="3" position="8 1.5 3"></a-plane>
+    <a-plane static-body src="#muur_texture" rotation="0 90 0" width="30" height="3" position="-8 1.5 3"></a-plane>
+    <a-plane static-body src="#muur_texture" rotation="0 180 0" width="16" height="3" position="0 1.5 18"></a-plane>
 
-    <a-plane color="#E0E0E0" rotation="90 0 0" width="16" height="30" position="0 3 3"></a-plane>
+    <a-plane src="#plafond_texture" rotation="90 0 0" width="16" height="30" position="0 3 3"></a-plane>
 
 
 
@@ -77,33 +80,54 @@
 
 
 <!--  ============================ schappen ================================ -->
-    <!-- <a-box color="orange" position="7.75 1.25 -1.5" width="0.5" height="2.5" depth="19"></a-box> -->
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="7.95 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0">
-      <a-box color="green" position="8 0.6 1.2" width="0.7" height="1" depth="1"></a-box>
+      <a-box color="#bfff50" position="8.9 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#bfff50" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#bfff50" position="3 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#bfff50" position="0 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#bfff50" position="-3 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#bfff50" position="-6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#bfff50" position="-8.9 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      </a-box>
     </a-obj-model>
 
-    <!-- <a-box color="orange" position="0 1.25 -11.75" width="0.5" height="2.5" depth="14.5" rotation="0 90 0"></a-box> -->
+
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="0 1.25 -11.95" scale="0.6 0.5 0.5" rotation="0 0 0"></a-obj-model>
 
-    <!-- <a-box color="orange" position="-7.75 1.25 -3" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box> -->
+
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-7.75 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
-    <!-- <a-box color="orange" position="-3 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 0 0"></a-box> -->
+
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
-    <!-- <a-box color="yellow" position="-2.5 1.25 -2" width="0.5" height="2.5" depth="14" rotation="0 180 0"></a-box> -->
+
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
-    <!-- <a-box color="orange" position="2.5 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 0 0"></a-box> -->
+
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
-    <!-- <a-box color="yellow" position="3 1.25 -1" width="0.5" height="2.5" depth="16" rotation="0 180 0"></a-box> -->
+
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0">
       <a-box color="green" position="-8 0.6 1.2" width="0.7" height="1" depth="1"></a-box>
     </a-obj-model>
 
-
-
-<!--  ============================ schapitems ================================ -->
-    <!-- <a-box dynamic-body color="green" position="7 5 0" width="1" height="1" depth="1"></a-box> -->
 
 
 <!--  ============================ kassa's ================================ -->
