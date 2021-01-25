@@ -54,22 +54,22 @@ window.onload = () =>{
         var afstand = Math.sqrt(Math.pow((this.getAttribute('position').x - camera.getAttribute("position").x), 2) + Math.pow((this.getAttribute('position').z - camera.getAttribute("position").z), 2));
         console.log(afstand);
   
-        const snelheid = 300 * afstand;
+        const snelheid = 125 * afstand;
         let speed = snelheid;
         
-        if(afstand < 30){
+        if(afstand < 35){
           att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 5 " + this.getAttribute('position').z;
           console.log(att.value);
           camera.setAttribute('animation', att.value);
           console.log(places[5]);
         }
 
-        if(i == 16){
+        if(i == 17){
           console.log("ik ben bij het stoplicht.");
           opGroen();
         }
 
-        if(i == 26){
+        if(i == 27){
           console.log("ik ga nu oversteken.");
           zebrapad();
           zebrapadB();
@@ -173,6 +173,12 @@ window.onload = () =>{
   //     opGroen();
 //   });
 
+let tegelEen = document.getElementById("js--appear");
+function eersteTegel(){
+  tegelEen.setAttribute("position", {x:"-65", y:"1.2", Z:"-10"});
+
+}
+
 const start = document.getElementById("js--menuStart");
 function clickedStart(){
   start.addEventListener('click', function(evt){
@@ -187,6 +193,7 @@ function verwijderMenu(){
     for(let i = 0; i < menu.length; i++){
       console.log(menu[i]);
       menu[i].setAttribute("animation", "dur: 3000; easing: linear; to: -70 -50 -12.5; loop:0 ; property:position");
+      eersteTegel();
     }
     //menu.setAttribute("position", {x:0, y:-50, z:0});//Dit werkt
   }, 1000);
