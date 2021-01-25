@@ -98,11 +98,49 @@ opGroen();
 
 
 function zebrapad(){
-  remmen = document.getElementsByClassName("js--remmen");
-  remmen.removeAttribute("animation__rijden");
-  setTimeout(function(){
-    remmen.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
-  }, 50000);
+let remmen = document.getElementById("js--remmen");
+remmen.remove();
+  // setTimeout(function(){
+  //   remmen.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+  // }, 50000);
 }
-  
+
+
+// function zebrapadB(){
+//   remmenB = document.getElementById("js--remmenB");
+//   console.log(remmenB);
+//   remmenB.removeAttribute("animation__rijden");
+//   console.log(remmenB);
+
+//   // setTimeout(function(){
+//   //   remmenB.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 550; to: 10 1 -320; loop:-1; property:position");
+//   // }, 50000);
+// }
+
+// function zebrapadC(){
+//   remmenC = document.getElementById("js--remmenC");
+//   console.log(remmenC);
+//   remmenB.removeAttribute("animation__rijden");
+//   console.log(remmenC);
+
+//   // setTimeout(function(){
+//   //   remmenB.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 550; to: 10 1 -320; loop:-1; property:position");
+//   // }, 50000);
+// }
+
+// function zebrapadD(){
+//   remmenD = document.getElementById("js--remmenD");
+//   console.log(remmenD);
+//   remmenD.removeAttribute("animation__rijden");
+//   console.log(remmenD);
+
+//   // setTimeout(function(){
+//   //   remmenB.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 550; to: 10 1 -320; loop:-1; property:position");
+//   // }, 50000);
+// }
+
+zebrapad();
+// zebrapadB();
+// zebrapadC();
+// zebrapadD();
   

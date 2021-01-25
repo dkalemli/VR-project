@@ -63,32 +63,7 @@ const camera = document.getElementById('js--camera');
 //         }
 //     });
 // }
-let stoplicht = document.getElementById("js--stoplicht");
-let rood = document.getElementById("js--stoplicht_rood");
-let groen = document.getElementById("js--stoplicht_groen");
-console.log(rood);
-let scene = document.getElementById('js--scene');
 
-
-function opGroen(){
-    setTimeout(function(){
-        rood.setAttribute('color', "black");
-        groen.setAttribute('color', "green");  
-        //Robot verschijnt aan overkant
-        let cylinder = document.createElement('a-cylinder');
-        cylinder.setAttribute("class", "js--place js--interact");
-        cylinder.setAttribute("color", "red");
-        cylinder.setAttribute("radius", "1.2");
-        cylinder.setAttribute("height", "1");
-        cylinder.setAttribute("position", {x: "-2", y: "1", z: "315"});
-        scene.appendChild(cylinder);
-        camera.innerHTML += '<a-obj-model scr="models/Robot.obj" mtl="models/Robot.mtl" position="2 -1 -2"></a-box>';
-
-
-   }, 30000);
-}
-
-opGroen();
 
 
 let tekst = document.getElementById("EersteOpmerking");
