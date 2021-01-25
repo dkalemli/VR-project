@@ -14,6 +14,7 @@ window.onload = () =>{
           if (hold == null) {
             camera.innerHTML += '<a-box id="js--hold" class="js--pickup js--interact" color="green" position="1 -1 -1"></a-box>';
             hold = "box";
+
             this.remove();
           }
         });
@@ -60,6 +61,20 @@ window.onload = () =>{
           att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 5 " + this.getAttribute('position').z;
           console.log(att.value);
           camera.setAttribute('animation', att.value);
+          console.log(places[5]);
+        }
+
+        if(i == 7){
+          console.log("ik ben bij het stoplicht.");
+          opGroen();
+        }
+
+        if(i == 11){
+          console.log("ik ga nu oversteken.");
+          zebrapad();
+          zebrapadB();
+          zebrapadC();
+          zebrapadD();
         }
   
         // console.log(this.getAttribute('position').x, this.getAttribute('position').z, camera.getAttribute("position").x, camera.getAttribute("position").z);
@@ -90,57 +105,69 @@ window.onload = () =>{
           camera.innerHTML += '<a-obj-model scr="./models/Robot.obj" mtl="./models/Robot.mtl" position="2 -1 -2"></a-box>';
 
 
-    }, 30000);
+    }, 10000);
   }
 
-opGroen();
+
 };
 
+// AFRAME.registercomponent('auto', {
+//   init: function(){
+//     console.log("auto's rijden");
+//   },
+//   update: function(){
+//     auto.setAttribute("animation__rijden", "none");
+//     console.log("auto's zijn gestopt");
+//   }
+// })
 
 function zebrapad(){
 let remmen = document.getElementById("js--remmen");
-remmen.remove();
-  // setTimeout(function(){
-  //   remmen.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
-  // }, 50000);
+console.log(remmen);
+remmen.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+console.log(remmen);
+  setTimeout(function(){
+    remmen.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+  }, 10000);
+}
+
+function zebrapadB(){
+  let remmenB = document.getElementById("js--remmenB");
+  console.log(remmenB);
+  remmenB.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+  console.log(remmenB);
+    setTimeout(function(){
+      remmenB.setAttribute("animation__rijden", "dur: 20000; easing: linear; from:18 1 650; to: 18 1 -340; loop:-1; property:position");
+    }, 10000);
+}
+
+function zebrapadC(){
+let remmenC = document.getElementById("js--remmenC");
+console.log(remmenC);
+remmenC.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+console.log(remmenC);
+  setTimeout(function(){
+    remmenC.setAttribute("animation__rijden", "dur: 20000; easing: linear; from:10 1 -340; to: 10 1 650; loop:-1; property:position");
+  }, 10000);
+}
+
+function zebrapadD(){
+let remmenD = document.getElementById("js--remmenD");
+console.log(remmenD);
+remmenD.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+console.log(remmenD);
+  setTimeout(function(){
+    remmenD.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:18 1 550; to: 18 1 -320; loop:-1; property:position");
+  }, 10000);
 }
 
 
-// function zebrapadB(){
-//   remmenB = document.getElementById("js--remmenB");
-//   console.log(remmenB);
-//   remmenB.removeAttribute("animation__rijden");
-//   console.log(remmenB);
 
-//   // setTimeout(function(){
-//   //   remmenB.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 550; to: 10 1 -320; loop:-1; property:position");
-//   // }, 50000);
-// }
+const bijStoplicht = document.getElementsByClassName("opRood");
 
-// function zebrapadC(){
-//   remmenC = document.getElementById("js--remmenC");
-//   console.log(remmenC);
-//   remmenB.removeAttribute("animation__rijden");
-//   console.log(remmenC);
-
-//   // setTimeout(function(){
-//   //   remmenB.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 550; to: 10 1 -320; loop:-1; property:position");
-//   // }, 50000);
-// }
-
-// function zebrapadD(){
-//   remmenD = document.getElementById("js--remmenD");
-//   console.log(remmenD);
-//   remmenD.removeAttribute("animation__rijden");
-//   console.log(remmenD);
-
-//   // setTimeout(function(){
-//   //   remmenB.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 550; to: 10 1 -320; loop:-1; property:position");
-//   // }, 50000);
-// }
-
-zebrapad();
-// zebrapadB();
-// zebrapadC();
-// zebrapadD();
-  
+// for (let i = 0; i < bijStoplicht.length; i++){
+//   bijStoplicht[i].addEventListener('click', function(evt){
+//     console.log("je bent bij het stoplicht aangekomen");
+//     opGroen();
+//   });
+// };  
