@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <a-scene>
+        <a-scene id="js--scene">
             <a-assets>
                 <!--#########################      STRAAT       #####################################################-->                
                 <a-asset-item id="straat-mtl" src="models/straat2.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
@@ -102,8 +102,24 @@
                 </a-entity>
             </a-camera>
         <!-- </a-entity> -->
+        
+        <!--#################################### LOOPTEGELS #########################################################-->
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-35 1 -5"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 -5"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 50"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 100"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 150"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 200"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 250"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 293"></a-cylinder>
+        <a-cylinder id="Cylinder" class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 -50 293"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 400"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 460"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="20 1 460"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="25 1 460"></a-cylinder>
 
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="0 1 10"></a-cylinder>
+
+
               
         <a-entity lopen id="js--robot" class="js--interact" obj-model="obj:#robot-obj; mtl:#robot-mtl"
                     position="0 1 -5"
@@ -454,7 +470,7 @@
         <a-box color="green" rotation="0 90 0" position="50 0 -90" height="25" width="700" depth="1"></a-box>
         
         <!-- <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model> -->
-        <a-entity obj-model="obj:#auto-blauw-obj; mtl:#auto-blauw-mtl"
+        <a-entity class="js--remmen" obj-model="obj:#auto-blauw-obj; mtl:#auto-blauw-mtl"
                     position="8 1 0"
                     animation__rijden="dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position"></a-entity>
         <a-entity obj-model="obj:#auto-groen-obj; mtl:#auto-groen-mtl"
@@ -462,7 +478,7 @@
                     position="14 1 0"
                     animation__rijden="dur: 20000; easing: linear; from:18 1 550; to: 18 1 -325; loop:-1; property:position">
         </a-entity>
-        <a-entity obj-model="obj:#auto-zwart-obj; mtl:#auto-zwart-mtl"
+        <a-entity class="js--remmen" obj-model="obj:#auto-zwart-obj; mtl:#auto-zwart-mtl"
                     position="8 1 0"
                     animation__rijden="dur: 20000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position"></a-entity>
         <a-entity obj-model="obj:#auto-politie-obj; mtl:#auto-politie-mtl"
