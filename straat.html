@@ -8,10 +8,11 @@
     <script src="https://unpkg.com/aframe-slice9-component/dist/aframe-slice9-component.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
     <script src="js/walk.js"></script>
+    <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
     <main>
-        <a-scene>
+        <a-scene id="js--scene">
             <a-assets>
                 <!--#########################      MENU       #####################################################-->
                 <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
@@ -28,6 +29,9 @@
                 <a-asset-item id="wijk-obj" src="models/straatMetKruispunt.obj"></a-asset-item> 
                 <a-asset-item id="wijk" src="models/wijk.gltf"></a-asset-item> 
                 <a-asset-item id="wijk2" src="models/GebouwenKruispunt.gltf"></a-asset-item> 
+                
+                <a-asset-item id="kruis-obj" src="models/kruis.obj"></a-asset-item> 
+
 
                 <!--#########################      AUTO'S       #####################################################-->
                 <a-asset-item id="auto-blauw-mtl" src="models/Auto1.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
@@ -98,21 +102,49 @@
         <!-- <a-camera position="-5 5 290" id="js--camera" wasd-controls="acceleration: 900">  --> 
             <!-- position="0 5 300" -->
         <!-- <a-entity camera look-controls wasd-controls="acceleration: 2000" id="js--camera" position="-70 6 -5" rotation = "0 270 0"> -->
-            <a-camera id="js--camera" look-controls wasd-controls="acceleration: 2000" position="-70 6 -5">
+            <!-- position="-70 6 -5" -->
+            <a-camera id="js--camera" look-controls wasd-controls="acceleration: 2000" position="0 6 490" >
                 <a-entity
-                    animation__click="property: scale; stgit push origin --delete Buiten_Versie0.1artEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
                     animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
                     cursor = "fuse: true; fuseTimeout: 2000"
                     material = "color: black; shader: flat"
                     geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
                     position = "0 0 -0.5"
-                    raycaster = "objects: .js--interact">
+                    raycaster = "objects: .js--interact, #opRood">
                 </a-entity>
             </a-camera>
         <!-- </a-entity> -->
+        
+        <!--#################################### LOOPTEGELS #########################################################-->
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-35 1.2 -5"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 -5"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 50"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 100"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 150"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 200"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 250"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact opRood" position="-2 1.2 293"></a-obj-model> <!--STOPLICHT (nr 7)-->
+        <a-obj-model src="#kruis-obj" id="Cylinder" class="js--place js--interact opRood" position="-2 -50 293"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 400"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 420"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 440"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 460"></a-obj-model>
+        <a-obj-model src="#kruis-obj" id="oversteken" class="js--place js--interact" position="28 1.2 460"></a-obj-model> <!--OVERSTEEK-->
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="39 1.2 462"></a-obj-model>
 
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="0 1 10"></a-cylinder>
+        <!--###################################### ZEEBRAPADEN #######################################################-->
+        <a-box color="white" position="7 0.5 460" width="2" height="0.1" depth="10"></a-box>
+        <a-box color="white" position="12 0.5 460" width="2" height="0.1" depth="10"></a-box>
+        <a-box color="white" position="17 0.5 460" width="2" height="0.1" depth="10"></a-box>
+        <a-box color="white" position="22 0.5 460" width="2" height="0.1" depth="10"></a-box>
+
+        <a-box color="white" position="0 0.5 298" rotation="0 90 0" width="2" height="0.1" depth="10"></a-box>
+        <a-box color="white" position="0 0.5 303" rotation="0 90 0" width="2" height="0.1" depth="10"></a-box>
+        <a-box color="white" position="0 0.5 308" rotation="0 90 0" width="2" height="0.1" depth="10"></a-box>
+
+
               
         <a-entity lopen id="js--robot" class="js--interact" obj-model="obj:#robot-obj; mtl:#robot-mtl"
                     position="0 1 -5"
@@ -147,8 +179,8 @@
         <!--<a-box class="js--place js--interact" color="red" position="0 0.5 161" height="25" width="10"></a-box>
         <a-box class="js--place js--interact" color="red" position="0 0.5 250" height="15" width="15"></a-box>
         <a-box class="js--place js--interact" color="red" position="0 0.5 300" height="15" width="15"></a-box> -->
-        <a-obj-model id="js--stoplicht" src="#stoplicht-obj" mtl="#stoplicht-mtl" position="3 1 293" rotation = "0 0 0"></a-obj-model>
-        <a-obj-model id="js--stoplicht" src="#stoplicht-obj" mtl="#stoplicht-mtl" position="-5 1 310" rotation = "0 180 0"></a-obj-model>
+        <a-obj-model id="js--stoplicht1" src="#stoplicht-obj" mtl="#stoplicht-mtl" position="3 1 293" rotation = "0 0 0"></a-obj-model>
+        <a-obj-model id="js--stoplicht2" src="#stoplicht-obj" mtl="#stoplicht-mtl" position="-5 1 310" rotation = "0 180 0"></a-obj-model>
         <a-sphere id="js--stoplicht_rood" color="red" position="-5 7.6 310" radius=".3"></a-sphere>
         <a-sphere id="js--stoplicht_groen" color="black" position="-5 6.7 310" radius=".3"></a-sphere>
         <a-entity static gltf-model="#wijk2" position="20 -5 300"></a-entity> 
@@ -463,18 +495,18 @@
         <a-box color="green" rotation="0 90 0" position="50 0 -90" height="25" width="700" depth="1"></a-box>
         
         <!-- <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model> -->
-        <a-entity obj-model="obj:#auto-blauw-obj; mtl:#auto-blauw-mtl"
+        <a-entity auto id="js--remmen" obj-model="obj:#auto-blauw-obj; mtl:#auto-blauw-mtl"
                     position="8 1 0"
-                    animation__rijden="dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position"></a-entity>
-        <a-entity obj-model="obj:#auto-groen-obj; mtl:#auto-groen-mtl"
+                    animation__rijden="dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position; pauseEvents: "></a-entity>
+        <a-entity auto id="js--remmenB" obj-model="obj:#auto-groen-obj; mtl:#auto-groen-mtl"
                     rotation="0 180 0"
                     position="14 1 0"
-                    animation__rijden="dur: 20000; easing: linear; from:18 1 550; to: 18 1 -325; loop:-1; property:position">
+                    animation__rijden="dur: 21000; easing: linear; from:18 1 650; to: 18 1 -340; loop:-1; property:position">
         </a-entity>
-        <a-entity obj-model="obj:#auto-zwart-obj; mtl:#auto-zwart-mtl"
+        <a-entity auto id="js--remmenC" obj-model="obj:#auto-zwart-obj; mtl:#auto-zwart-mtl"
                     position="8 1 0"
-                    animation__rijden="dur: 20000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position"></a-entity>
-        <a-entity obj-model="obj:#auto-politie-obj; mtl:#auto-politie-mtl"
+                    animation__rijden="dur: 21000; easing: linear; from:10 1 -340; to: 10 1 650; loop:-1; property:position"></a-entity>
+        <a-entity auto id="js--remmenD" obj-model="obj:#auto-politie-obj; mtl:#auto-politie-mtl"
                     rotation="0 180 0"
                     position="14 1 0"
                     animation__rijden="dur: 15000; easing: linear; from:18 1 550; to: 18 1 -325; loop:-1; property:position">

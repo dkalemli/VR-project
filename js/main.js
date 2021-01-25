@@ -1,6 +1,6 @@
 console.log("running");
 // const places = document.getElementsByClassName('js--place');
-// const camera = document.getElementById('js--camera');
+const camera = document.getElementById('js--camera');
 
 // let pickups = document.getElementsByClassName('js--pickup');
 // let hold = null;
@@ -63,20 +63,7 @@ console.log("running");
 //         }
 //     });
 // }
-let stoplicht = document.getElementById("js--stoplicht");
-let rood = document.getElementById("js--stoplicht_rood");
-let groen = document.getElementById("js--stoplicht_groen");
-console.log(rood);
 
-function opGroen(){
-    setTimeout(function(){
-        rood.setAttribute('color', "black");
-        groen.setAttribute('color', "green");  
-        //Robot verschijnt aan overkant
-   }, 28000);
-}
-
-opGroen();
 
 
 let tekst = document.getElementById("EersteOpmerking");
