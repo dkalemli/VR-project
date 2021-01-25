@@ -171,13 +171,23 @@ window.onload = () =>{
   //     opGroen();
 //   });
 
-let menu = document.getElementById("js--menu");
+const start = document.getElementById("js--menuStart");
+function clickedStart(){
+  start.addEventListener('click', function(evt){
+    verwijderMenu();
+  });
+}
+
+let menu = document.getElementsByClassName("js--menu");
 function verwijderMenu(){
   console.log(menu);
   setTimeout(function(){
+    for(let i = 0; i < menu.length; i++){
+      console.log(menu[i]);
+      menu[i].setAttribute("animation", "dur: 3000; easing: linear; to: -70 -50 -12.5; loop:0 ; property:position");
+    }
     //menu.setAttribute("position", {x:0, y:-50, z:0});//Dit werkt
-    menu.setAttribute("animation", "dur: 3000; easing: linear; from:-65 6 -12.5; to: -65 -50 -12.5; loop:0 ; property:position");
-  }, 10000);
+  }, 1000);
 }
-verwijderMenu();
+clickedStart();
 };  
