@@ -23,6 +23,9 @@
                 <a-asset-item id="wijk-obj" src="models/straatMetKruispunt.obj"></a-asset-item> 
                 <a-asset-item id="wijk" src="models/wijk.gltf"></a-asset-item> 
                 <a-asset-item id="wijk2" src="models/GebouwenKruispunt.gltf"></a-asset-item> 
+                
+                <a-asset-item id="kruis-obj" src="models/kruis.obj"></a-asset-item> 
+
 
                 <!--#########################      AUTO'S       #####################################################-->
                 <a-asset-item id="auto-blauw-mtl" src="models/Auto1.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
@@ -106,19 +109,21 @@
         <!-- </a-entity> -->
         
         <!--#################################### LOOPTEGELS #########################################################-->
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-35 1 -5"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 -5"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 50"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 100"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 150"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 200"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 250"></a-cylinder>
-        <a-cylinder class="js--place js--interact opRood" color="red" height="1" radius="1.2" position="-2 1 293"></a-cylinder> <!--STOPLICHT (nr 7)-->
-        <a-cylinder id="Cylinder" class="js--place js--interact opRood" color="red" height="1" radius="1.2" position="-2 -50 293"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 400"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 460"></a-cylinder>
-        <a-cylinder id="oversteken" class="js--place js--interact" color="red" height="1" radius="1.2" position="28 1 460"></a-cylinder> <!--OVERSTEEK-->
-        <a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="39 1 462"></a-cylinder>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-35 1.2 -5"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 -5"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 50"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 100"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 150"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 200"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 1.2 250"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact opRood" position="-2 1.2 293"></a-obj-model> <!--STOPLICHT (nr 7)-->
+        <a-obj-model src="#kruis-obj" id="Cylinder" class="js--place js--interact opRood" position="-2 -50 293"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 400"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 420"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 440"></a-obj-model>
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 .85 460"></a-obj-model>
+        <a-obj-model src="#kruis-obj" id="oversteken" class="js--place js--interact" position="28 1.2 460"></a-obj-model> <!--OVERSTEEK-->
+        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="39 1.2 462"></a-obj-model>
 
         <!--###################################### ZEEBRAPADEN #######################################################-->
         <a-box color="white" position="7 0.5 460" width="2" height="0.1" depth="10"></a-box>

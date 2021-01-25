@@ -69,7 +69,7 @@ window.onload = () =>{
           opGroen();
         }
 
-        if(i == 11){
+        if(i == 13){
           console.log("ik ga nu oversteken.");
           zebrapad();
           zebrapadB();
