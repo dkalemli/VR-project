@@ -57,19 +57,19 @@ window.onload = () =>{
         const snelheid = 300 * afstand;
         let speed = snelheid;
         
-        if(afstand < 250){
+        if(afstand < 30){
           att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 5 " + this.getAttribute('position').z;
           console.log(att.value);
           camera.setAttribute('animation', att.value);
           console.log(places[5]);
         }
 
-        if(i == 7){
+        if(i == 16){
           console.log("ik ben bij het stoplicht.");
           opGroen();
         }
 
-        if(i == 13){
+        if(i == 26){
           console.log("ik ga nu oversteken.");
           zebrapad();
           zebrapadB();
@@ -99,7 +99,9 @@ window.onload = () =>{
           //cylinder.setAttribute("color", "red");
           //cylinder.setAttribute("radius", "1.2");
           //cylinder.setAttribute("height", "1");
-          cylinder.setAttribute("position", {x: "-2", y: "1", z: "315"});
+          cylinder.setAttribute("position", {x: "-2", y: "1.4", z: "315"});
+          cylinder.setAttribute("rotation", {x: "-20", y: "0", z: "0"});
+
           //scene.appendChild(cylinder);
           //scene.innerHTML += '<a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 293"></a-cylinder>';
           camera.innerHTML += '<a-obj-model scr="./models/Robot.obj" mtl="./models/Robot.mtl" position="2 -1 -2"></a-box>';
