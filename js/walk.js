@@ -111,65 +111,85 @@ window.onload = () =>{
   }
 
 
-};
 
-// AFRAME.registercomponent('auto', {
-//   init: function(){
-//     console.log("auto's rijden");
-//   },
-//   update: function(){
-//     auto.setAttribute("animation__rijden", "none");
-//     console.log("auto's zijn gestopt");
-//   }
-// })
 
-function zebrapad(){
-let remmen = document.getElementById("js--remmen");
-console.log(remmen);
-remmen.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
-console.log(remmen);
-  setTimeout(function(){
-    remmen.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
-  }, 10000);
-}
+  // AFRAME.registercomponent('auto', {
+  //   init: function(){
+  //     console.log("auto's rijden");
+  //   },
+  //   update: function(){
+  //     auto.setAttribute("animation__rijden", "none");
+  //     console.log("auto's zijn gestopt");
+  //   }
+  // })
 
-function zebrapadB(){
-  let remmenB = document.getElementById("js--remmenB");
-  console.log(remmenB);
-  remmenB.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
-  console.log(remmenB);
+  function zebrapad(){
+  let remmen = document.getElementById("js--remmen");
+  console.log(remmen);
+  remmen.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+  console.log(remmen);
     setTimeout(function(){
-      remmenB.setAttribute("animation__rijden", "dur: 20000; easing: linear; from:18 1 650; to: 18 1 -340; loop:-1; property:position");
+      remmen.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
     }, 10000);
-}
+  }
 
-function zebrapadC(){
-let remmenC = document.getElementById("js--remmenC");
-console.log(remmenC);
-remmenC.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
-console.log(remmenC);
-  setTimeout(function(){
-    remmenC.setAttribute("animation__rijden", "dur: 20000; easing: linear; from:10 1 -340; to: 10 1 650; loop:-1; property:position");
-  }, 10000);
-}
+  function zebrapadB(){
+    let remmenB = document.getElementById("js--remmenB");
+    console.log(remmenB);
+    remmenB.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+    console.log(remmenB);
+      setTimeout(function(){
+        remmenB.setAttribute("animation__rijden", "dur: 20000; easing: linear; from:18 1 650; to: 18 1 -340; loop:-1; property:position");
+      }, 10000);
+  }
 
-function zebrapadD(){
-let remmenD = document.getElementById("js--remmenD");
-console.log(remmenD);
-remmenD.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
-console.log(remmenD);
-  setTimeout(function(){
-    remmenD.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:18 1 550; to: 18 1 -320; loop:-1; property:position");
-  }, 10000);
-}
+  function zebrapadC(){
+  let remmenC = document.getElementById("js--remmenC");
+  console.log(remmenC);
+  remmenC.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+  console.log(remmenC);
+    setTimeout(function(){
+      remmenC.setAttribute("animation__rijden", "dur: 20000; easing: linear; from:10 1 -340; to: 10 1 650; loop:-1; property:position");
+    }, 10000);
+  }
+
+  function zebrapadD(){
+  let remmenD = document.getElementById("js--remmenD");
+  console.log(remmenD);
+  remmenD.setAttribute("animation__stoppen", "dur: 100000; easing: linear; from:10 1 -320; to: 10 1 550; loop:-1; property:position");
+  console.log(remmenD);
+    setTimeout(function(){
+      remmenD.setAttribute("animation__rijden", "dur: 15000; easing: linear; from:18 1 550; to: 18 1 -320; loop:-1; property:position");
+    }, 10000);
+  }
 
 
 
-const bijStoplicht = document.getElementsByClassName("opRood");
+  const bijStoplicht = document.getElementsByClassName("opRood");
 
-// for (let i = 0; i < bijStoplicht.length; i++){
-//   bijStoplicht[i].addEventListener('click', function(evt){
-//     console.log("je bent bij het stoplicht aangekomen");
-//     opGroen();
+  // for (let i = 0; i < bijStoplicht.length; i++){
+  //   bijStoplicht[i].addEventListener('click', function(evt){
+  //     console.log("je bent bij het stoplicht aangekomen");
+  //     opGroen();
 //   });
-// };  
+
+const start = document.getElementById("js--menuStart");
+function clickedStart(){
+  start.addEventListener('click', function(evt){
+    verwijderMenu();
+  });
+}
+
+let menu = document.getElementsByClassName("js--menu");
+function verwijderMenu(){
+  console.log(menu);
+  setTimeout(function(){
+    for(let i = 0; i < menu.length; i++){
+      console.log(menu[i]);
+      menu[i].setAttribute("animation", "dur: 3000; easing: linear; to: -70 -50 -12.5; loop:0 ; property:position");
+    }
+    //menu.setAttribute("position", {x:0, y:-50, z:0});//Dit werkt
+  }, 1000);
+}
+clickedStart();
+};  
