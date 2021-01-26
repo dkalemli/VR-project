@@ -3,10 +3,14 @@ window.onload = () =>{
   const camera = document.getElementById('js--camera');
   let places = document.getElementsByClassName("js--place");
 
-  let mandje = document.getElementsByClassName('js--mandje')
+  const mandje = document.getElementsByClassName('js--mandje')
   let mandje_hold = null;
 
-  const middel_poort = document.getElementById("js--middel-poort");
+  const schapitems = document.getElementsByClassName("js--schapitem");
+
+  let item_hold = null;
+
+
 
 
 // ======================================== mandje pakken =================================
@@ -14,13 +18,13 @@ window.onload = () =>{
     for (let i = 0; i < mandje.length; i++) {
       mandje[i].addEventListener('click', function(evt){
         if (mandje_hold == null) {
-          mandje_hold = 1;
           // camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.5 -1 -1" scale="0.4 0.4 0.4" rotation="0 110 10"></a-obj-model>';
           camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.15 -0.24 -0.2" scale="0.1 0.1 0.1" rotation="0 108 5"></a-obj-model>';
+          mandje_hold = 1;
         }
 
         for (var i = 0; i < places.length; i++) {
-          places[i].setAttribute('position', places[i].getAttribute('position').x + " 0 " + places[i].getAttribute('position').z);
+          places[i].setAttribute('position', places[i].getAttribute('position').x + " -0.03 " + places[i].getAttribute('position').z);
         }
 
         this.remove();
@@ -29,6 +33,31 @@ window.onload = () =>{
   }
 
 pak_mandje();
+
+
+
+
+// ======================================== schapitems in mandje zetten =================================
+function zet_in_mandje() {
+    for (let i = 0; i < schapitems.length; i++) {
+      schapitems[i].addEventListener('click', function(evt){
+          if (mandje_hold == 1) {
+
+
+            schapitems[i].setAttribute('position', "0 -0.2 -2");
+            console.log(schapitems[i]);
+            // camera.innerHTML += schapitems[i];
+
+
+            // this.remove();
+
+        }
+      });
+    }
+}
+
+zet_in_mandje();
+
 
 
 

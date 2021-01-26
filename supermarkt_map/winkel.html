@@ -39,7 +39,7 @@
 
 
 <!--  ============================ camera ================================ -->
-    <a-camera id="js--camera" position="6 1.6 15">
+    <a-camera id="js--camera" position="6 1.6 15" wasd-controls="acceleration:300">
       <a-entity
         animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
         animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -71,11 +71,11 @@
 
 
 <!--  ============================ poorten ================================ -->
-    <a-box color="#eoeoeo" position="7.5 1 12" width="1" height="2" depth="0.2"></a-box>
+    <a-box color="gray" position="7.5 1 12" width="1" height="2" depth="0.2"></a-box>
 
-    <a-box color="#eoeoeo" position="2.75 1 12" width="4.5" height="2" depth="0.2"></a-box>
+    <a-box color="gray" position="2.75 1 12" width="4.5" height="2" depth="0.2"></a-box>
 
-    <a-box color="#eoeoeo" position="0.5 1 13" width="0.2" height="2" depth="2"></a-box>
+    <a-box color="gray" position="0.5 1 13" width="0.2" height="2" depth="2"></a-box>
 
     <!-- <a-box color="red" position="2.75 0.6 10" width="4.5" height="0.2" depth="0.2"></a-box> -->
 
@@ -88,33 +88,37 @@
 <!--  ============================ schappen ================================ -->
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="7.95 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0">
       <a-box color="#5656dc" position="8.9 0 1.1" width="1.5" height="0.21" depth="1.9">
-        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+        <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
       </a-box>
 
       <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
-        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+        <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
       </a-box>
 
       <a-box color="#5656dc" position="3 0 1.1" width="1.5" height="0.21" depth="1.9">
-        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+        <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
       </a-box>
 
       <a-box color="#5656dc" position="0 0 1.1" width="1.5" height="0.21" depth="1.9">
-        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+        <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
       </a-box>
 
       <a-box color="#5656dc" position="-3 0 1.1" width="1.5" height="0.21" depth="1.9">
-        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+        <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
       </a-box>
 
       <a-box color="#5656dc" position="-6 0 1.1" width="1.5" height="0.21" depth="1.9">
-        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+        <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
       </a-box>
 
-      <a-box color="##5656dc" position="-8.9 0 1.1" width="1.5" height="0.21" depth="1.9">
-        <a-obj-model class="js--fruit js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
+      <a-box color="#5656dc" position="-8.9 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 180 0"></a-obj-model>
       </a-box>
     </a-obj-model>
+
+
+
+
 
 
     <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="0 1.25 -11.95" scale="0.6 0.5 0.5" rotation="0 0 0"></a-obj-model>
