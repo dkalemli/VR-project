@@ -46,6 +46,7 @@ window.onload = () =>{
     //     camera.setAttribute('animation', att.value);
     //   });
     // }
+    //const naar120 = document.getElementsById("js--loopNaar120");
 
     for (let i = 0; i < places.length; i++) {
       places[i].addEventListener('click', function(evt){
@@ -64,12 +65,44 @@ window.onload = () =>{
           console.log(places[5]);
         }
 
-        if(i == 17){
+        if(i == 4){
+          if(afstand < 35){
+            att.valueTegel4 = "property: position; dur: " + 10000 + "; easing: linear; to: -2 5 120";
+            console.log(att.valueTegel4);
+            camera.setAttribute('animation', att.valueTegel4);
+          }
+        }
+
+        if(i == 6){
+          if(afstand < 35){
+            att.valueTegel4 = "property: position; dur: " + 12000 + "; easing: linear; to: -2 5 285";
+            console.log(att.valueTegel4);
+            camera.setAttribute('animation', att.valueTegel4);
+          }
+        }
+
+        if(i == 8){
           console.log("ik ben bij het stoplicht.");
           opGroen();
         }
 
-        if(i == 27){
+        if(i == 10){
+          if(afstand < 35){
+            att.valueTegel4 = "property: position; dur: " + 14000 + "; easing: linear; to: -2 5 415";
+            console.log(att.valueTegel4);
+            camera.setAttribute('animation', att.valueTegel4);
+          }
+        }
+
+        if(i == 12){
+          if(afstand < 35){
+            att.valueTegel4 = "property: position; dur: " + 8000 + "; easing: linear; to: -2 5 460";
+            console.log(att.valueTegel4);
+            camera.setAttribute('animation', att.valueTegel4);
+          }
+        }
+
+        if(i == 14){
           console.log("ik ga nu oversteken.");
           zebrapad();
           zebrapadB();
@@ -174,8 +207,10 @@ window.onload = () =>{
 //   });
 
 let tegelEen = document.getElementById("js--appear");
+let moeder = document.getElementById("js--appearMoeder")
 function eersteTegel(){
-  tegelEen.setAttribute("position", {x:"-65", y:"1.4", Z:"-10"});
+  tegelEen.setAttribute("position", {x:"-65", y:"1.4", Z:"0"});
+  moeder.setAttribute("position", {x:"-55", y:"2", Z:"10"});
   console.log("tegel is hier");
 }
 
@@ -185,6 +220,8 @@ function clickedStart(){
     verwijderMenu();
   });
 }
+
+
 
 let menu = document.getElementsByClassName("js--menu");
 function verwijderMenu(){
