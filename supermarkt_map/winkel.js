@@ -6,6 +6,8 @@ window.onload = () =>{
   let mandje = document.getElementsByClassName('js--mandje')
   let mandje_hold = null;
 
+  const middel_poort = document.getElementById("js--middel-poort");
+
 
 // ======================================== mandje pakken =================================
   function pak_mandje() {
@@ -13,12 +15,14 @@ window.onload = () =>{
       mandje[i].addEventListener('click', function(evt){
         if (mandje_hold == null) {
           mandje_hold = 1;
-          camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.5 -1 -1" scale="0.4 0.4 0.4" rotation="0 110 10"></a-obj-model>';
+          // camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.5 -1 -1" scale="0.4 0.4 0.4" rotation="0 110 10"></a-obj-model>';
+          camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.15 -0.24 -0.2" scale="0.1 0.1 0.1" rotation="0 108 5"></a-obj-model>';
         }
 
         for (var i = 0; i < places.length; i++) {
           places[i].setAttribute('position', places[i].getAttribute('position').x + " 0 " + places[i].getAttribute('position').z);
         }
+
         this.remove();
       });
     }
