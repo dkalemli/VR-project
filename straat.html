@@ -114,7 +114,7 @@
         <!-- <a-entity  slice9="width: 7.5; height: 3.5;"  rotation="0 20 0"><a-text font="#montserratFont" wrap-count="20" value="start"></a-text></a-entity>
         <a-entity  slice9="width: 7.5; height: 3.5;"  rotation="0 20 0"></a-entity> -->
 
-        <a-sky position="0 0 200" src="#lucht" sound="#achtergrond; autoplay: true; positional: false; volume: 0.5"></a-sky>
+        <a-sky position="0 0 200" src="#lucht" sound="src: url(./sounds/Achtergrond.mp3); autoplay: true; positional: false; volume: .6"></a-sky>
 
         <!-- <a-camera position="-5 5 290" id="js--camera" wasd-controls="acceleration: 900">  --> 
             <!-- position="0 5 300" -->
@@ -525,20 +525,25 @@
         <a-box color="green" rotation="0 90 0" position="50 0 -90" height="25" width="700" depth="1"></a-box>
         
         <!-- <a-obj-model class="rijden" src="#auto-blauw-obj" mtl="#auto-blauw-mtl" position="8 1 -6" sound = "scr: #RijdendeAuto; autoplay: true"></a-obj-model> -->
+        <!-- sound="src: url(./sounds/Achtergrond.mp3); autoplay: true; positional: false; volume: 5" -->
         <a-entity auto id="js--remmen" obj-model="obj:#auto-blauw-obj; mtl:#auto-blauw-mtl"
                     position="8 1 0"
-                    animation__rijden="dur: 15000; easing: linear; from:10 1 -320; to: 10 1 750; loop:-1; property:position; pauseEvents: "></a-entity>
+                    animation__rijden="dur: 15000; easing: linear; from:10 1 -320; to: 10 1 750; loop:-1; property:position; pauseEvents: "
+                    sound = "scr: url(./sounds/CarDrive.mp3); autoplay: true; positional: true; volume: 20"></a-entity>
         <a-entity auto id="js--remmenB" obj-model="obj:#auto-groen-obj; mtl:#auto-groen-mtl"
+                    sound = "scr: url(./sounds/CarDrive.mp3); autoplay: true; positional: true; volume: 20"
                     rotation="0 180 0"
                     position="14 1 0"
                     animation__rijden="dur: 21000; from:18 1 750; to: 18 1 -340; loop:-1; property:position">
         </a-entity>
         <a-entity auto id="js--remmenC" obj-model="obj:#auto-zwart-obj; mtl:#auto-zwart-mtl"
                     position="8 1 0"
-                    animation__rijden="dur: 21000; from:10 1 -340; to: 10 1 750; loop:-1; property:position"></a-entity>
+                    animation__rijden="dur: 21000; from:10 1 -340; to: 10 1 750; loop:-1; property:position"
+                    sound = "scr: url(./sounds/CarDrive.mp3); autoplay: true; positional: true; volume: 20"></a-entity>
         <a-entity auto id="js--remmenD" obj-model="obj:#auto-politie-obj; mtl:#auto-politie-mtl"
                     rotation="0 180 0"
                     position="14 1 0"
+                    sound = "scr: url(./sounds/CarDrive.mp3); autoplay: true; positional: true; volume: 20"
                     animation__rijden="dur: 15000; easing: linear; from:18 1 750; to: 18 1 -325; loop:-1; property:position">
         </a-entity>
         <!--Als tegel aan de overkan bij oversteken wordt aangeraakt, animation stoppen-->
