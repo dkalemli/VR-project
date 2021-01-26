@@ -65,6 +65,23 @@ window.onload = () =>{
           console.log(places[5]);
         }
 
+        if(i == 2){
+          robotKennismaking();
+          robotPraat = document.getElementById("js--robot");
+          robotPraat.components.sound.playSound();
+        }
+
+        if(i == 3){         
+          skySound = document.getElementById("js--AchtergrSound");
+          skySound.components.sound.playSound();
+          robotPraat.components.sound.stopSound();
+          setTimeout(function(){
+            robotInBeeld();
+            voiceBuiten = document.getElementById("js--voice-buiten");
+            voiceBuiten.components.sound.playSound();
+          }, 2000);
+        }
+
         if(i == 4){
           if(afstand < 35){
             att.valueTegel4 = "property: position; dur: " + 10000 + "; easing: linear; to: -2 5 120";
@@ -83,6 +100,10 @@ window.onload = () =>{
 
         if(i == 8){
           console.log("ik ben bij het stoplicht.");
+          setTimeout(function(){
+            voiceStoplicht = document.getElementById("js--voice-stoplicht");
+            voiceStoplicht.components.sound.playSound();
+          }, 2000);
           opGroen();
         }
 
@@ -102,6 +123,13 @@ window.onload = () =>{
           }
         }
 
+        if(i == 13){
+          setTimeout(function(){
+            voiceOversteken = document.getElementById("js--voice-oversteken");
+            voiceOversteken.components.sound.playSound();
+          }, 3000);
+        }
+
         if(i == 14){
           console.log("ik ga nu oversteken.");
           zebrapad();
@@ -109,10 +137,24 @@ window.onload = () =>{
           zebrapadC();
           zebrapadD();
         }
+
+        if(i == 15){
+          setTimeout(function(){
+            voiceAangekomen = document.getElementById("js--voice-aangekomen");
+            voiceAangekomen.components.sound.playSound();
+          }, 1000);
+        }
   
         // console.log(this.getAttribute('position').x, this.getAttribute('position').z, camera.getAttribute("position").x, camera.getAttribute("position").z);
       });
     }
+
+  function robotKennismaking(){
+    
+  }  
+  function robotInBeeld(){
+    camera.innerHTML += '<a-obj-model src="./models/Robot.obj" mtl="./models/Robot.mtl" position="5 -3 -5" rotation="0 180 0"></a-obj-model>';
+  }
   
 
   //let stoplicht = document.getElementById("js--stoplicht");
@@ -137,10 +179,10 @@ window.onload = () =>{
 
           //scene.appendChild(cylinder);
           //scene.innerHTML += '<a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 293"></a-cylinder>';
-          camera.innerHTML += '<a-obj-model scr="./models/Robot.obj" mtl="./models/Robot.mtl" position="2 -1 -2"></a-box>';
+          camera.innerHTML += '<a-obj-model scr="./models/Robot.obj" mtl="./models/Robot.mtl" position="2 -1 -2"></a-obj-model>';
 
 
-    }, 10000);
+    }, 20000);
   }
 
 
@@ -221,12 +263,23 @@ function clickedStart(){
   });
 }
 
+const verken = document.getElementById("js--menuVerken");
+function clickedStart(){
+  start.addEventListener('click', function(evt){
+    verwijderMenu();
+    let menuSound = document.getElementById("js--menuSound");
+    menuSound.components.sound.stopSound();
+  });
+}
+
 
 
 let menu = document.getElementsByClassName("js--menu");
 function verwijderMenu(){
   console.log(menu);
   setTimeout(function(){
+    let menuSound = document.getElementById("js--menuSound");
+    menuSound.components.sound.stopSound();
     for(let i = 0; i < menu.length; i++){
       console.log(menu[i]);
       menu[i].setAttribute("animation", "dur: 3000; easing: linear; to: -70 -50 -12.5; loop:0 ; property:position");
