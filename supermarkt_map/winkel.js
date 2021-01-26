@@ -6,10 +6,20 @@ window.onload = () =>{
   const mandje = document.getElementsByClassName('js--mandje')
   let mandje_hold = null;
 
-  const schapitems = document.getElementsByClassName("js--schapitem");
+  let schapitems = document.getElementsByClassName("js--schapitem");
 
   let item_hold = null;
 
+
+  let banaan = document.getElementById("js--banaan");
+  let appel = document.getElementById("js--appel");
+  let sinaasappel = document.getElementById("js--sinaasappel");
+
+  var items_array = [
+    [banaan, '<a-box color="yellow" position="0 -0.2 -2"></a-box>'],
+    [appel, '<a-box color="red" position="0 -0.2 -2"></a-box>'],
+    [sinaasappel, '<a-box color="orange" position="0 -0.2 -2"></a-box>']
+  ]
 
 
 
@@ -38,20 +48,39 @@ pak_mandje();
 
 
 // ======================================== schapitems in mandje zetten =================================
+function geef_mini_item(schapitem) {
+  for (var i = 0; i < items_array.length; i++) {
+    if (items_array[i][0] == schapitem) {
+      return items_array[i][1];
+    }
+  }
+}
+
+
 function zet_in_mandje() {
     for (let i = 0; i < schapitems.length; i++) {
       schapitems[i].addEventListener('click', function(evt){
           if (mandje_hold == 1) {
+            if (item_hold == null){
+              let halve_string = geef_mini_item(schapitems[i]);
+              camera.innerHTML += halve_string;
+              item_hold = 1;
+              }
 
+            else if (item_hold == 1){
+              let halve_string = geef_mini_item(schapitems[i]);
+              camera.innerHTML += halve_string;
+              item_hold = 2;
+              }
 
-            schapitems[i].setAttribute('position', "0 -0.2 -2");
-            console.log(schapitems[i]);
-            // camera.innerHTML += schapitems[i];
+            else if (item_hold == 2){
+              let halve_string = geef_mini_item(schapitems[i]);
+              camera.innerHTML += halve_string;
+              item_hold = 3;
+              }
 
-
-            // this.remove();
-
-        }
+            this.remove();
+          }
       });
     }
 }
