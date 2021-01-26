@@ -155,6 +155,17 @@ window.onload = () =>{
   function robotInBeeld(){
     camera.innerHTML += '<a-obj-model src="./models/Robot.obj" mtl="./models/Robot.mtl" position="5 -3 -5" rotation="0 180 0"></a-obj-model>';
   }
+
+  function uitlegVoorlezen(){
+    voiceUitleg = document.getElementById("js--menuVoorlezen");
+    voiceUitleg.addEventListener('click', function(evt){
+      let menuSound = document.getElementById("js--menuSound");
+      menuSound.components.sound.stopSound();
+      voiceUitleg.components.sound.playSound();
+    });
+  }
+
+  uitlegVoorlezen();
   
 
   //let stoplicht = document.getElementById("js--stoplicht");
@@ -251,8 +262,8 @@ window.onload = () =>{
 let tegelEen = document.getElementById("js--appear");
 let moeder = document.getElementById("js--appearMoeder")
 function eersteTegel(){
-  tegelEen.setAttribute("position", {x:"-65", y:"1.4", Z:"0"});
-  moeder.setAttribute("position", {x:"-55", y:"2", Z:"10"});
+  tegelEen.setAttribute("position", {x:"-65", y:"1.4", Z:"10"});
+  moeder.setAttribute("position", {x:"-55", y:"2", Z:"20"});
   console.log("tegel is hier");
 }
 

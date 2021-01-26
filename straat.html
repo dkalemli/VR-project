@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The journey of education - Supermarkte experience</title>
+    <title>The journey of education - Supermarkt experience</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-slice9-component/dist/aframe-slice9-component.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
@@ -99,20 +99,23 @@
         </a-assets>
 
         <!-- Menu -->
-        <a-entity id="js--menuSound" class="js--menu" position="-77 12 -12" scale="0.6 1.2 1" text-geometry="value: HMD SUPERMARKT; font: #montserratFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; size: 1.5; height: 0.5;" material="color:lightblue; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;" rotation="" visible="" 
+        <a-entity id="js--menuSound" class="js--menu" position="-80 12 -12" scale="0.6 1.2 1" text-geometry="value: HMD SUPERMARKT; font: #montserratFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; size: 1.5; height: 0.5;" material="color:lightblue; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;" rotation="" visible="" 
         sound="src: url(./sounds/MenuSound.mp3); autoplay: true; positional: false; volume: .1"></a-entity>
         <!-- <a-entity class="js--menu" slice9="width: 7.5; height: 7.5; color: #fff opacity: 1.0 transparent: true" color="black" opacity="0.5" position="-65 5 -12.5" rotation="0 -20 0"> -->
-            <a-text class="js--menu" width="20" height="20" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="-65 6.5 -12.5" rotation="0 -20 0" value="
-            1. Klik op het model (moeder) in de kamer om een boodschappenlijstje en geld te krijgen;
-            2. Door een paar seconden naar de witte kruisjes op de grond te kijken, loop je naar die plek toe;
-            3. Ga nu naar buiten en loop over straat naar de winkel toe. De robot wijst je de weg.
-            4. Telkens krijg je hulp met vragen van je vriend de robot. Hij helpt jou om het spel te spelen;
-            5. Loop naar de supermarkt en koop alle producten die op het boodschappenlijstje staan;            
+            <a-text class="js--menu" width="20" height="20" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="-65 7.5 -12.5" rotation="0 -20 0" value="
+            Uitleg:            
+            1. Klik op de vrouw in de kamer, dit is jouw moeder, om een boodschappenlijstje en geld te krijgen;
+            2. Door een paar seconden naar een wit kruisje op de grond te kijken, loop je naar die plek toe;
+            3. Ga nu naar buiten en loop over straat naar de winkel toe. De robot wijst je de weg en helpt je.
+            4. In de supermarkt pak je alle producten die op het boodschappenlijstje staan.;
+            5. Ga naar de kassa en betaal de producten;            
             "></a-text>
         <!-- </a-entity> -->
         <a-entity id="js--menuStart" class="js--menu js--interact" static gltf-model="#menu-start" scale="1.2 1.2 1.2" position="-78 7 -11" rotation="0 -45 0"></a-entity>
-        <a-entity id="js--menuVerken" class="js--menu js--interact" static gltf-model="#menu-verken" position="-78 4 -8" scale="1.2 1.2 1.2" rotation="0 -45 0"></a-entity>
-        <a-entity id="js--menuVoorlezen" class="js--menu js--interact" static gltf-model="#menu-voorlezen" position="-78 1 -11" scale="1.2 1.2 1.2" rotation="0 -45 0"></a-entity>
+        <a-entity id="js--menuVerken" class="js--menu js--interact" static gltf-model="#menu-verken" position="-76 4 -11" scale="1.2 1.2 1.2" rotation="0 -45 0"></a-entity>
+        <a-entity id="js--menuVoorlezen" class="js--menu js--interact" static gltf-model="#menu-voorlezen" position="-74 1 -11" scale="1.2 1.2 1.2" rotation="0 -45 0"
+        sound="src: url(./sounds/uitleg.mp3); autoplay: false; positional: false; volume: 1"
+        ></a-entity>
   
 
         <!-- <a-entity  slice9="width: 7.5; height: 3.5;"  rotation="0 20 0"><a-text font="#montserratFont" wrap-count="20" value="start"></a-text></a-entity>
