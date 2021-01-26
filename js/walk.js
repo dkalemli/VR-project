@@ -176,7 +176,7 @@ window.onload = () =>{
 let tegelEen = document.getElementById("js--appear");
 function eersteTegel(){
   tegelEen.setAttribute("position", {x:"-65", y:"1.2", Z:"-10"});
-
+  console.log("tegel is hier");
 }
 
 const start = document.getElementById("js--menuStart");
