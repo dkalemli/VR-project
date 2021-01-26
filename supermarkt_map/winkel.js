@@ -16,9 +16,9 @@ window.onload = () =>{
   let sinaasappel = document.getElementById("js--sinaasappel");
 
   var items_array = [
-    [banaan, '<a-box color="yellow" position="0 -0.2 -2"></a-box>'],
-    [appel, '<a-box color="red" position="0 -0.2 -2"></a-box>'],
-    [sinaasappel, '<a-box color="orange" position="0 -0.2 -2"></a-box>']
+    [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" scale="0.07 0.07 0.07" rotation="0 90 0"'],
+    [appel, '<a-obj-model src="#appel-obj" mtl="#appel-mtl" scale="0.06 0.06 0.06" rotation="0 0 0"'],
+    [sinaasappel, '<a-obj-model src="#sinaasappel-obj" mtl="#sinaasappel-mtl" scale="0.07 0.07 0.07" rotation="0 0 0"']
   ]
 
 
@@ -61,25 +61,31 @@ function zet_in_mandje() {
     for (let i = 0; i < schapitems.length; i++) {
       schapitems[i].addEventListener('click', function(evt){
           if (mandje_hold == 1) {
+
             if (item_hold == null){
               let halve_string = geef_mini_item(schapitems[i]);
-              camera.innerHTML += halve_string;
+              let hele_string = halve_string + ' position="0.1 -0.15 -0.22"></a-obj-model>';
+              camera.innerHTML += hele_string;
               item_hold = 1;
               }
 
             else if (item_hold == 1){
               let halve_string = geef_mini_item(schapitems[i]);
-              camera.innerHTML += halve_string;
+              let hele_string = halve_string + ' position="0.1 -0.15 -0.18"></a-obj-model>';
+              camera.innerHTML += hele_string;
               item_hold = 2;
               }
 
             else if (item_hold == 2){
               let halve_string = geef_mini_item(schapitems[i]);
-              camera.innerHTML += halve_string;
+              let hele_string = halve_string + ' position="0.1 -0.11 -0.20"></a-obj-model>';
+              camera.innerHTML += hele_string;
               item_hold = 3;
               }
 
-            this.remove();
+
+              schapitems[i].setAttribute('position', "0 0 100"); //niet remove maar wegteleporteren, omdat removen de volgorde van de array kapot maakt
+            // this.remove();
           }
       });
     }
