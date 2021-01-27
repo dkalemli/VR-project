@@ -30,6 +30,8 @@
 
       <a-asset-item id="kruis-obj" src="./blender/kruis.obj"></a-asset-item>
 
+      <a-asset-item id="vrouw-1-obj" src="./models/source/Jess_Casual_Walking_001/Jess_Casual_Walking_001.obj"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/woman-walking-7fdd3ab66966442db81cc8a7f4f741aa  -->
+
 
       <img id="muur_texture" src="./textures/muur_texture.png">
       <img id="grond_texture" src="./textures/grond_texture.png">
@@ -138,7 +140,18 @@
       <a-box color="green" position="-8 0.6 1.2" width="0.7" height="1" depth="1"></a-box>
     </a-obj-model>
 
+<!-- ============================= Klanten =================================-->
 
+<a-obj-model src="#vrouw-1-obj" material="src: ./models/source/Jess_Casual_Walking_001/Jess_Casual_Walking_001_D.png" scale="0.004 0.004 0.004" rotation="270 180 0" 
+        animation="dur: 30000; 
+        easing: linear; 
+        from:0 1 290; 
+        to:0 1 -100; 
+        loop: true; 
+        property:position"
+        position="5 1 0">
+        <a-obj-model src="#mandje-obj" mtl="#mandje-mtl" position="0 1 0" scale="0.25 0.25 0.25" rotation="0 180 0"></a-obj-model>
+</a-obj-model>
 
 <!--  ============================ kassa's ================================ -->
     <a-obj-model id="js--pin-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-6 -.3 12" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
