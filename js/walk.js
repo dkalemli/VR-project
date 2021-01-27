@@ -184,7 +184,7 @@ window.onload = () =>{
           //cylinder.setAttribute("class", "js--place js--interact");
           //cylinder.setAttribute("color", "red");
           //cylinder.setAttribute("radius", "1.2");
-          //cylinder.setAttribute("height", "1");
+          //cylinder.setAttribute("height", "1");6
           cylinder.setAttribute("position", {x: "-2", y: "1.4", z: "315"});
           cylinder.setAttribute("rotation", {x: "-20", y: "0", z: "0"});
 
