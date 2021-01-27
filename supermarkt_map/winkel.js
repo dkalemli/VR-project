@@ -10,6 +10,8 @@ window.onload = () =>{
 
   let item_hold = null;
 
+  let saldo = 5.00;
+
 
   let banaan = document.getElementById("js--banaan");
   let appel = document.getElementById("js--appel");
@@ -23,7 +25,7 @@ window.onload = () =>{
 
 
 
-// ======================================== mandje pakken =================================
+  // ======================================== mandje pakken =================================
   function pak_mandje() {
     for (let i = 0; i < mandje.length; i++) {
       mandje[i].addEventListener('click', function(evt){
@@ -42,14 +44,14 @@ window.onload = () =>{
     }
   }
 
-pak_mandje();
+  pak_mandje();
 
 
 
 
-// ======================================== schapitems in mandje zetten =================================
-function geef_mini_item(schapitem) {
-  for (var i = 0; i < items_array.length; i++) {
+  // ======================================== schapitems in mandje zetten =================================
+  function geef_mini_item(schapitem) {
+    for (var i = 0; i < items_array.length; i++) {
     if (items_array[i][0] == schapitem) {
       return items_array[i][1];
     }
@@ -114,8 +116,6 @@ zet_in_mandje();
     });
   }
 };
-
-
 
 
 // ======================================== API =================================
