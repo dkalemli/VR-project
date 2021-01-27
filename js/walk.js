@@ -66,9 +66,12 @@ window.onload = () =>{
         }
 
         if(i == 2){
-          robotKennismaking();
-          robotPraat = document.getElementById("js--robot");
-          robotPraat.components.sound.playSound();
+          setTimeout(function(){
+            robotKennismaking();
+            robotPraat = document.getElementById("js--robot");
+            robotPraat.components.sound.playSound();
+          }, 3000);
+          
         }
 
         if(i == 3){         
@@ -126,6 +129,7 @@ window.onload = () =>{
         if(i == 13){
           setTimeout(function(){
             voiceOversteken = document.getElementById("js--voice-oversteken");
+            console.log("praten");
             voiceOversteken.components.sound.playSound();
           }, 3000);
         }
@@ -153,7 +157,7 @@ window.onload = () =>{
     
   }  
   function robotInBeeld(){
-    camera.innerHTML += '<a-obj-model src="./models/Robot.obj" mtl="./models/Robot.mtl" position="5 -3 -5" rotation="0 180 0"></a-obj-model>';
+    camera.innerHTML += '<a-obj-model src="./models/Robot.obj" mtl="./models/Robot.mtl" position="5 -3 -8" rotation="0 270 0"></a-obj-model>';
   }
 
   function uitlegVoorlezen(){
@@ -190,7 +194,7 @@ window.onload = () =>{
 
           //scene.appendChild(cylinder);
           //scene.innerHTML += '<a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 293"></a-cylinder>';
-          camera.innerHTML += '<a-obj-model scr="./models/Robot.obj" mtl="./models/Robot.mtl" position="2 -1 -2"></a-obj-model>';
+          //camera.innerHTML += '<a-obj-model scr="./models/Robot.obj" mtl="./models/Robot.mtl" position="2 -1 -2"></a-obj-model>';
 
 
     }, 20000);

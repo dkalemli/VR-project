@@ -77,6 +77,13 @@
                 <!--#########################      MENSEN EN DIEREN       #####################################################-->
                 <a-asset-item id="Boerderij" src="./models/Dieren.gltf"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/single-story-house-textured-with-interior-62c6fecff4ee4e24abb4080ff533e707 -->
 
+                <a-asset-item id="vrouw-1-obj" src="./models/source/Jess_Casual_Walking_001/Jess_Casual_Walking_001.obj"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/woman-walking-7fdd3ab66966442db81cc8a7f4f741aa  -->
+
+                <a-asset-item id="man-surfplank-obj" src="./models/man.obj"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/person-eefb1c0d73864774b5fca1b00f510a4f -->
+                <a-asset-item id="man-surfplank-mtl" src="./models/man.mtl"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/person-eefb1c0d73864774b5fca1b00f510a4f -->
+
+
+
                 <!--#########################      TEXTURES & IMAGES       #####################################################-->
                 <img id="plane--stoep" src="./img/textures/sidewalk.jpg" alt="stoep"> <!--CREDTITS: TODO-->
                 <img id="plane--gras" src="./img/textures/grass.jpg" alt="gras"> <!--CREDTITS: TODO-->
@@ -174,6 +181,18 @@
         <a-box color="white" position="0 0.5 298" rotation="0 90 0" width="2" height="0.1" depth="10"></a-box>
         <a-box color="white" position="0 0.5 303" rotation="0 90 0" width="2" height="0.1" depth="10"></a-box>
         <a-box color="white" position="0 0.5 308" rotation="0 90 0" width="2" height="0.1" depth="10"></a-box>
+        
+    
+        
+        
+        <a-obj-model src="#vrouw-1-obj" material="src: ./models/source/Jess_Casual_Walking_001/Jess_Casual_Walking_001_D.png" scale="0.004 0.004 0.004" rotation="270 180 0" 
+        animation="dur: 30000; 
+        easing: linear; 
+        from:0 1 290; 
+        to:0 1 -100; 
+        loop: true; 
+        property:position"
+        position="5 1 0"></a-obj-model> <!--15: redirecten naar supermarkt.html-->
 
             	
               
@@ -472,6 +491,9 @@
         <a-entity static gltf-model="#huis-3" scale="2.5 2.5 2.5" rotation="0 90 0" position="-7 0.5 340"></a-entity>
 
         <a-entity static gltf-model="#Boerderij" position="-330 -73 330"></a-entity>
+        <!-- <a-obj-model src="#man-surfplank-obj" mtl="#man-surfplank-mtl" scale="3 3 3" position="0 5 300"></a-obj-model> -->
+
+
 
         <a-obj-model position="-20 0.5 380" src="#boom1-obj" mtl="#boom1-mtl" rotation="0 0 0" scale="1.2 1.2 1.2"></a-obj-model>
         <a-obj-model position="-10 0.5 360" src="#boom2-obj" mtl="#boom1-mtl" rotation="0 90 0" scale="1.2 1.2 1.2"></a-obj-model>
