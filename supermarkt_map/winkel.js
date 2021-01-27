@@ -1,8 +1,9 @@
 window.onload = () =>{
   const scene = document.getElementById('js--scene');
   const camera = document.getElementById('js--camera');
+  const loopband = document.getElementById('js--pin-kassa');
   let places = document.getElementsByClassName("js--place");
-
+  let process = 0;
   const mandje = document.getElementsByClassName('js--mandje')
   let mandje_hold = null;
 
@@ -20,9 +21,9 @@ window.onload = () =>{
   let melk = document.getElementById("js--melk");
 
   var items_array = [
-    [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" scale="0.07 0.07 0.07" rotation="0 90 0"', 0.80, "banaan"],
-    [appel, '<a-obj-model src="#appel-obj" mtl="#appel-mtl" scale="0.06 0.06 0.06" rotation="0 0 0"', 0.65, "appel"],
-    [sinaasappel, '<a-obj-model src="#sinaasappel-obj" mtl="#sinaasappel-mtl" scale="0.07 0.07 0.07" rotation="0 0 0"', 1.10, "sinaasappel"],
+    [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" rotation="0 90 0"', 0.80, "banaan"],
+    [appel, '<a-obj-model src="#appel-obj" mtl="#appel-mtl" rotation="0 0 0"', 0.65, "appel"],
+    [sinaasappel, '<a-obj-model src="#sinaasappel-obj" mtl="#sinaasappel-mtl" rotation="0 0 0"', 1.10, "sinaasappel"],
     [melk, '<a-box color="blue" width="1" height="1"', 1.50, "melk"]
   ];
 
@@ -69,23 +70,30 @@ function zet_in_mandje() {
 
             if (item_hold == null){
               let halve_string = geef_mini_item(schapitems[i]);
-              let hele_string = halve_string + ' position="0.1 -0.15 -0.22"></a-obj-model>';
+              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.15 -0.22"></a-obj-model>';
               camera.innerHTML += hele_string;
               item_hold = 1;
               }
 
             else if (item_hold == 1){
               let halve_string = geef_mini_item(schapitems[i]);
-              let hele_string = halve_string + ' position="0.1 -0.15 -0.18"></a-obj-model>';
+              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.15 -0.18"></a-obj-model>';
               camera.innerHTML += hele_string;
               item_hold = 2;
               }
 
             else if (item_hold == 2){
               let halve_string = geef_mini_item(schapitems[i]);
-              let hele_string = halve_string + ' position="0.1 -0.11 -0.20"></a-obj-model>';
+              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.11 -0.20"></a-obj-model>';
               camera.innerHTML += hele_string;
               item_hold = 3;
+              }
+            
+            else if (item_hold == 3){
+              let halve_string = geef_mini_item(schapitems[i]);
+              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.11 -0.20"></a-obj-model>';
+              camera.innerHTML += hele_string;
+              item_hold = 4;
               }
 
 
@@ -125,10 +133,24 @@ zet_in_mandje();
     bijKassa.addEventListener('click', function(evt){
       console.log("Je bent bij de kassa aangekomen");
       //schapitems[i].setAttribute('position', "-2 1 12");
-      for(let i = 0; i < items_array.length; i++){
-        totaalbedrag = totaalbedrag + items_array[i][2];
-        console.log(items_array[i][3] + ": " + items_array[i][2]);
+      
+      if (process == 0){
+        let nummer = 3;
+        for(let i = 0; i < items_array.length; i++){
+          halve_string = geef_mini_item(schapitems[i]);
+          hele_string = halve_string + ' position="'+nummer+' 2.45 0" scale="0.9" ></a-obj-model>';
+          // camera.innerHTML += "'"+hele_string+"'";
+          bijKassa.innerHTML += hele_string; //<a-box color="red" width="0.8" position="'+ nummer+ ' 2 0"></a-box>';
+          nummer -= 1;
+          totaalbedrag = totaalbedrag + items_array[i][2];
+          console.log(items_array[i][3] + ": " + items_array[i][2]);
+          console.log(hele_string);
+        }
       }
+      else{
+        console.log("Je hebt al betaald.")
+      }
+      process = 1;
       console.log("Dat wordt dan " + totaalbedrag + " euro");
       if(totaalbedrag <= saldo){
         console.log("Betaling akkoord");
@@ -137,7 +159,6 @@ zet_in_mandje();
       }
       else if(totaalbedrag > saldo){
         console.log("Je hebt niet genoeg saldo");
-
       }
       
     });
