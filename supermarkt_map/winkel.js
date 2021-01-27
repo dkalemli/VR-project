@@ -10,18 +10,21 @@ window.onload = () =>{
 
   let item_hold = null;
 
+  let totaalbedrag = 0.00;
   let saldo = 5.00;
 
 
   let banaan = document.getElementById("js--banaan");
   let appel = document.getElementById("js--appel");
   let sinaasappel = document.getElementById("js--sinaasappel");
+  let melk = document.getElementById("js--melk");
 
   var items_array = [
-    [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" scale="0.07 0.07 0.07" rotation="0 90 0"'],
-    [appel, '<a-obj-model src="#appel-obj" mtl="#appel-mtl" scale="0.06 0.06 0.06" rotation="0 0 0"'],
-    [sinaasappel, '<a-obj-model src="#sinaasappel-obj" mtl="#sinaasappel-mtl" scale="0.07 0.07 0.07" rotation="0 0 0"']
-  ]
+    [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" scale="0.07 0.07 0.07" rotation="0 90 0"', 0.80, "banaan"],
+    [appel, '<a-obj-model src="#appel-obj" mtl="#appel-mtl" scale="0.06 0.06 0.06" rotation="0 0 0"', 0.65, "appel"],
+    [sinaasappel, '<a-obj-model src="#sinaasappel-obj" mtl="#sinaasappel-mtl" scale="0.07 0.07 0.07" rotation="0 0 0"', 1.10, "sinaasappel"],
+    [melk, '<a-box color="blue" width="1" height="1"', 1.50, "melk"]
+  ];
 
 
 
@@ -95,9 +98,6 @@ function zet_in_mandje() {
 
 zet_in_mandje();
 
-
-
-
 // ======================================== moevement speed =================================
   for (let i = 0; i < places.length; i++) {
     places[i].addEventListener('click', function(evt){
@@ -115,7 +115,32 @@ zet_in_mandje();
       // console.log(this.getAttribute('position').x, this.getAttribute('position').z, camera.getAttribute("position").x, camera.getAttribute("position").z);
     });
   }
+
+  // ======================================== API =================================
+
+
+  // ======================================== AFREKENEN =================================
+  function opLoopBand(){
+    const bijKassa = document.getElementById("js--contant-kassa");
+    bijKassa.addEventListener('click', function(evt){
+      console.log("Je bent bij de kassa aangekomen");
+      //schapitems[i].setAttribute('position', "-2 1 12");
+      for(let i = 0; i < items_array.length; i++){
+        totaalbedrag = totaalbedrag + items_array[i][2];
+        console.log(items_array[i][3] + ": " + items_array[i][2]);
+      }
+      console.log("Dat wordt dan " + totaalbedrag + " euro");
+      if(totaalbedrag <= saldo){
+        console.log("Betaling akkoord");
+        saldo = saldo - totaalbedrag;
+        console.log("Saldo = " + saldo.toFixed(2));
+      }
+      else if(totaalbedrag > saldo){
+        console.log("Je hebt niet genoeg saldo");
+
+      }
+      
+    });
+  } 
+  opLoopBand();
 };
-
-
-// ======================================== API =================================
