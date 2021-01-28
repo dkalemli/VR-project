@@ -2,6 +2,8 @@ window.onload = () =>{
   const scene = document.getElementById('js--scene');
   const camera = document.getElementById('js--camera');
   const loopband = document.getElementById('js--pin-kassa');
+  const cassiere = document.getElementById("js--cassiere");
+
   let places = document.getElementsByClassName("js--place");
   let process = 0;
   const mandje = document.getElementsByClassName('js--mandje')
@@ -162,32 +164,31 @@ zet_in_mandje();
 
   // ======================================== AFREKENEN =================================
   function totaalBerekenen(){
-    // totaalbedrag test////////////////////
     for (var i = 0; i < inMandArr.length; i++) {
       totaalbedrag += prijs_alle_items[i];
     }
     //totaalbedrag = totaalbedrag.toFixed(2);
     totaalbedrag = Math.round(totaalbedrag);
     console.log("Dat wordt dan " + totaalbedrag + " euro");
+    cassiere.innerHTML = '<a-text text= value: Dat wordt dan ' + totaalbedrag + ' euro; scale:1.5 1.5 1.5; position:1 1 1; rotation: 0 180 0;color: black></a-text>'; 
+
     if(totaalbedrag <= saldo){
-      console.log("Betaling akkoord");
+      console.log("Je hebt betaald. Dankjewel en tot ziens!");
       saldo = saldo - totaalbedrag;
       console.log("Saldo = " + saldo.toFixed(2));
       }
     else if(totaalbedrag > saldo){
-      console.log("Je hebt niet genoeg saldo");
+      console.log("Je hebt niet genoeg geld bij je");
     } 
   }
 
   function opLoopBand(){
     const bijKassa = document.getElementById("js--contant-kassa");
-
     bijKassa.addEventListener('click', function(evt){
       camera.innerHTML = "";
       camera.innerHTML = '<a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1" animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1" cursor = "fuse: true; fuseTimeout: 2000" material = "color: black; shader: flat" geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01" position = "0 0 -0.5" raycaster = "objects: .js--interact; far: 30"></a-entity>';
       if (process == 0){
         for(let i = 0; i < inMandArr.length; i++){
-          console.log("Op de band gaat: " + inMandArr[i]);
           bijKassa.innerHTML += inMandArr[i];
         }
         totaalBerekenen();
