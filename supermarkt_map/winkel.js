@@ -166,7 +166,29 @@ zet_in_mandje();
   }
 
   // ======================================== API =================================
+  AFRAME.registerComponent("lemon", {
+    init: function() {
 
+        const planeet = document.getElementById("planeet");
+        const BASE_URL = "https://fruityvice.com/api/fruit/";
+
+        this.planeet = function() {
+            //let randomNum = Math.floor(Math.random() * 27) + 1;
+            const BanaanID = 27;
+            fetch(BASE_URL + BanaanID)
+            .then(response => response.json())
+            .then(data => planeet.setAttribute("value", data.name));
+        }
+        this.el.addEventListener("mouseenter", this.planeet);
+    },
+    update: function() {
+        this.planeet();
+    },
+    tick: function() {},
+    remove: function() {},
+    pause: function() {},
+    play: function() {}
+  });   
 
   // ======================================== AFREKENEN =================================
   function totaalBerekenen(){
