@@ -19,6 +19,7 @@ window.onload = () =>{
   let appel = document.getElementById("js--appel");
   let sinaasappel = document.getElementById("js--sinaasappel");
   let peer = document.getElementById("js--peer");
+  let aardbei = document.getElementById("js--aardbei");
   let melk = document.getElementById("js--melk");
 
   var items_array = [
@@ -26,6 +27,7 @@ window.onload = () =>{
     [appel, '<a-obj-model src="#appel-obj" mtl="#appel-mtl" rotation="0 0 0"', 0.65, "appel"],
     [sinaasappel, '<a-obj-model src="#sinaasappel-obj" mtl="#sinaasappel-mtl" rotation="0 0 0"', 1.10, "sinaasappel"],
     [peer, '<a-obj-model src="#peer-obj" mtl="#peer-mtl" rotation="0 0 0"', 1.00, "peer"],
+    [aardbei, '<a-obj-model src="#aardbei-obj" mtl="#aardbei-mtl" rotation="0 0 0"', 0.30, "aardbei"],
     [melk, '<a-box color="blue" width="1" height="1"', 1.50, "melk"]
   ];
 
