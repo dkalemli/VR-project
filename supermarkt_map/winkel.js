@@ -32,8 +32,9 @@ window.onload = () =>{
     [citroen, '<a-obj-model src="#citroen-obj" mtl="#citroen-mtl" rotation="0 180 0"', 0.75, "citroen"],
     [melk, '<a-box color="blue" width="1" height="1"', 1.50, "melk"]
   ];
-  var inMandArr = [];
 
+  var inMandArr = [];
+  var prijs_alle_items = [];
 
 
 
@@ -71,6 +72,14 @@ window.onload = () =>{
 }
 
 
+    function geef_prijs_mee(schapitem) {
+      for (var i = 0; i < items_array.length; i++) {
+      if (items_array[i][0] == schapitem) {
+        return items_array[i][2];
+      }
+    }
+  }
+
 function zet_in_mandje() {
     for (let i = 0; i < schapitems.length; i++) {
       schapitems[i].addEventListener('click', function(evt){
@@ -79,8 +88,10 @@ function zet_in_mandje() {
             if (item_hold == null){
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.15 -0.22"></a-obj-model>';
+              let prijs = geef_prijs_mee(schapitems[i]);
               camera.innerHTML += hele_string;
               inMandArr[0] = halve_string + ' scale="0.9 0.9 0.9" position="2 2.45 0"></a-obj-model>';
+              prijs_alle_items[0] = prijs;
               console.log(inMandArr);
               item_hold = 1;
               }
@@ -88,8 +99,10 @@ function zet_in_mandje() {
             else if (item_hold == 1){
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.15 -0.18"></a-obj-model>';
+              let prijs = geef_prijs_mee(schapitems[i]);
               camera.innerHTML += hele_string;
               inMandArr[1] = halve_string + ' scale="0.9 0.9 0.9" position="1 2.45 0"></a-obj-model>';
+              prijs_alle_items[1] = prijs;
               console.log(inMandArr);
               item_hold = 2;
               }
@@ -98,7 +111,9 @@ function zet_in_mandje() {
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.11 -0.20"></a-obj-model>';
               camera.innerHTML += hele_string;
+              let prijs = geef_prijs_mee(schapitems[i]);
               inMandArr[2] = halve_string + ' scale="0.9 0.9 0.9" position="0 2.45 0"></a-obj-model>';
+              prijs_alle_items[2] = prijs;
               console.log(inMandArr);
               item_hold = 3;
               }
@@ -107,7 +122,9 @@ function zet_in_mandje() {
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.11 -0.12 -0.17"></a-obj-model>';
               camera.innerHTML += hele_string;
+              let prijs = geef_prijs_mee(schapitems[i]);
               inMandArr[3] = halve_string + ' scale="0.9 0.9 0.9" position="-1 2.45 0"></a-obj-model>';
+              prijs_alle_items[3] = prijs;
               console.log(inMandArr);
               item_hold = 4;
               }
@@ -171,6 +188,16 @@ zet_in_mandje();
       else{
         console.log("Je hebt al betaald.")
       }
+
+      // totaalbedrag test////////////////////
+            let testtotaal = 0;
+            for (var i = 0; i < inMandArr.length; i++) {
+              testtotaal += prijs_alle_items[i];
+            }
+            testtotaal = testtotaal.toFixed(2);
+            console.log(testtotaal);
+      // ///////////////////////////////
+
       process = 1;
       console.log("Dat wordt dan " + totaalbedrag + " euro");
       if(totaalbedrag <= saldo){
@@ -182,7 +209,10 @@ zet_in_mandje();
         console.log("Je hebt niet genoeg saldo");
       }
 
+
     });
+
+
   }
   opLoopBand();
 };
