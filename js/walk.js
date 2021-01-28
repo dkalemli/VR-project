@@ -1,4 +1,4 @@
-window.onload = () =>{
+
     const places = document.getElementsByClassName('js--place');
     const camera = document.getElementById('js--camera');
   
@@ -195,8 +195,6 @@ window.onload = () =>{
           //scene.appendChild(cylinder);
           //scene.innerHTML += '<a-cylinder class="js--place js--interact" color="red" height="1" radius="1.2" position="-2 1 293"></a-cylinder>';
           //camera.innerHTML += '<a-obj-model scr="./models/Robot.obj" mtl="./models/Robot.mtl" position="2 -1 -2"></a-obj-model>';
-
-
     }, 20000);
   }
 
@@ -291,14 +289,6 @@ function clickedStartHoog(){
 }
 
 
-// Klik op moeder om een boodschappenlijstje te krijgen
-let moeder = document.getElementById("js--moeder")
-function clickedMoeder(){
-  moeder.addEventListener('click', function(evt){
-    camera.setAttribute("position", {x:"-70", y:"7", z:"8"})
-  });
-}
-
 // const verken = document.getElementById("js--menuVerken");
 // function clickedStart(){
 //   verken.addEventListener('click', function(evt){
@@ -308,8 +298,6 @@ function clickedMoeder(){
 //     menuSound.components.sound.stopSound();
 //   });
 // }
-
-
 
 let menu = document.getElementsByClassName("js--menu");
 function verwijderMenu(){
@@ -326,9 +314,39 @@ function verwijderMenu(){
   }, 1000);
 }
 
+// Klik op moeder om een boodschappenlijstje te krijgen
+const bedrag = document.getElementById('js--bedrag');
+const productTitel = document.getElementById('js--productTitel');
+let moeder = document.getElementById("js--moeder");
+let producten = document.getElementsByClassName("js--producten");
+let boodschappenlijst = ["banaan", "appel", "aardbei", "sinaasappel", "citroen", "peer", "bloem_500g", "bloem_1kg", "bloem_2kg", "cola_500mL", "cola_1L", "cola_2L"];
+
+function clickedMoeder(){
+  moeder.addEventListener('click', function(evt){
+    let nummer = 12;
+    let gekozenProducten = [];
+    
+    for (i = 0; i < producten.length; i++) {
+      let productNummer = Math.floor(Math.random() * nummer) + 1;
+      gekozenProducten.push(boodschappenlijst[productNummer]);
+
+      const j = boodschappenlijst.indexOf(boodschappenlijst[productNummer]);
+      boodschappenlijst.splice(j, 1);
+
+      nummer -= 1;
+    }
+
+    for (i = 0; i < producten.length; i++) {
+      producten[i].setAttribute("value", gekozenProducten[i]);
+    }
+
+    bedrag.setAttribute("position", {x:"3.75", y:"2.25", z:"-3"});
+    productTitel.setAttribute("position", {x:"3.75", y:"2", z:"-3"});
+
+  });
+}
+
 clickedStart();
 clickedVerken();
 clickedStartHoog();
-clickedMoeder()
-
-};  
+clickedMoeder();
