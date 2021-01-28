@@ -18,12 +18,14 @@ window.onload = () =>{
   let banaan = document.getElementById("js--banaan");
   let appel = document.getElementById("js--appel");
   let sinaasappel = document.getElementById("js--sinaasappel");
+  let peer = document.getElementById("js--peer");
   let melk = document.getElementById("js--melk");
 
   var items_array = [
     [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" rotation="0 90 0"', 0.80, "banaan"],
     [appel, '<a-obj-model src="#appel-obj" mtl="#appel-mtl" rotation="0 0 0"', 0.65, "appel"],
     [sinaasappel, '<a-obj-model src="#sinaasappel-obj" mtl="#sinaasappel-mtl" rotation="0 0 0"', 1.10, "sinaasappel"],
+    [peer, '<a-obj-model src="#peer-obj" mtl="#peer-mtl" rotation="0 0 0"', 1.00, "peer"],
     [melk, '<a-box color="blue" width="1" height="1"', 1.50, "melk"]
   ];
 
@@ -88,10 +90,10 @@ function zet_in_mandje() {
               camera.innerHTML += hele_string;
               item_hold = 3;
               }
-            
+
             else if (item_hold == 3){
               let halve_string = geef_mini_item(schapitems[i]);
-              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.11 -0.20"></a-obj-model>';
+              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.11 -0.11 -0.16"></a-obj-model>';
               camera.innerHTML += hele_string;
               item_hold = 4;
               }
@@ -133,7 +135,7 @@ zet_in_mandje();
     bijKassa.addEventListener('click', function(evt){
       console.log("Je bent bij de kassa aangekomen");
       //schapitems[i].setAttribute('position', "-2 1 12");
-      
+
       if (process == 0){
         let nummer = 3;
         for(let i = 0; i < items_array.length; i++){
@@ -160,8 +162,8 @@ zet_in_mandje();
       else if(totaalbedrag > saldo){
         console.log("Je hebt niet genoeg saldo");
       }
-      
+
     });
-  } 
+  }
   opLoopBand();
 };
