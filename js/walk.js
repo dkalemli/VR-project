@@ -279,15 +279,15 @@ function clickedStart(){
   });
 }
 
-const verken = document.getElementById("js--menuVerken");
-function clickedStart(){
-  verken.addEventListener('click', function(evt){
-    verwijderMenu();
-    camera.setAttribute("position", "0 100 0");	
-    let menuSound = document.getElementById("js--menuSound");
-    menuSound.components.sound.stopSound();
-  });
-}
+// const verken = document.getElementById("js--menuVerken");
+// function clickedStart(){
+//   verken.addEventListener('click', function(evt){
+//     verwijderMenu();
+//     camera.setAttribute("position", "0 100 0");	
+//     let menuSound = document.getElementById("js--menuSound");
+//     menuSound.components.sound.stopSound();
+//   });
+// }
 
 
 
