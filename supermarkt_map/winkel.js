@@ -3,6 +3,8 @@ window.onload = () =>{
   const camera = document.getElementById('js--camera');
   const loopband = document.getElementById('js--pin-kassa');
   const cassiere = document.getElementById("js--cassiere");
+  let bijKassa = document.getElementById("js--contant-kassa");
+
 
   let places = document.getElementsByClassName("js--place");
   let process = 0;
@@ -176,6 +178,9 @@ zet_in_mandje();
       console.log("Je hebt betaald. Dankjewel en tot ziens!");
       saldo = saldo - totaalbedrag;
       console.log("Saldo = " + saldo.toFixed(2));
+      setTimeout(function(){
+        bijKassa.innerHTML = "";
+      }, 2500)
       }
     else if(totaalbedrag > saldo){
       console.log("Je hebt niet genoeg geld bij je");
@@ -183,10 +188,11 @@ zet_in_mandje();
   }
 
   function opLoopBand(){
-    const bijKassa = document.getElementById("js--contant-kassa");
     bijKassa.addEventListener('click', function(evt){
       camera.innerHTML = "";
-      camera.innerHTML += ' <a-entity static gltf-model = "./blender/5euro.gltf" position="0 -0.1 0"></a-entity>'; //<a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1" animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1" cursor = "fuse: true; fuseTimeout: 2000" material = "color: black; shader: flat" geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01" position = "0 0 -0.5" raycaster = "objects: .js--interact; far: 30"></a-entity>
+      camera.innerHTML += '<a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1" animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1" cursor = "fuse: true; fuseTimeout: 2000" material = "color: black; shader: flat" geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01" position = "0 0 -0.5" raycaster = "objects: .js--interact; far: 30"></a-entity> '; //
+      //camera.innerHTML += '<a-entity static gltf-model = "./blender/5euro.gltf"></a-entity> ';
+      camera.innerHTML += '<a-box color="red" position="0 -0.1 0"></a-box>  position="0 -0.1 0"></a-entity> ';
       console.log(camera.innerHTML);
       if (process == 0){
         for(let i = 0; i < inMandArr.length; i++){
