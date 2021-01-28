@@ -157,7 +157,8 @@ window.onload = () =>{
     
   }  
   function robotInBeeld(){
-    camera.innerHTML += '<a-obj-model src="./models/Robot.obj" mtl="./models/Robot.mtl" position="5 -3 -8" rotation="0 270 0"></a-obj-model>';
+    console.log("Robot is ontzichtbaar");
+    //camera.innerHTML += '<a-obj-model src="./models/Robot.obj" mtl="./models/Robot.mtl" position="5 -3 -8" rotation="0 270 0"></a-obj-model>';
   }
 
   function uitlegVoorlezen(){
@@ -280,8 +281,9 @@ function clickedStart(){
 
 const verken = document.getElementById("js--menuVerken");
 function clickedStart(){
-  start.addEventListener('click', function(evt){
+  verken.addEventListener('click', function(evt){
     verwijderMenu();
+    camera.setAttribute("position", "0 100 0");	
     let menuSound = document.getElementById("js--menuSound");
     menuSound.components.sound.stopSound();
   });
