@@ -11,7 +11,7 @@ window.onload = () =>{
 
   let item_hold = null;
 
-  let totaalbedrag = 0.00;
+  let totaalbedrag = 0;
   let saldo = 5.00;
 
 
@@ -30,7 +30,7 @@ window.onload = () =>{
     [peer, '<a-obj-model src="#peer-obj" mtl="#peer-mtl" rotation="0 0 0"', 1.00, "peer"],
     [aardbei, '<a-obj-model src="#aardbei-obj" mtl="#aardbei-mtl" rotation="0 0 0"', 0.30, "aardbei"],
     [citroen, '<a-obj-model src="#citroen-obj" mtl="#citroen-mtl" rotation="0 180 0"', 0.75, "citroen"],
-    [melk, '<a-box color="blue" width="1" height="1"', 1.50, "melk"]
+    [melk, '<a-box color="blue" width="1" height="1"', 1.25, "melk"]
   ];
 
   var inMandArr = [];
@@ -161,58 +161,42 @@ zet_in_mandje();
 
 
   // ======================================== AFREKENEN =================================
+  function totaalBerekenen(){
+    // totaalbedrag test////////////////////
+    for (var i = 0; i < inMandArr.length; i++) {
+      totaalbedrag += prijs_alle_items[i];
+    }
+    //totaalbedrag = totaalbedrag.toFixed(2);
+    totaalbedrag = Math.round(totaalbedrag);
+    console.log("Dat wordt dan " + totaalbedrag + " euro");
+    if(totaalbedrag <= saldo){
+      console.log("Betaling akkoord");
+      saldo = saldo - totaalbedrag;
+      console.log("Saldo = " + saldo.toFixed(2));
+      }
+    else if(totaalbedrag > saldo){
+      console.log("Je hebt niet genoeg saldo");
+    } 
+  }
+
   function opLoopBand(){
     const bijKassa = document.getElementById("js--contant-kassa");
 
     bijKassa.addEventListener('click', function(evt){
       camera.innerHTML = "";
       camera.innerHTML = '<a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1" animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1" cursor = "fuse: true; fuseTimeout: 2000" material = "color: black; shader: flat" geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01" position = "0 0 -0.5" raycaster = "objects: .js--interact; far: 30"></a-entity>';
-      console.log("Je bent bij de kassa aangekomen");
-      //schapitems[i].setAttribute('position', "-2 1 12");
-
       if (process == 0){
-        //let nummer = 3;
         for(let i = 0; i < inMandArr.length; i++){
-          //halve_string = geef_mini_item(schapitems[i]);
-          //hele_string = halve_string + ' position="'+nummer+' 2.45 0" scale="0.9" ></a-obj-model>';
-
-          // camera.innerHTML += "'"+hele_string+"'";
           console.log("Op de band gaat: " + inMandArr[i]);
-          bijKassa.innerHTML += inMandArr[i]; //<a-box color="red" width="0.8" position="'+ nummer+ ' 2 0"></a-box>';
-          //nummer -= 1;
-          //totaalbedrag = totaalbedrag + items_array[i][2];
-          //console.log(items_array[i][3] + ": " + items_array[i][2]);
-          //console.log(hele_string);
+          bijKassa.innerHTML += inMandArr[i];
         }
+        totaalBerekenen();
+        process = 1;
       }
       else{
         console.log("Je hebt al betaald.")
       }
-
-      // totaalbedrag test////////////////////
-            let testtotaal = 0;
-            for (var i = 0; i < inMandArr.length; i++) {
-              testtotaal += prijs_alle_items[i];
-            }
-            testtotaal = testtotaal.toFixed(2);
-            console.log(testtotaal);
-      // ///////////////////////////////
-
-      process = 1;
-      console.log("Dat wordt dan " + totaalbedrag + " euro");
-      if(totaalbedrag <= saldo){
-        console.log("Betaling akkoord");
-        saldo = saldo - totaalbedrag;
-        console.log("Saldo = " + saldo.toFixed(2));
-      }
-      else if(totaalbedrag > saldo){
-        console.log("Je hebt niet genoeg saldo");
-      }
-
-
     });
-
-
   }
   opLoopBand();
 };
