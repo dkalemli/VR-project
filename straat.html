@@ -22,6 +22,13 @@
                 <a-asset-item id="menu-verken" src="./models/VERKEN.gltf"></a-asset-item>
                 <a-asset-item id="menu-voorlezen" src="./models/UitlegVoorlezen.gltf"></a-asset-item>
 
+                <!--#########################      MODEL       #####################################################-->  
+                <a-asset-item id="moeder-gltf" src="./models/scene.gltf"></a-asset-item><!--Gemaakt door Dogukan Kalemli-->  
+
+                <!--#########################      MEUBELS       #####################################################-->    
+                <a-asset-item id="stoel-gltf" src="./models/Stoel.gltf"></a-asset-item><!--Gemaakt door Dogukan Kalemli-->
+                <a-asset-item id="bank-gltf" src="./models/Bank.gltf"></a-asset-item> 
+                <a-asset-item id="tafel-gltf" src="./models/Tafel.gltf"></a-asset-item> 
 
                 <!--#########################      STRAAT       #####################################################-->                
                 <a-asset-item id="wijk-mtl" src="./models/straatMetKruispunt.mtl"></a-asset-item><!--Gemaakt door Max Osewoudt-->
@@ -112,6 +119,7 @@
             "></a-text>
         <!-- </a-entity> -->
         <a-entity id="js--menuStart" class="js--menu js--interact" static gltf-model="#menu-start" scale="1.2 1.2 1.2" position="-78 8 -11" rotation="0 -45 0"></a-entity>
+        <a-entity id="js--StartHoog" class="js--interact" static gltf-model="#menu-start" scale="1.2 1.2 1.2" position="-0 125 150" rotation="0 -90 0"></a-entity>
         <a-entity id="js--menuVerken" class="js--menu js--interact" static gltf-model="#menu-verken" position="-78 5 -11" scale="1.2 1.2 1.2" rotation="0 -45 0"></a-entity>
         <a-entity id="js--menuVoorlezen" class="js--menu js--interact" static gltf-model="#menu-voorlezen" position="-74 3 -11" scale="1.2 1.2 1.2" rotation="0 -45 0"
         sound="src: url(./sounds/uitleg.mp3); autoplay: false; positional: false; volume: 1"
@@ -127,7 +135,8 @@
             <!-- position="0 5 300" -->
         <!-- <a-entity camera look-controls wasd-controls="acceleration: 2000" id="js--camera" position="-70 6 -5" rotation = "0 270 0"> -->
             <!-- position="-70 6 -5" -->
-            <a-entity id="js--camera" position="-70 7 8"><a-camera id="js--cameraObjects" look-controls wasd-controls="acceleration: 2000" >	
+        <a-entity id="js--camera" position="-70 7 8">
+            <a-camera id="js--cameraObjects" look-controls wasd-controls="acceleration: 2000" >	
                 <a-cursor	
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"	
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"	
@@ -137,12 +146,13 @@
                     geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"	
                     raycaster = "objects: .js--interact, #opRood">	
                 </a-cursor>	
-            </a-camera></a-entity>
+            </a-camera>
+        </a-entity>
         <!-- </a-entity> -->
         
         <!--#################################### LOOPTEGELS #########################################################-->
         <a-obj-model src="#kruis-obj" id="js--appear" class="js--place js--interact" position="-70 -50 -3"></a-obj-model>
-        <!--TODO #########TODO ####### DOGUKAN: DIT MOET JE VERVANGEN DOOR DE MOEDER EN DAN HERPOSITIONEREN: --> <a-box color="pink" height="10" width="3" id="js--appearMoeder" class="js--place js--interact" position="-60 -50 -6"></a-box> <!--DOGUKAN: DIT MOET JE VERVANGEN DOOR DE MOEDER EN DAN HERPOSITIONEREN-->
+        <a-entity id="js--appearMoeder" class="js--place js--interact" gltf-model="#moeder-gltf" scale="0.125 0.125 0.125" position="-55 1 3" rotation="0 270 0"></a-entity>
         <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-32 1.2 -5"></a-obj-model> <!--2: Hal-->
         <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 -5"></a-obj-model> <!--3: Meeting robot-->
         <a-obj-model src="#kruis-obj" id="js--loopNaar120" class="js--place js--interact" position="-2 0.85 20"></a-obj-model> <!--4: door laten lopen naar 120-->
@@ -231,7 +241,12 @@
 
         <a-entity id="js--voice-afsluiting" sound="src: url(./sounds/VoiceAfsluiting.mp3); autoplay: false; positional: false; volume: 1.5"></a-entity>
 
-        <a-entity static gltf-model="#huis" position="-55 0.5 -5"></a-entity> 
+        <a-entity static gltf-model="#huis" position="-55 0.5 -5"></a-entity>
+        <a-entity static gltf-model="#stoel-gltf" scale="2 2 2" position="-48 3 3" rotation="0 90 0"></a-entity>
+        <a-entity static gltf-model="#stoel-gltf" scale="2 2 2" position="-48 3 8" rotation="0 90 0"></a-entity>
+        <a-entity static gltf-model="#bank-gltf" scale="1.75 1.75 1.75" position="-52 1.5 -16" rotation="0 0 0"></a-entity> 
+        <a-entity static gltf-model="#tafel-gltf" scale="4.5 4.5 4.5" position="-46 1.5 5" rotation="0 0 0"></a-entity> 
+
         <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="-30 0.5 -25"></a-obj-model>
         <a-obj-model src="#boom1-obj" mtl="#boom1-mtl" position="-30 0.5 25"></a-obj-model>
         <a-box src="#stoep" position = "-12 0 -5" width=8 height=2 depth="10" rotation="0 -90 0"></a-box>

@@ -59,7 +59,7 @@ window.onload = () =>{
         let speed = snelheid;
         
         if(afstand < 35){
-          att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 5 " + this.getAttribute('position').z;
+          att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 7 " + this.getAttribute('position').z;
           console.log(att.value);
           camera.setAttribute('animation', att.value);
           console.log(places[5]);
@@ -71,7 +71,6 @@ window.onload = () =>{
             robotPraat = document.getElementById("js--robot");
             robotPraat.components.sound.playSound();
           }, 3000);
-          
         }
 
         if(i == 3){         
@@ -267,9 +266,8 @@ window.onload = () =>{
 let tegelEen = document.getElementById("js--appear");
 let moeder = document.getElementById("js--appearMoeder")
 function eersteTegel(){
-  tegelEen.setAttribute("position", {x:"-65", y:"1.4", Z:"10"});
-  moeder.setAttribute("position", {x:"-55", y:"2", Z:"20"});
-  console.log("tegel is hier");
+  tegelEen.setAttribute("position", {x:"-60", y:"1.4", z:"-5"});
+  moeder.setAttribute("position", {x:"-55", y:"1", z:"3"});
 }
 
 const start = document.getElementById("js--menuStart");
@@ -278,6 +276,22 @@ function clickedStart(){
     verwijderMenu();
   });
 }
+
+const verken = document.getElementById("js--menuVerken");
+function clickedVerken(){ 
+  verken.addEventListener('click', function(evt){
+    camera.setAttribute("position", {x:"0", y:"125", z:"175"})
+  });
+}
+
+const startHoog = document.getElementById("js--StartHoog");
+function clickedStartHoog(){
+  startHoog.addEventListener('click', function(evt){
+    verwijderMenu();
+    camera.setAttribute("position", {x:"-70", y:"7", z:"8"})
+  });
+}
+
 
 // const verken = document.getElementById("js--menuVerken");
 // function clickedStart(){
@@ -305,5 +319,9 @@ function verwijderMenu(){
     //menu.setAttribute("position", {x:0, y:-50, z:0});//Dit werkt
   }, 1000);
 }
+
 clickedStart();
+clickedVerken();
+clickedStartHoog();
+
 };  
