@@ -107,7 +107,7 @@ function zet_in_mandje() {
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.11 -0.12 -0.17"></a-obj-model>';
               camera.innerHTML += hele_string;
-              inMandArr[3] = halve_string = ' scale="0.9 0.9 0.9" position="-1 2.45 0"></a-obj-model>';
+              inMandArr[3] = halve_string + ' scale="0.9 0.9 0.9" position="-1 2.45 0"></a-obj-model>';
               console.log(inMandArr);
               item_hold = 4;
               }
