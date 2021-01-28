@@ -24,6 +24,9 @@ window.onload = () =>{
   let aardbei = document.getElementById("js--aardbei");
   let citroen = document.getElementById("js--citroen");
   let melk = document.getElementById("js--melk");
+  let bloem_500g = document.getElementById("js--bloem_500g");
+  let bloem_1kg = document.getElementById("js--bloem_1kg");
+  let bloem_2kg = document.getElementById("js--bloem_2kg");
 
   var items_array = [
     [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" rotation="0 90 0"', 0.80, "banaan"],
@@ -32,7 +35,9 @@ window.onload = () =>{
     [peer, '<a-obj-model src="#peer-obj" mtl="#peer-mtl" rotation="0 0 0"', 1.00, "peer"],
     [aardbei, '<a-obj-model src="#aardbei-obj" mtl="#aardbei-mtl" rotation="0 0 0"', 0.30, "aardbei"],
     [citroen, '<a-obj-model src="#citroen-obj" mtl="#citroen-mtl" rotation="0 180 0"', 0.75, "citroen"],
-    [melk, '<a-box color="blue" width="1" height="1"', 1.25, "melk"]
+    [bloem_500g, '<a-obj-model src="#bloem_500g-obj" mtl="#bloem_500g-mtl" rotation="0 0 0"', 0.50, "bloem_500g"],
+    [bloem_1kg, '<a-obj-model src="#bloem_1kg-obj" mtl="#bloem_1kg-mtl" rotation="0 0 0"', 0.90, "bloem_1kg"],
+    [bloem_2kg, '<a-obj-model src="#bloem_2kg-obj" mtl="#bloem_2kg-mtl" rotation="0 0 0"', 1.10, "bloem_2kg"]
   ];
 
   var inMandArr = [];
