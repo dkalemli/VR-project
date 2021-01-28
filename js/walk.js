@@ -268,8 +268,7 @@ let tegelEen = document.getElementById("js--appear");
 let moeder = document.getElementById("js--appearMoeder")
 function eersteTegel(){
   tegelEen.setAttribute("position", {x:"-65", y:"1.4", Z:"10"});
-  moeder.setAttribute("position", {x:"-55", y:"2", Z:"20"});
-  console.log("tegel is hier");
+  moeder.setAttribute("position", {x:"-55", y:"1", Z:"3"});
 }
 
 const start = document.getElementById("js--menuStart");
