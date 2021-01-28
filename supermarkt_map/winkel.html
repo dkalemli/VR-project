@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="./winkel.js"></script>
+  <title>winkel</title>
+</head>
+<body>
+  <a-scene id="js--scene" physics>
+    <a-assets>
+
+      <a-asset-item id="kassa-obj" src="./blender/kassa.obj"></a-asset-item>
+      <a-asset-item id="kassa-mtl" src="./blender/kassa.mtl"></a-asset-item>
+
+      <a-asset-item id="schappen-obj" src="./blender/schappen.obj"></a-asset-item>
+      <a-asset-item id="schappen-mtl" src="./blender/schappen.mtl"></a-asset-item>
+
+      <!-- <a-asset-item id="winkelwagen-obj" src="./blender/winkelwagenV2.obj"></a-asset-item>
+      <a-asset-item id="winkelwagen-mtl" src="./blender/winkelwagenV2.mtl"></a-asset-item> -->
+
+      <a-asset-item id="mandje-obj" src="./blender/mandje.obj"></a-asset-item>
+      <a-asset-item id="mandje-mtl" src="./blender/mandje.mtl"></a-asset-item>
+
+      <a-asset-item id="banaan-obj" src="./blender/banaan.obj"></a-asset-item>
+      <a-asset-item id="banaan-mtl" src="./blender/banaan.mtl"></a-asset-item>
+
+      <a-asset-item id="appel-obj" src="./blender/appel.obj"></a-asset-item>
+      <a-asset-item id="appel-mtl" src="./blender/appel.mtl"></a-asset-item>
+
+      <a-asset-item id="sinaasappel-obj" src="./blender/sinaasappel.obj"></a-asset-item>
+      <a-asset-item id="sinaasappel-mtl" src="./blender/sinaasappel.mtl"></a-asset-item>
+
+      <a-asset-item id="peer-obj" src="./blender/peer.obj"></a-asset-item>
+      <a-asset-item id="peer-mtl" src="./blender/peer.mtl"></a-asset-item>
+
+      <a-asset-item id="aardbei-obj" src="./blender/aardbei.obj"></a-asset-item>
+      <a-asset-item id="aardbei-mtl" src="./blender/aardbei.mtl"></a-asset-item>
+
+      <a-asset-item id="citroen-obj" src="./blender/citroen.obj"></a-asset-item>
+      <a-asset-item id="citroen-mtl" src="./blender/citroen.mtl"></a-asset-item>
+
+      <a-asset-item id="bloem_500g-obj" src="./blender/bloem_500g.obj"></a-asset-item>
+      <a-asset-item id="bloem_500g-mtl" src="./blender/bloem_500g.mtl"></a-asset-item>
+
+      <a-asset-item id="bloem_1kg-obj" src="./blender/bloem_1kg.obj"></a-asset-item>
+      <a-asset-item id="bloem_1kg-mtl" src="./blender/bloem_1kg.mtl"></a-asset-item>
+
+      <a-asset-item id="bloem_2kg-obj" src="./blender/bloem_2kg.obj"></a-asset-item>
+      <a-asset-item id="bloem_2kg-mtl" src="./blender/bloem_2kg.mtl"></a-asset-item>
+
+      <a-asset-item id="geld" src="./blender/5euro.gltf"></a-asset-item>
+
+      <a-asset-item id="kruis-obj" src="./blender/kruis.obj"></a-asset-item>
+
+      <a-asset-item id="vrouw-1-obj" src="./blender/Jess_Casual_Walking_001.obj"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/woman-walking-7fdd3ab66966442db81cc8a7f4f741aa  -->
+      <!-- <a-asset-item id="cassiere" src="./blender/cassiere.gltf"></a-asset-item>BRON: sketchfab.com  -->
+
+
+
+      <img id="muur_texture" src="./textures/muur_texture.png">
+      <img id="grond_texture" src="./textures/grond_texture.png">
+      <img id="plafond_texture" src="./textures/plafond_texture.png">
+    </a-assets>
+
+
+
+<!--  ============================ camera ================================ -->
+    <a-camera id="js--camera" position="6 1.6 15" wasd-controls="acceleration:200">
+      <a-entity
+        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+        animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+        cursor = "fuse: true; fuseTimeout: 2000"
+        material = "color: black; shader: flat"
+        geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+        position = "0 0 -0.5"
+        raycaster = "objects: .js--interact; far: 30"
+      ></a-entity>
+
+      <!-- <a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.15 -0.24 -0.2" scale="0.1 0.1 0.1" rotation="0 108 5"></a-obj-model> -->
+
+      <!-- <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" scale="0.07 0.07 0.07" rotation="0 90 0" position="0.1 -0.15 -0.22"></a-obj-model>
+      <a-obj-model class="js--schapitem js--interact" src="#appel-obj" mtl="#appel-mtl" scale="0.06 0.06 0.06" rotation="0 180 0" position="0.1 -0.15 -0.18"></a-obj-model>
+      <a-obj-model class="js--schapitem js--interact" src="#sinaasappel-obj" mtl="#sinaasappel-mtl" scale="0.07 0.07 0.07" rotation="0 180 0" position="0.1 -0.11 -0.20"></a-obj-model> -->
+    </a-camera>
+
+
+
+
+<!--  ============================ gebouw / grond en muren ================================ -->
+    <a-plane static-body src="#grond_texture" rotation="-90 0 0" width="16" height="30" position="0 0 3">
+    </a-plane>
+
+    <a-plane static-body src="#muur_texture" rotation="0 0 0" width="16" height="3" position="0 1.5 -12"></a-plane>
+    <a-plane static-body src="#muur_texture" rotation="0 -90 0" width="30" height="3" position="8 1.5 3"></a-plane>
+    <a-plane static-body src="#muur_texture" rotation="0 90 0" width="30" height="3" position="-8 1.5 3"></a-plane>
+    <a-plane static-body src="#muur_texture" rotation="0 180 0" width="16" height="3" position="0 1.5 18"></a-plane>
+
+    <a-plane src="#plafond_texture" rotation="90 0 0" width="16" height="30" position="0 3 3"></a-plane>
+
+
+
+<!--  ============================ poorten ================================ -->
+    <a-box color="gray" position="7.5 1 12" width="1" height="2" depth="0.2"></a-box>
+
+    <a-box color="gray" position="2.75 1 12" width="4.5" height="2" depth="0.2"></a-box>
+
+    <a-box color="gray" position="0.5 1 13" width="0.2" height="2" depth="2"></a-box>
+
+    <!-- <a-box color="red" position="2.75 0.6 10" width="4.5" height="0.2" depth="0.2"></a-box> -->
+
+<!--  ============================ mandje ================================ -->
+    <a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="4 0 13" scale="0.35 0.35 0.35" rotation="0 180 0"></a-obj-model>
+
+
+<!--  ============================ schappen ================================ -->
+    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="7.95 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0">
+
+      <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--banaan" class="js--schapitem" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#5656dc" position="0 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--appel" class="js--schapitem" src="#appel-obj" mtl="#appel-mtl" position="0 0.4 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#5656dc" position="-6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--sinaasappel" class="js--schapitem" src="#sinaasappel-obj" mtl="#sinaasappel-mtl" position="0 0.5 0" scale="1 1.3 1.3" rotation="0 180 0"></a-obj-model>
+      </a-box>
+
+    </a-obj-model>
+
+
+
+
+
+
+    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="0 1.25 -11.95" scale="0.6 0.5 0.5" rotation="0 0 0"></a-obj-model>
+
+
+
+
+    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-7.75 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0">
+
+      <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--bloem_500g" class="js--schapitem" src="#bloem_500g-obj" mtl="#bloem_500g-mtl" position="0 0.4 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#5656dc" position="0 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--bloem_1kg" class="js--schapitem" src="#bloem_1kg-obj" mtl="#bloem_1kg-mtl" position="0 0.5 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#5656dc" position="-6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--bloem_2kg" class="js--schapitem" src="#bloem_2kg-obj" mtl="#bloem_2kg-mtl" position="0 0.7 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+      </a-box>
+
+    </a-obj-model>
+
+
+
+
+    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+
+
+
+    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
+    </a-obj-model>
+
+
+<!--  -->
+    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0">
+
+      <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--citroen" class="js--schapitem" src="#citroen-obj" mtl="#citroen-mtl" position="0 0.3 0" scale="1 1 0.7" rotation="0 90 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#5656dc" position="0 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--aardbei" class="js--schapitem" src="#aardbei-obj" mtl="#aardbei-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+      </a-box>
+
+      <a-box color="#5656dc" position="-6 0 1.1" width="1.5" height="0.21" depth="1.9">
+        <a-obj-model id="js--peer" class="js--schapitem" src="#peer-obj" mtl="#peer-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+      </a-box>
+
+    </a-obj-model>
+
+<!-- ============================= Klanten =================================-->
+
+<a-obj-model src="#vrouw-1-obj" material="src: ./blender/Jess_Casual_Walking_001_D.png" scale="0.0012 0.0012 0.0012" rotation="270 180 0"
+        animation="dur: 15000;
+        easing: linear;
+        from:5.3 0 16;
+        to:5.3 0 -10;
+        loop: true;
+        property:position"
+        position="5 1 0">
+        <a-obj-model src="#mandje-obj" mtl="#mandje-mtl" position="0 1 0" scale="0.25 0.25 0.25" rotation="180 180 0"></a-obj-model>
+</a-obj-model>
+
+<a-obj-model src="#vrouw-1-obj" material="src: ./blender/Jess_Casual_Walking_001_D.png" scale="0.0012 0.0012 0.0012" rotation="270 180 90"
+        position="-6 0 -7">
+        <a-obj-model src="#mandje-obj" mtl="#mandje-mtl" position="0 0 0" scale="0.25 0.25 0.25" rotation="180 180 0"></a-obj-model>
+</a-obj-model>
+
+
+<!--  ============================ kassa's ================================ -->
+    <a-obj-model id="js--pin-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-6 -.3 12" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
+    <a-obj-model class="js--interact" id="js--contant-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-2 -0.3 12" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
+
+<!-- ============================= Medewerker =================================-->
+<!-- <a-obj-model id="js--cassiere" position="-3 0.2 13" src="#cassiere"
+        position="-6 0 -7">
+</a-obj-model> -->
+<a-box class="js--cassiere" color="pink" width="0.5" depth="0.5" height="1.6" position="-3.3 0 13"></a-box>
+
+<!--  ============================ momevement boxes ================================ -->
+    <!-- <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="6 100 12" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model> -->
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="5.5 100 8.5" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="5.5 100 3.8" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="5.5 100 -1" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="5.5 100 -5.8" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="5 100 -10" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="0 100 -10" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="-5 100 -10" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="-5.5 100 8.5" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="-5.5 100 3.8" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="-5.5 100 -1" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="-5.5 100 -5.8" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="0 100 8.5" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="0 100 3.8" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="0 100 -1" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="0 100 -5.8" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model>
+
+
+
+    <a-sky color="skyblue"></a-sky>
+
+  </a-scene>
+</body>
+</html>
