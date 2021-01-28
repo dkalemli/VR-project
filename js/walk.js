@@ -59,7 +59,7 @@ window.onload = () =>{
         let speed = snelheid;
         
         if(afstand < 35){
-          att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 5 " + this.getAttribute('position').z;
+          att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 7 " + this.getAttribute('position').z;
           console.log(att.value);
           camera.setAttribute('animation', att.value);
           console.log(places[5]);
@@ -71,7 +71,6 @@ window.onload = () =>{
             robotPraat = document.getElementById("js--robot");
             robotPraat.components.sound.playSound();
           }, 3000);
-          
         }
 
         if(i == 3){         
