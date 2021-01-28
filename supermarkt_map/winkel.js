@@ -155,7 +155,7 @@ zet_in_mandje();
 
       if (process == 0){
         //let nummer = 3;
-        for(let i = 0; i < items_array.length; i++){
+        for(let i = 0; i < inMandArr.length; i++){
           //halve_string = geef_mini_item(schapitems[i]);
           //hele_string = halve_string + ' position="'+nummer+' 2.45 0" scale="0.9" ></a-obj-model>';
 
