@@ -96,6 +96,7 @@ function zet_in_mandje() {
               prijs_alle_items[0] = prijs;
               console.log(inMandArr);
               item_hold = 1;
+              schapitems[i].setAttribute('position', "0 0 100");
               }
 
             else if (item_hold == 1){
@@ -107,6 +108,7 @@ function zet_in_mandje() {
               prijs_alle_items[1] = prijs;
               console.log(inMandArr);
               item_hold = 2;
+              schapitems[i].setAttribute('position', "0 0 100");
               }
 
             else if (item_hold == 2){
@@ -118,6 +120,7 @@ function zet_in_mandje() {
               prijs_alle_items[2] = prijs;
               console.log(inMandArr);
               item_hold = 3;
+              schapitems[i].setAttribute('position', "0 0 100");
               }
 
             else if (item_hold == 3){
@@ -129,10 +132,11 @@ function zet_in_mandje() {
               prijs_alle_items[3] = prijs;
               console.log(inMandArr);
               item_hold = 4;
+              schapitems[i].setAttribute('position', "0 0 100");
               }
 
 
-              schapitems[i].setAttribute('position', "0 0 100"); //niet remove maar wegteleporteren, omdat removen de volgorde van de array kapot maakt
+              // schapitems[i].setAttribute('position', "0 0 100"); //niet remove maar wegteleporteren, omdat removen de volgorde van de array kapot maakt
             // this.remove();
           }
       });
@@ -170,7 +174,7 @@ zet_in_mandje();
     //totaalbedrag = totaalbedrag.toFixed(2);
     totaalbedrag = Math.round(totaalbedrag);
     console.log("Dat wordt dan " + totaalbedrag + " euro");
-    //cassiere.innerHTML = '<a-entity text= value: Dat wordt dan ' + totaalbedrag + ' euro; scale:1.5 1.5 1.5; position:1 1 1; rotation: 0 180 0;color: black></a-entity>'; 
+    //cassiere.innerHTML = '<a-entity text= value: Dat wordt dan ' + totaalbedrag + ' euro; scale:1.5 1.5 1.5; position:1 1 1; rotation: 0 180 0;color: black></a-entity>';
 
     if(totaalbedrag <= saldo){
       console.log("Je hebt betaald. Dankjewel en tot ziens!");
@@ -179,7 +183,7 @@ zet_in_mandje();
       }
     else if(totaalbedrag > saldo){
       console.log("Je hebt niet genoeg geld bij je");
-    } 
+    }
   }
 
   function opLoopBand(){
