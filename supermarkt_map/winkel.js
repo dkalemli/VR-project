@@ -32,6 +32,8 @@ window.onload = () =>{
     [citroen, '<a-obj-model src="#citroen-obj" mtl="#citroen-mtl" rotation="0 180 0"', 0.75, "citroen"],
     [melk, '<a-box color="blue" width="1" height="1"', 1.50, "melk"]
   ];
+  var inMandArr = [];
+
 
 
 
@@ -78,6 +80,8 @@ function zet_in_mandje() {
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.15 -0.22"></a-obj-model>';
               camera.innerHTML += hele_string;
+              inMandArr[0] = halve_string + ' scale="0.9 0.9 0.9" position="2 2.45 0"></a-obj-model>';
+              console.log(inMandArr);
               item_hold = 1;
               }
 
@@ -85,6 +89,8 @@ function zet_in_mandje() {
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.15 -0.18"></a-obj-model>';
               camera.innerHTML += hele_string;
+              inMandArr[1] = halve_string + ' scale="0.9 0.9 0.9" position="1 2.45 0"></a-obj-model>';
+              console.log(inMandArr);
               item_hold = 2;
               }
 
@@ -92,13 +98,17 @@ function zet_in_mandje() {
               let halve_string = geef_mini_item(schapitems[i]);
               let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.1 -0.11 -0.20"></a-obj-model>';
               camera.innerHTML += hele_string;
+              inMandArr[2] = halve_string + ' scale="0.9 0.9 0.9" position="0 2.45 0"></a-obj-model>';
+              console.log(inMandArr);
               item_hold = 3;
               }
 
             else if (item_hold == 3){
               let halve_string = geef_mini_item(schapitems[i]);
-              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.11 -0.11 -0.16"></a-obj-model>';
+              let hele_string = halve_string + ' scale="0.065 0.065 0.065" position="0.11 -0.12 -0.17"></a-obj-model>';
               camera.innerHTML += hele_string;
+              inMandArr[3] = halve_string = ' scale="0.9 0.9 0.9" position="-1 2.45 0"></a-obj-model>';
+              console.log(inMandArr);
               item_hold = 4;
               }
 
@@ -136,21 +146,26 @@ zet_in_mandje();
   // ======================================== AFREKENEN =================================
   function opLoopBand(){
     const bijKassa = document.getElementById("js--contant-kassa");
+
     bijKassa.addEventListener('click', function(evt){
+      camera.innerHTML = "";
+      camera.innerHTML = '<a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1" animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1" cursor = "fuse: true; fuseTimeout: 2000" material = "color: black; shader: flat" geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01" position = "0 0 -0.5" raycaster = "objects: .js--interact; far: 30"></a-entity>';
       console.log("Je bent bij de kassa aangekomen");
       //schapitems[i].setAttribute('position', "-2 1 12");
 
       if (process == 0){
-        let nummer = 3;
+        //let nummer = 3;
         for(let i = 0; i < items_array.length; i++){
-          halve_string = geef_mini_item(schapitems[i]);
-          hele_string = halve_string + ' position="'+nummer+' 2.45 0" scale="0.9" ></a-obj-model>';
+          //halve_string = geef_mini_item(schapitems[i]);
+          //hele_string = halve_string + ' position="'+nummer+' 2.45 0" scale="0.9" ></a-obj-model>';
+
           // camera.innerHTML += "'"+hele_string+"'";
-          bijKassa.innerHTML += hele_string; //<a-box color="red" width="0.8" position="'+ nummer+ ' 2 0"></a-box>';
-          nummer -= 1;
-          totaalbedrag = totaalbedrag + items_array[i][2];
-          console.log(items_array[i][3] + ": " + items_array[i][2]);
-          console.log(hele_string);
+          console.log("Op de band gaat: " + inMandArr[i]);
+          bijKassa.innerHTML += inMandArr[i]; //<a-box color="red" width="0.8" position="'+ nummer+ ' 2 0"></a-box>';
+          //nummer -= 1;
+          //totaalbedrag = totaalbedrag + items_array[i][2];
+          //console.log(items_array[i][3] + ": " + items_array[i][2]);
+          //console.log(hele_string);
         }
       }
       else{
