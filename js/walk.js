@@ -264,10 +264,8 @@ window.onload = () =>{
 //   });
 
 let tegelEen = document.getElementById("js--appear");
-let moeder = document.getElementById("js--appearMoeder")
 function eersteTegel(){
   tegelEen.setAttribute("position", {x:"-60", y:"1.4", z:"-5"});
-  moeder.setAttribute("position", {x:"-55", y:"1", z:"3"});
 }
 
 const start = document.getElementById("js--menuStart");
@@ -292,6 +290,14 @@ function clickedStartHoog(){
   });
 }
 
+
+// Klik op moeder om een boodschappenlijstje te krijgen
+let moeder = document.getElementById("js--moeder")
+function clickedMoeder(){
+  moeder.addEventListener('click', function(evt){
+    camera.setAttribute("position", {x:"-70", y:"7", z:"8"})
+  });
+}
 
 // const verken = document.getElementById("js--menuVerken");
 // function clickedStart(){
@@ -323,5 +329,6 @@ function verwijderMenu(){
 clickedStart();
 clickedVerken();
 clickedStartHoog();
+clickedMoeder()
 
 };  
