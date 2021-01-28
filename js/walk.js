@@ -267,8 +267,8 @@ window.onload = () =>{
 let tegelEen = document.getElementById("js--appear");
 let moeder = document.getElementById("js--appearMoeder")
 function eersteTegel(){
-  tegelEen.setAttribute("position", {x:"-65", y:"1.4", Z:"10"});
-  moeder.setAttribute("position", {x:"-55", y:"1", Z:"3"});
+  tegelEen.setAttribute("position", {x:"-65", y:"1.4", z:"10"});
+  moeder.setAttribute("position", {x:"-55", y:"1", z:"3"});
 }
 
 const start = document.getElementById("js--menuStart");
@@ -277,6 +277,14 @@ function clickedStart(){
     verwijderMenu();
   });
 }
+
+const verken = document.getElementById("js--menuVerken");
+function clickedVerken(){
+  verken.addEventListener('click', function(evt){
+    camera.setAttribute("position", {x:"0", y:"125", z:"175"})
+  });
+}
+
 
 // const verken = document.getElementById("js--menuVerken");
 // function clickedStart(){
@@ -304,5 +312,8 @@ function verwijderMenu(){
     //menu.setAttribute("position", {x:0, y:-50, z:0});//Dit werkt
   }, 1000);
 }
+
 clickedStart();
+clickedVerken();
+
 };  
