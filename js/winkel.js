@@ -3,6 +3,7 @@
   const loopband = document.getElementById('js--pin-kassa');
   const cassiere = document.getElementById("js--cassiere");
   let bijKassa = document.getElementById("js--contant-kassa");
+  const uitgang = document.getElementById("js--uitgang"); 
 
 
   let places = document.getElementsByClassName("js--place");
@@ -219,6 +220,7 @@ zet_in_mandje();
           cassiere.innerHTML = "";
           const robotPraat = document.getElementById("js--voice-naarUitgang");
           robotPraat.components.sound.playSound();
+          uitgang.setAttribute("class", "js--place js--interact");
         }, 2500);
       }
       else if(totaalbedrag > saldo){
