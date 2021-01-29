@@ -172,9 +172,9 @@ for (let i = 0; i < places.length; i++) {
 
     if(i == 12){
       setTimeout(function(){
-        voiceOversteken = document.getElementById("js--voice-oversteken");
-        console.log("Ik praat nu - robot zegt uitkijken");
+        let voiceOversteken = document.getElementById("js--voice-oversteken");
         voiceOversteken.components.sound.playSound();
+        console.log("oversteken");
       }, 3000);
     }
 
