@@ -18,6 +18,8 @@
   let totaalbedrag = 0;
   let saldo = 5.00;
 
+  let producten = document.getElementsByClassName("js--producten");
+
 
   let banaan = document.getElementById("js--banaan");
   let appel = document.getElementById("js--appel");
@@ -81,12 +83,34 @@
         for (var i = 0; i < places.length; i++) {
           places[i].setAttribute('position', places[i].getAttribute('position').x + " -0.03 " + places[i].getAttribute('position').z);
         }
-
+        productlijst = localStorage.getItem("productlijst");
+        console.log(productlijst);
+        convert_productlijst();
+        add_js_interact();
         this.remove();
       });
     }
   }
   pak_mandje();
+
+  // ======================================== js--interact toevoegen aan items =================================
+  function convert_productlijst() {
+    productlijst = productlijst.split(",");
+    console.log(productlijst);
+  }
+
+  function add_js_interact() {
+    for (var i = 0; i < productlijst.length; i++) {
+
+      for (var j = 0; j < items_array.length; j++) {
+        if (items_array[j][3] == productlijst[i]) {
+          items_array[j][0].classList.add("js--interact");
+          console.log(items_array[j][0]);
+          producten[i].setAttribute("value", items_array[j][3]);
+        }
+      }
+    }
+  }
 
 
 
