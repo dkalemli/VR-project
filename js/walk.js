@@ -9,25 +9,38 @@
     let scene = document.getElementById('js--scene');
 
     let weer;
+    let description;
     const sky = document.getElementById('js--AchtergrSound');
 
 
     //const apiURL = api.openweathermap.org/data/2.5/weather?q={Leiden}&appid={f436657e0412a098a9f7906c7dc0b3ff};
     function getWeather(){
-      fetch('http://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=f436657e0412a098a9f7906c7dc0b3ff')
+      fetch('http://api.openweathermap.org/data/2.5/weather?q=Leiden&appid=f436657e0412a098a9f7906c7dc0b3ff')
         .then(Response => Response.json())
         .then(data => weer = data.weather[0].main);
     }
     function setSky(){
-      console.log("Het weer is: " + weer);
+      console.log("Het weer is: " + weer);      
       if(weer == "Clouds"){
         sky.setAttribute("src", "#Clouds");
+        sky.setAttribute("position", "0 100 0");
+      }
+      else if(weer == "Thunderstorm"){
+        sky.setAttribute("src", "#Clouds");
+        sky.setAttribute("position", "0 100 0");
+      }
+      else if(weer == "Drizzle"){
+        sky.setAttribute("src", "#Clouds");
+        sky.setAttribute("position", "0 100 0");    
       }
       else if(weer == "Rain"){
-        sky.setAttribute("color", "blue");
+        sky.setAttribute("src", "#Clouds");
+        sky.setAttribute("position", "0 100 0");      
       }
       else if(weer == "Clear"){
         sky.setAttribute("src", "#Clear");
+        sky.setAttribute("rotation", "0 -180 -90");
+        sky.setAttribute("position", "0 0 0");
       }
       else{
         sky.setAttribute("src", "#lucht");
