@@ -8,10 +8,9 @@
   <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
   <title>HMD Supermarkt</title>
 </head>
-<body>
+<body onload="Uitleg();">
   <a-scene id="js--scene" physics>
     <a-assets>
-
       <a-asset-item id="kassa-obj" src="./blender/kassa.obj"></a-asset-item>
       <a-asset-item id="kassa-mtl" src="./blender/kassa.mtl"></a-asset-item>
 
@@ -66,7 +65,9 @@
 
       <a-asset-item id="vrouw-1-obj" src="./blender/Jess_Casual_Walking_001.obj"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/woman-walking-7fdd3ab66966442db81cc8a7f4f741aa  -->
       
-      <a-asset-item id="uitgang" src="./models/uitgang.gltf"></a-asset-item><!--Gemaakt door: Max Osewoudt-->
+      <a-asset-item id="uitgang" class="js--place js--interact" src="./models/uitgang.gltf"></a-asset-item><!--Gemaakt door: Max Osewoudt-->
+
+      <a-asset-item id="menu-voorlezen" src="./models/UitlegHH.gltf"></a-asset-item>
 
 
 
@@ -266,12 +267,14 @@
     <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="0 100 -5.8" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model> -->
 
 
-
+    
     <a-sky color="skyblue"></a-sky>
 
     <!--################################# ROBOTSTEM ###################################-->
     <a-entity id="js--voice-naarUitgang" sound="src: url(./sounds/VoicenaarUitgang.mp3); autoplay: false; positional: false; volume: 1.5"></a-entity> 
-
+    <a-entity id="js--voice-smUitleg1" sound="src: url(./sounds/VoiceuitlegWinkel1.mp3); autoplay: true; positional: false; volume: 1.5"></a-entity> 
+    <a-entity id="js--voice-smUitleg2" sound="src: url(./sounds/VoiceuitlegWinkel2.mp3); autoplay: false; positional: false; volume: 1.5"></a-entity> 
+    <a-entity id="js--voice-afsluiting" sound="src: url(./sounds/VoiceAfsluiting.mp3); autoplay: false; positional: false; volume: 1.5"></a-entity>
 
   </a-scene>
   <script src="./js/winkel.js"></script>

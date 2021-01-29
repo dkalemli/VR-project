@@ -51,6 +51,15 @@
   var inMandArr = [];
   var prijs_alle_items = [];
 
+  // ======================================= Uitleg ====================================
+  function Uitleg(){
+    setTimeout(function(){
+      const robotPraatWinkeluitleg1 = document.getElementById("js--voice-smUitleg1");
+      robotPraatWinkeluitleg1.components.sound.playSound();
+    }, 1000);
+  };
+  
+
 
 
   // ======================================== mandje pakken =================================
@@ -60,6 +69,11 @@
         if (mandje_hold == null) {
           // camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.5 -1 -1" scale="0.4 0.4 0.4" rotation="0 110 10"></a-obj-model>';
           camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.15 -0.24 -0.2" scale="0.1 0.1 0.1" rotation="0 108 5"></a-obj-model>';
+          setTimeout(function(){
+            const robotPraatWinkeluitleg2 = document.getElementById("js--voice-smUitleg2");
+            robotPraatWinkeluitleg2.components.sound.playSound();
+          }, 1500);
+          
           mandje_hold = 1;
           // banaan.classList.add("js--interact");
         }
@@ -72,7 +86,6 @@
       });
     }
   }
-
   pak_mandje();
 
 
@@ -201,10 +214,16 @@ zet_in_mandje();
         setTimeout(function(){
           bijKassa.innerHTML = "";
           cassiere.innerHTML = "";
-          const robotPraat = document.getElementById("js--voice-naarUitgang");
-          robotPraat.components.sound.playSound();
-          uitgang.setAttribute("class", "js--place js--interact");
+          const robotPraatbetaald = document.getElementById("js--voice-naarUitgang");
+          robotPraatbetaald.components.sound.playSound();
         }, 2500);
+        bijuitgang.addEventListener('click', function(evt){
+          setTimeout(function(){
+            const robotPraatAfsluiting = document.getElementById("js--voice-afsluiting");
+            robotPraatAfsluiting.components.sound.playSound();
+          },3000);
+        });
+
       }
       else if(totaalbedrag > saldo){
         console.log("Je hebt niet genoeg geld bij je");
@@ -234,5 +253,14 @@ zet_in_mandje();
       }
     });
   }
+
+  function herhaalUitleg(){
+    herhaalButton = document.getElementById("js--herhaalButton");
+    herhaalButton.addEventListener('click', function(evt){
+      const robotPraatAfsluiting = document.getElementById("js--voice-smUitleg2");
+      robotPraatAfsluiting.components.sound.playSound();
+    });
+  }
+  herhaalUitleg();
   opLoopBand();
 
