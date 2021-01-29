@@ -7,6 +7,39 @@
   
     const placeholders = document.getElementsByClassName('js--placeholder');
     let scene = document.getElementById('js--scene');
+
+    let weer;
+    const sky = document.getElementById('js--AchtergrSound');
+
+
+    //const apiURL = api.openweathermap.org/data/2.5/weather?q={Leiden}&appid={f436657e0412a098a9f7906c7dc0b3ff};
+    function getWeather(){
+      fetch('http://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=f436657e0412a098a9f7906c7dc0b3ff')
+        .then(Response => Response.json())
+        .then(data => weer = data.weather[0].main);
+    }
+    function setSky(){
+      console.log("Het weer is: " + weer);
+      if(weer == "Clouds"){
+        sky.setAttribute("src", "#Clouds");
+      }
+      else if(weer == "Rain"){
+        sky.setAttribute("color", "blue");
+      }
+      else if(weer == "Clear"){
+        sky.setAttribute("src", "#Clear");
+      }
+      else{
+        sky.setAttribute("src", "#lucht");
+      }
+    }
+    getWeather();
+    
+    setTimeout(function(){
+      setSky();
+    }, 5000);
+    
+
   
     function addListeners() {
       for (let i = 0; i < pickups.length; i++) {
