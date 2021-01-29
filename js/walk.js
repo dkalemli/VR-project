@@ -148,7 +148,7 @@
         if(i == 7){
           console.log("ik ben bij het stoplicht.");
           setTimeout(function(){
-            voiceStoplicht = document.getElementById("js--voice-stoplicht");
+            let voiceStoplicht = document.getElementById("js--voice-stoplicht");
             voiceStoplicht.components.sound.playSound();
           }, 2000);
           opGroen();
@@ -172,7 +172,7 @@
 
         if(i == 12){
           setTimeout(function(){
-            voiceOversteken = document.getElementById("js--voice-oversteken");
+            let voiceOversteken = document.getElementById("js--voice-oversteken");
             console.log("praten");
             voiceOversteken.components.sound.playSound();
           }, 3000);
@@ -393,8 +393,8 @@ function clickedMoeder(){
       producten[i].setAttribute("value", gekozenProducten[i]);
     }
 
-    bedrag.setAttribute("position", {x:"3.75", y:"2.25", z:"-3"});
-    productTitel.setAttribute("position", {x:"3.75", y:"2", z:"-3"});
+    bedrag.setAttribute("position", {x:"2", y:"2.25", z:"-3"});
+    productTitel.setAttribute("position", {x:"2", y:"2", z:"-3"});
 
   });
 }
