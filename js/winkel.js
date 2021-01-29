@@ -1,4 +1,3 @@
-window.onload = () =>{
   const scene = document.getElementById('js--scene');
   const camera = document.getElementById('js--camera');
   const loopband = document.getElementById('js--pin-kassa');
@@ -203,7 +202,7 @@ zet_in_mandje();
     //totaalbedrag = totaalbedrag.toFixed(2);
     totaalbedrag = Math.round(totaalbedrag);
     console.log("Dat wordt dan " + totaalbedrag + " euro");
-    //cassiere.innerHTML = '<a-entity text= value: Dat wordt dan ' + totaalbedrag + ' euro; scale:1.5 1.5 1.5; position:1 1 1; rotation: 0 180 0;color: black></a-entity>';
+    //cassiere.innerHTML = '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Goedemiddag, dat wordt dan' + totaalBerekenen + ' euro alstublieft."></a-text>';
 
     if(totaalbedrag <= saldo){
       console.log("Je hebt betaald. Dankjewel en tot ziens!");
@@ -223,13 +222,15 @@ zet_in_mandje();
       camera.innerHTML = "";
       camera.innerHTML += '<a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1" animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1" cursor = "fuse: true; fuseTimeout: 2000" material = "color: black; shader: flat" geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01" position = "0 0 -0.5" raycaster = "objects: .js--interact; far: 30"></a-entity> '; //
       //camera.innerHTML += '<a-entity static gltf-model = "./blender/5euro.gltf"></a-entity> ';
-      camera.innerHTML += '<a-box color="red" position="0 -0.1 0"></a-box>  position="0 -0.1 0"></a-entity> ';
+      //camera.innerHTML += '<a-box color="red" position="0 -0.1 0"></a-box>  position="0 -0.1 0"></a-entity> ';
       console.log(camera.innerHTML);
       if (process == 0){
         for(let i = 0; i < inMandArr.length; i++){
           bijKassa.innerHTML += inMandArr[i];
         }
-        totaalBerekenen();
+        setTimeout(function(){
+          totaalBerekenen();
+        }, 3000);
         process = 1;
       }
       else{
@@ -238,4 +239,4 @@ zet_in_mandje();
     });
   }
   opLoopBand();
-};
+
