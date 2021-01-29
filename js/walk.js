@@ -110,7 +110,7 @@
           console.log(places[5]);
         }
 
-        if(i == 2){
+        if(i == 1){
           setTimeout(function(){
             robotKennismaking();
             robotPraat = document.getElementById("js--robot");
@@ -118,7 +118,7 @@
           }, 3000);
         }
 
-        if(i == 3){
+        if(i == 2){
           skySound = document.getElementById("js--AchtergrSound");
           skySound.components.sound.playSound();
           robotPraat.components.sound.stopSound();
@@ -129,7 +129,7 @@
           }, 2000);
         }
 
-        if(i == 4){
+        if(i == 3){
           if(afstand < 35){
             att.valueTegel4 = "property: position; dur: " + 10000 + "; easing: linear; to: -2 5 120";
             console.log(att.valueTegel4);
@@ -137,7 +137,7 @@
           }
         }
 
-        if(i == 6){
+        if(i == 5){
           if(afstand < 35){
             att.valueTegel4 = "property: position; dur: " + 12000 + "; easing: linear; to: -2 5 285";
             console.log(att.valueTegel4);
@@ -145,7 +145,7 @@
           }
         }
 
-        if(i == 8){
+        if(i == 7){
           console.log("ik ben bij het stoplicht.");
           setTimeout(function(){
             voiceStoplicht = document.getElementById("js--voice-stoplicht");
@@ -154,7 +154,7 @@
           opGroen();
         }
 
-        if(i == 10){
+        if(i == 9){
           if(afstand < 35){
             att.valueTegel4 = "property: position; dur: " + 14000 + "; easing: linear; to: -2 5 415";
             console.log(att.valueTegel4);
@@ -162,7 +162,7 @@
           }
         }
 
-        if(i == 12){
+        if(i == 11){
           if(afstand < 35){
             att.valueTegel4 = "property: position; dur: " + 8000 + "; easing: linear; to: -2 5 460";
             console.log(att.valueTegel4);
@@ -170,7 +170,7 @@
           }
         }
 
-        if(i == 13){
+        if(i == 12){
           setTimeout(function(){
             voiceOversteken = document.getElementById("js--voice-oversteken");
             console.log("praten");
@@ -178,7 +178,7 @@
           }, 3000);
         }
 
-        if(i == 14){
+        if(i == 13){
           console.log("ik ga nu oversteken.");
           zebrapad();
           zebrapadB();
@@ -186,7 +186,7 @@
           zebrapadD();
         }
 
-        if(i == 15){
+        if(i == 14){
           setTimeout(function(){
             voiceAangekomen = document.getElementById("js--voice-aangekomen");
             voiceAangekomen.components.sound.playSound();
