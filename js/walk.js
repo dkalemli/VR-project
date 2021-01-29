@@ -22,19 +22,19 @@
       console.log("Het weer is: " + weer);
       if(weer == "Clouds"){
         sky.setAttribute("src", "#Clouds");
-        sky.setAttribute("position", "0 100 0");
+        sky.setAttribute("position", "0 100 100");
       }
       else if(weer == "Thunderstorm"){
         sky.setAttribute("src", "#Clouds");
-        sky.setAttribute("position", "0 100 0");
+        sky.setAttribute("position", "0 100 100");
       }
       else if(weer == "Drizzle"){
         sky.setAttribute("src", "#Clouds");
-        sky.setAttribute("position", "0 100 0");
+        sky.setAttribute("position", "0 100 100");
       }
       else if(weer == "Rain"){
         sky.setAttribute("src", "#Clouds");
-        sky.setAttribute("position", "0 100 0");
+        sky.setAttribute("position", "0 100 100");
       }
       else if(weer == "Clear"){
         sky.setAttribute("src", "#Clear");

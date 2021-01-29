@@ -223,10 +223,12 @@ zet_in_mandje();
     totaalbedrag = totaalbedrag.toFixed(2);
     //totaalbedrag = Math.round(totaalbedrag);
     console.log("Dat wordt dan " + totaalbedrag + " euro");
-    cassiere.innerHTML = '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Goedemiddag, dat wordt dan ' + totaalbedrag + ' euro alstublieft."></a-text>';
+    cassiere.innerHTML = '<a-text class="js--menu" width="2" height="2" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 0.1 0" rotation="0 110 0" value="Goedemiddag, dat wordt dan ' + totaalbedrag + ' euro alstublieft."></a-text>';
+    let cassierePraat = document.getElementById("js--voice-betalen");
+    cassierePraat.components.sound.playSound();
     setTimeout(function(){
       cassiere.innerHTML = "";
-      cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="door een paar seconden naar mij te kijken kun je het geld aan mij geven."></a-text>';
+      cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 0.1 0" rotation="0 110 0" value="door een paar seconden naar mij te kijken kun je het geld aan mij geven."></a-text>';
     }, 3000);
     cassiere.addEventListener('click', function(evt){
       if(totaalbedrag <= saldo){
