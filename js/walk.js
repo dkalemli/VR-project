@@ -184,14 +184,18 @@
           zebrapadB();
           zebrapadC();
           zebrapadD();
-        }
-
-        if(i == 14){
           setTimeout(function(){
             voiceAangekomen = document.getElementById("js--voice-aangekomen");
             voiceAangekomen.components.sound.playSound();
           }, 1000);
         }
+
+        // if(i == 14){
+        //   setTimeout(function(){
+        //     voiceAangekomen = document.getElementById("js--voice-aangekomen");
+        //     voiceAangekomen.components.sound.playSound();
+        //   }, 1000);
+        // }
 
         // console.log(this.getAttribute('position').x, this.getAttribute('position').z, camera.getAttribute("position").x, camera.getAttribute("position").z);
       });

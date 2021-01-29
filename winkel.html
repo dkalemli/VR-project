@@ -20,6 +20,9 @@
       <!-- <a-asset-item id="winkelwagen-obj" src="./blender/winkelwagenV2.obj"></a-asset-item>
       <a-asset-item id="winkelwagen-mtl" src="./blender/winkelwagenV2.mtl"></a-asset-item> -->
 
+      <a-asset-item id="cassiere-obj" src="./models/cassiere.obj"></a-asset-item>
+      <a-asset-item id="cassiere-mtl" src="./models/cassiere.mtl"></a-asset-item>
+
       <a-asset-item id="mandje-obj" src="./blender/mandje.obj"></a-asset-item>
       <a-asset-item id="mandje-mtl" src="./blender/mandje.mtl"></a-asset-item>
 
@@ -64,15 +67,12 @@
       <a-asset-item id="kruis-obj" src="./blender/kruis.obj"></a-asset-item>
 
       <a-asset-item id="vrouw-1-obj" src="./blender/Jess_Casual_Walking_001.obj"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/woman-walking-7fdd3ab66966442db81cc8a7f4f741aa  -->
-<<<<<<< HEAD
 
-      <a-asset-item id="uitgang" src="./models/uitgang.gltf"></a-asset-item><!--Gemaakt door: Max Osewoudt-->
-=======
       
-      <a-asset-item id="uitgang" class="js--place js--interact" src="./models/uitgang.gltf"></a-asset-item><!--Gemaakt door: Max Osewoudt-->
+      <a-asset-item id="uitgang" src="./models/uitgang.gltf"></a-asset-item><!--Gemaakt door: Max Osewoudt-->
 
-      <a-asset-item id="menu-voorlezen" src="./models/UitlegHH.gltf"></a-asset-item>
->>>>>>> smUitleg
+      <a-asset-item id="uitleg-voorlezen" src="./models/UitlegHH.gltf"></a-asset-item>
+
 
 
 
@@ -117,7 +117,7 @@
 
     <a-plane src="#plafond_texture" rotation="90 0 0" width="16" height="30" position="0 3 3"></a-plane>
 
-    <a-entity static gltf-model="#uitgang" id="js--uitgang" position="-2 0 18" rotation="0 90 0" scale="0.4 .4 .4"></a-entity>
+    <a-entity static gltf-model="#uitgang" id="js--uitgang" class="js--place js--interact" position="-2 0 18" rotation="0 90 0" scale="0.4 .4 .4"></a-entity>
 
 
 
@@ -245,10 +245,9 @@
     <a-obj-model class="js--interact" id="js--contant-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-2 -0.3 12" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
 
 <!-- ============================= Medewerker =================================-->
-<!-- <a-obj-model id="js--cassiere" position="-3 0.2 13" src="#cassiere"
-        position="-6 0 -7">
-</a-obj-model> -->
-<a-box id="js--cassiere" class="js--interact" color="pink" width="0.5" depth="0.5" height="1.6" position="-3.3 0 13"></a-box>
+<a-obj-model id="js--cassiere" src="#cassiere-obj" mtl="#cassiere-mtl" #position="-3 0.2 13" position="-3 0 13" scale="0.03 0.03 0.03" rotation="0 100 0">
+</a-obj-model> 
+<!-- <a-box id="js--cassiere" class="js--interact" color="pink" width="0.5" depth="0.5" height="1.6" position="-3.3 0 13"></a-box> -->
 
 <!--  ============================ momevement boxes ================================ -->
     <!-- <a-obj-model class="js--place js--interact" src="#kruis-obj" color="red" position="6 100 12" scale="0.4 0.2 0.4" rotation="0 0 0"></a-obj-model> -->
@@ -280,6 +279,8 @@
     <a-entity id="js--voice-smUitleg1" sound="src: url(./sounds/VoiceuitlegWinkel1.mp3); autoplay: true; positional: false; volume: 1.5"></a-entity> 
     <a-entity id="js--voice-smUitleg2" sound="src: url(./sounds/VoiceuitlegWinkel2.mp3); autoplay: false; positional: false; volume: 1.5"></a-entity> 
     <a-entity id="js--voice-afsluiting" sound="src: url(./sounds/VoiceAfsluiting.mp3); autoplay: false; positional: false; volume: 1.5"></a-entity>
+    <a-entity static gltf-model="#uitleg-voorlezen" class="js--interact" position="4.5 1.5 13" id="js--herhaalButton" rotation="0 270 0" scale="0.08 0.08 0.08"></a-entity>
+
 
   </a-scene>
   <script src="./js/winkel.js"></script>

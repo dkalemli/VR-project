@@ -3,7 +3,7 @@
   const loopband = document.getElementById('js--pin-kassa');
   const cassiere = document.getElementById("js--cassiere");
   let bijKassa = document.getElementById("js--contant-kassa");
-  const uitgang = document.getElementById("js--uitgang");
+  const uitgang = document.getElementById("js--uitgang"); 
 
 
   let places = document.getElementsByClassName("js--place");
@@ -17,8 +17,6 @@
 
   let totaalbedrag = 0;
   let saldo = 5.00;
-
-  var productlijst = null;
 
 
   let banaan = document.getElementById("js--banaan");
@@ -84,35 +82,11 @@
           places[i].setAttribute('position', places[i].getAttribute('position').x + " -0.03 " + places[i].getAttribute('position').z);
         }
 
-        productlijst = localStorage.getItem("productlijst");
-        console.log(productlijst);
-        convert_productlijst();
-        add_js_interact();
-
         this.remove();
       });
     }
   }
   pak_mandje();
-
-
-// ======================================== js--interact toevoegen aan items =================================
-  function convert_productlijst() {
-    productlijst = productlijst.split(",");
-    console.log(productlijst);
-  }
-
-  function add_js_interact() {
-    for (var i = 0; i < productlijst.length; i++) {
-
-      for (var j = 0; j < items_array.length; j++) {
-        if (items_array[j][3] == productlijst[i]) {
-          items_array[j][0].classList.add("js--interact");
-          console.log(items_array[j][0]);
-        }
-      }
-    }
-  }
 
 
 
@@ -243,7 +217,8 @@ zet_in_mandje();
           const robotPraatbetaald = document.getElementById("js--voice-naarUitgang");
           robotPraatbetaald.components.sound.playSound();
         }, 2500);
-        bijuitgang.addEventListener('click', function(evt){
+    
+        uitgang.addEventListener('click', function(evt){
           setTimeout(function(){
             const robotPraatAfsluiting = document.getElementById("js--voice-afsluiting");
             robotPraatAfsluiting.components.sound.playSound();
@@ -256,7 +231,7 @@ zet_in_mandje();
       }
     });
   }
-
+  
 
   function opLoopBand(){
     bijKassa.addEventListener('click', function(evt){
@@ -289,3 +264,4 @@ zet_in_mandje();
   }
   herhaalUitleg();
   opLoopBand();
+
