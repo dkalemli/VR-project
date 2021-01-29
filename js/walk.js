@@ -1,10 +1,9 @@
-
     const places = document.getElementsByClassName('js--place');
     const camera = document.getElementById('js--camera');
-  
+
     let pickups = document.getElementsByClassName('js--pickup');
     let hold = null;
-  
+
     const placeholders = document.getElementsByClassName('js--placeholder');
     let scene = document.getElementById('js--scene');
 
@@ -20,7 +19,7 @@
         .then(data => weer = data.weather[0].main);
     }
     function setSky(){
-      console.log("Het weer is: " + weer);      
+      console.log("Het weer is: " + weer);
       if(weer == "Clouds"){
         sky.setAttribute("src", "#Clouds");
         sky.setAttribute("position", "0 100 0");
@@ -31,11 +30,11 @@
       }
       else if(weer == "Drizzle"){
         sky.setAttribute("src", "#Clouds");
-        sky.setAttribute("position", "0 100 0");    
+        sky.setAttribute("position", "0 100 0");
       }
       else if(weer == "Rain"){
         sky.setAttribute("src", "#Clouds");
-        sky.setAttribute("position", "0 100 0");      
+        sky.setAttribute("position", "0 100 0");
       }
       else if(weer == "Clear"){
         sky.setAttribute("src", "#Clear");
@@ -47,13 +46,13 @@
       }
     }
     getWeather();
-    
+
     setTimeout(function(){
       setSky();
     }, 5000);
-    
 
-  
+
+
     function addListeners() {
       for (let i = 0; i < pickups.length; i++) {
         pickups[i].addEventListener('click', function(evt){
@@ -66,9 +65,9 @@
         });
       }
     }
-  
+
     addListeners();
-  
+
     for (let i = 0; i < placeholders.length; i++) {
       placeholders[i].addEventListener('click', function(evt){
         if (hold == "box"){
@@ -84,7 +83,7 @@
         }
       });
     }
-  
+
     // for (let i = 0; i < places.length; i++) {
     //   places[i].addEventListener('click', function(evt){
     //     let att = document.createAttribute("animation");
@@ -97,13 +96,13 @@
     for (let i = 0; i < places.length; i++) {
       places[i].addEventListener('click', function(evt){
         let att = document.createAttribute("animation");
-  
+
         var afstand = Math.sqrt(Math.pow((this.getAttribute('position').x - camera.getAttribute("position").x), 2) + Math.pow((this.getAttribute('position').z - camera.getAttribute("position").z), 2));
         console.log(afstand);
-  
+
         const snelheid = 125 * afstand;
         let speed = snelheid;
-        
+
         if(afstand < 35){
           att.value = "property: position; dur: " + speed + "; easing: linear; to: " + this.getAttribute('position').x + " 7 " + this.getAttribute('position').z;
           console.log(att.value);
@@ -119,7 +118,7 @@
           }, 3000);
         }
 
-        if(i == 3){         
+        if(i == 3){
           skySound = document.getElementById("js--AchtergrSound");
           skySound.components.sound.playSound();
           robotPraat.components.sound.stopSound();
@@ -193,14 +192,14 @@
             voiceAangekomen.components.sound.playSound();
           }, 1000);
         }
-  
+
         // console.log(this.getAttribute('position').x, this.getAttribute('position').z, camera.getAttribute("position").x, camera.getAttribute("position").z);
       });
     }
 
   function robotKennismaking(){
-    
-  }  
+
+  }
   function robotInBeeld(){
     console.log("Robot is ontzichtbaar");
     //camera.innerHTML += '<a-obj-model src="./models/Robot.obj" mtl="./models/Robot.mtl" position="5 -3 -8" rotation="0 270 0"></a-obj-model>';
@@ -216,7 +215,7 @@
   }
 
   uitlegVoorlezen();
-  
+
 
   //let stoplicht = document.getElementById("js--stoplicht");
   let rood = document.getElementById("js--stoplicht_rood");
@@ -228,7 +227,7 @@
   function opGroen(){
       setTimeout(function(){
           rood.setAttribute('color', "black");
-          groen.setAttribute('color', "green");  
+          groen.setAttribute('color', "green");
           //Robot verschijnt aan overkant
           let cylinder = document.getElementById("Cylinder");
           //cylinder.setAttribute("class", "js--place js--interact");
@@ -320,7 +319,7 @@ function clickedStart(){
 }
 
 const verken = document.getElementById("js--menuVerken");
-function clickedVerken(){ 
+function clickedVerken(){
   verken.addEventListener('click', function(evt){
     camera.setAttribute("position", {x:"0", y:"125", z:"175"})
   });
@@ -339,7 +338,7 @@ function clickedStartHoog(){
 // function clickedStart(){
 //   verken.addEventListener('click', function(evt){
 //     verwijderMenu();
-//     camera.setAttribute("position", "0 100 0");	
+//     camera.setAttribute("position", "0 100 0");
 //     let menuSound = document.getElementById("js--menuSound");
 //     menuSound.components.sound.stopSound();
 //   });
@@ -371,7 +370,7 @@ function clickedMoeder(){
   moeder.addEventListener('click', function(evt){
     let nummer = 12;
     let gekozenProducten = [];
-    
+
     for (i = 0; i < producten.length; i++) {
       let productNummer = Math.floor(Math.random() * nummer) + 1;
       gekozenProducten.push(boodschappenlijst[productNummer]);
@@ -381,6 +380,10 @@ function clickedMoeder(){
 
       nummer -= 1;
     }
+
+    /////////////////////
+    geef_lijst_door(gekozenProducten);
+    /////////////////////
 
     for (i = 0; i < producten.length; i++) {
       producten[i].setAttribute("value", gekozenProducten[i]);
@@ -392,7 +395,14 @@ function clickedMoeder(){
   });
 }
 
+
 clickedStart();
 clickedVerken();
 clickedStartHoog();
 clickedMoeder();
+
+
+
+function geef_lijst_door(producten) {
+  localStorage.setItem('productlijst', producten);
+}
