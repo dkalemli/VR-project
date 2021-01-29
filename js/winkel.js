@@ -29,6 +29,9 @@ window.onload = () =>{
   let bloem_500g = document.getElementById("js--bloem_500g");
   let bloem_1kg = document.getElementById("js--bloem_1kg");
   let bloem_2kg = document.getElementById("js--bloem_2kg");
+  let cola_500mL = document.getElementById("js--cola_500mL");
+  let cola_1L = document.getElementById("js--cola_1L");
+  let cola_2L = document.getElementById("js--cola_2L");
 
   var items_array = [
     [banaan, '<a-obj-model src="#banaan-obj" mtl="#banaan-mtl" rotation="0 -90 0"', 0.80, "banaan"],
@@ -39,7 +42,10 @@ window.onload = () =>{
     [citroen, '<a-obj-model src="#citroen-obj" mtl="#citroen-mtl" rotation="0 180 0"', 0.75, "citroen"],
     [bloem_500g, '<a-obj-model src="#bloem_500g-obj" mtl="#bloem_500g-mtl" rotation="0 0 0"', 0.50, "bloem_500g"],
     [bloem_1kg, '<a-obj-model src="#bloem_1kg-obj" mtl="#bloem_1kg-mtl" rotation="0 0 0"', 0.90, "bloem_1kg"],
-    [bloem_2kg, '<a-obj-model src="#bloem_2kg-obj" mtl="#bloem_2kg-mtl" rotation="0 0 0"', 1.10, "bloem_2kg"]
+    [bloem_2kg, '<a-obj-model src="#bloem_2kg-obj" mtl="#bloem_2kg-mtl" rotation="0 0 0"', 1.10, "bloem_2kg"],
+    [cola_500mL, '<a-obj-model src="#cola_500mL-obj" mtl="#cola_500mL-mtl" rotation="0 0 0"', 0.75, "cola_500mL"],
+    [cola_1L, '<a-obj-model src="#cola_1L-obj" mtl="#cola_1L-mtl" rotation="0 0 0"', 1.00, "cola_1L"],
+    [cola_2L, '<a-obj-model src="#cola_2L-obj" mtl="#cola_2L-mtl" rotation="0 0 0"', 1.25, "cola_2L"]
   ];
 
   var inMandArr = [];
@@ -55,6 +61,7 @@ window.onload = () =>{
           // camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.5 -1 -1" scale="0.4 0.4 0.4" rotation="0 110 10"></a-obj-model>';
           camera.innerHTML += '<a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.15 -0.24 -0.2" scale="0.1 0.1 0.1" rotation="0 108 5"></a-obj-model>';
           mandje_hold = 1;
+          // banaan.classList.add("js--interact");
         }
 
         for (var i = 0; i < places.length; i++) {
@@ -170,30 +177,6 @@ zet_in_mandje();
     });
   }
 
-  // ======================================== API =================================
-  AFRAME.registerComponent("lemon", {
-    init: function() {
-
-        const planeet = document.getElementById("planeet");
-        const BASE_URL = "https://fruityvice.com/api/fruit/";
-
-        this.planeet = function() {
-            //let randomNum = Math.floor(Math.random() * 27) + 1;
-            const BanaanID = 27;
-            fetch(BASE_URL + BanaanID)
-            .then(response => response.json())
-            .then(data => planeet.setAttribute("value", data.name));
-        }
-        this.el.addEventListener("mouseenter", this.planeet);
-    },
-    update: function() {
-        this.planeet();
-    },
-    tick: function() {},
-    remove: function() {},
-    pause: function() {},
-    play: function() {}
-  });
 
   // ======================================== AFREKENEN =================================
   function totaalBerekenen(){

@@ -51,6 +51,15 @@
       <a-asset-item id="bloem_2kg-obj" src="./blender/bloem_2kg.obj"></a-asset-item>
       <a-asset-item id="bloem_2kg-mtl" src="./blender/bloem_2kg.mtl"></a-asset-item>
 
+      <a-asset-item id="cola_500mL-obj" src="./blender/cola_500mL.obj"></a-asset-item>
+      <a-asset-item id="cola_500mL-mtl" src="./blender/cola_500mL.mtl"></a-asset-item>
+
+      <a-asset-item id="cola_1L-obj" src="./blender/cola_1L.obj"></a-asset-item>
+      <a-asset-item id="cola_1L-mtl" src="./blender/cola_1L.mtl"></a-asset-item>
+
+      <a-asset-item id="cola_2L-obj" src="./blender/cola_2L.obj"></a-asset-item>
+      <a-asset-item id="cola_2L-mtl" src="./blender/cola_2L.mtl"></a-asset-item>
+
       <a-asset-item id="geld" src="./blender/5euro.gltf"></a-asset-item>
 
       <a-asset-item id="kruis-obj" src="./blender/kruis.obj"></a-asset-item>
@@ -117,7 +126,7 @@
 
 
 <!--  ============================ schappen ================================ -->
-    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="7.95 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0">
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="7.95 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0">
 
       <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
         <a-obj-model id="js--banaan" class="js--schapitem" src="#banaan-obj" mtl="#banaan-mtl" position="0 0.3 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
@@ -138,12 +147,12 @@
 
 
 
-    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="0 1.25 -11.95" scale="0.6 0.5 0.5" rotation="0 0 0"></a-obj-model>
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="0 1.25 -11.95" scale="0.6 0.5 0.5" rotation="0 0 0"></a-obj-model>
 
 
 
 
-    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-7.75 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0">
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-7.75 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0">
 
       <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
         <a-obj-model id="js--bloem_500g" class="js--schapitem" src="#bloem_500g-obj" mtl="#bloem_500g-mtl" position="0 0.4 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
@@ -162,19 +171,32 @@
 
 
 
-    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0">
 
+    <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
+      <a-obj-model id="js--cola_2L" class="js--schapitem" src="#cola_2L-obj" mtl="#cola_2L-mtl" position="0 0.8 0" scale="0.8 1 1" rotation="0 0 0"></a-obj-model>
+    </a-box>
 
+    <a-box color="#5656dc" position="0 0 1.1" width="1.5" height="0.21" depth="1.9">
+      <a-obj-model id="js--cola_1L" class="js--schapitem" src="#cola_1L-obj" mtl="#cola_1L-mtl" position="0 0.65 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+    </a-box>
 
-    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="-2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
+    <a-box color="#5656dc" position="-6 0 1.1" width="1.5" height="0.21" depth="1.9">
+      <a-obj-model id="js--cola_500mL" class="js--schapitem" src="#cola_500mL-obj" mtl="#cola_500mL-mtl" position="0 0.5 0" scale="0.7 1 1" rotation="0 0 0"></a-obj-model>
+    </a-box>
+
     </a-obj-model>
 
 
-    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model></a-obj-model>
+
+
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
 
 
 <!--  -->
-    <a-obj-model class="js--schappen js--interact" src="#schappen-obj" mtl="#schappen-mtl" position="2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0">
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="2.8 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0">
 
       <a-box color="#5656dc" position="6 0 1.1" width="1.5" height="0.21" depth="1.9">
         <a-obj-model id="js--citroen" class="js--schapitem" src="#citroen-obj" mtl="#citroen-mtl" position="0 0.3 0" scale="1 1 0.7" rotation="0 90 0"></a-obj-model>
