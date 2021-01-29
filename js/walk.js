@@ -368,7 +368,7 @@ let boodschappenlijst = ["banaan", "appel", "aardbei", "sinaasappel", "citroen",
 
 function clickedMoeder(){
   moeder.addEventListener('click', function(evt){
-    let nummer = 12;
+    let nummer = 11;
     let gekozenProducten = [];
 
     for (i = 0; i < producten.length; i++) {
