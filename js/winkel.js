@@ -199,23 +199,34 @@ zet_in_mandje();
     for (var i = 0; i < inMandArr.length; i++) {
       totaalbedrag += prijs_alle_items[i];
     }
-    //totaalbedrag = totaalbedrag.toFixed(2);
-    totaalbedrag = Math.round(totaalbedrag);
+    totaalbedrag = totaalbedrag.toFixed(2);
+    //totaalbedrag = Math.round(totaalbedrag);
     console.log("Dat wordt dan " + totaalbedrag + " euro");
-    //cassiere.innerHTML = '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Goedemiddag, dat wordt dan' + totaalBerekenen + ' euro alstublieft."></a-text>';
-
-    if(totaalbedrag <= saldo){
-      console.log("Je hebt betaald. Dankjewel en tot ziens!");
-      saldo = saldo - totaalbedrag;
-      console.log("Saldo = " + saldo.toFixed(2));
-      setTimeout(function(){
-        bijKassa.innerHTML = "";
-      }, 2500)
+    cassiere.innerHTML = '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Goedemiddag, dat wordt dan ' + totaalbedrag + ' euro alstublieft."></a-text>';
+    setTimeout(function(){
+      cassiere.innerHTML = "";
+      cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="door een paar seconden naar mij te kijken kun je het geld aan mij geven."></a-text>';
+    }, 3000);
+    cassiere.addEventListener('click', function(evt){
+      if(totaalbedrag <= saldo){
+        console.log("Je hebt betaald. Dankjewel en tot ziens!");
+        cassiere.innerHTML = "";
+        cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Je hebt betaald! Dankjewel en graag tot ziens."></a-text>';
+        saldo = saldo - totaalbedrag;
+        console.log("Saldo = " + saldo.toFixed(2));
+        setTimeout(function(){
+          bijKassa.innerHTML = "";
+          cassiere.innerHTML = "";
+          const robotPraat = document.getElementById("js--voice-naarUitgang");
+          robotPraat.components.sound.playSound();
+        }, 2500);
       }
-    else if(totaalbedrag > saldo){
-      console.log("Je hebt niet genoeg geld bij je");
-    }
+      else if(totaalbedrag > saldo){
+        console.log("Je hebt niet genoeg geld bij je");
+      }
+    });
   }
+  
 
   function opLoopBand(){
     bijKassa.addEventListener('click', function(evt){
