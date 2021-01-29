@@ -68,46 +68,45 @@
 
       <a-asset-item id="vrouw-1-obj" src="./blender/Jess_Casual_Walking_001.obj"></a-asset-item><!-- Credits: https://sketchfab.com/3d-models/woman-walking-7fdd3ab66966442db81cc8a7f4f741aa  -->
 
-
       <a-asset-item id="uitgang" src="./models/uitgang.gltf"></a-asset-item><!--Gemaakt door: Max Osewoudt-->
 
-      <a-asset-item id="uitleg-voorlezen" src="./models/UitlegHH.gltf"></a-asset-item>
+      <!-- <a-asset-item id="uitleg-voorlezen" src="./models/UitlegHH.gltf"></a-asset-item> -->
 
-
-
-
-      <img id="muur_texture" src="./textures/muur_texture.png">
-      <img id="grond_texture" src="./textures/grond_texture.png">
-      <img id="plafond_texture" src="./textures/plafond_texture.png">
+      <img id="muur_texture" src="./textures/muur_texture.png" alt="Tetuur van muur">
+      <img id="grond_texture" src="./textures/grond_texture.png" alt="textuur van vloer">
+      <img id="plafond_texture" src="./textures/plafond_texture.png" alt="Paflond textuurs">
     </a-assets>
 
 
-
 <!--  ============================ camera ================================ -->
-    <a-camera id="js--camera" position="6 1.6 15" wasd-controls="acceleration:200">
-      <a-entity
-        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
-        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
-        animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-        cursor = "fuse: true; fuseTimeout: 2000"
-        material = "color: black; shader: flat"
-        geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
-        position = "0 0 -0.5"
-        raycaster = "objects: .js--interact; far: 30"
-      ></a-entity>
 
-      <!-- <a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.15 -0.24 -0.2" scale="0.1 0.1 0.1" rotation="0 108 5"></a-obj-model> -->
+      <a-entity id="js--camera" position="6 1 15">
+            <a-camera id="js--cameraObjects" look-controls wasd-controls="acceleration: 2000" >
+                <a-cursor
+                    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                    animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+                    animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                    cursor = "fuse: true; fuseTimeout: 2000"
+                    material = "color: black; shader: flat"
+                    geometry = "primitive: ring; radiusInner: 0.015; radiusOuter: 0.025"
+                    raycaster = "objects: .js--interact">
+                </a-cursor>
+                <!-- <a-obj-model class="js--interact js--mandje" src="#mandje-obj" mtl="#mandje-mtl" position="0.15 -0.24 -0.2" scale="0.1 0.1 0.1" rotation="0 108 5"></a-obj-model> -->
 
-      <!-- <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" scale="0.07 0.07 0.07" rotation="0 90 0" position="0.1 -0.15 -0.22"></a-obj-model>
-      <a-obj-model class="js--schapitem js--interact" src="#appel-obj" mtl="#appel-mtl" scale="0.06 0.06 0.06" rotation="0 180 0" position="0.1 -0.15 -0.18"></a-obj-model>
-      <a-obj-model class="js--schapitem js--interact" src="#sinaasappel-obj" mtl="#sinaasappel-mtl" scale="0.07 0.07 0.07" rotation="0 180 0" position="0.1 -0.11 -0.20"></a-obj-model> -->
-      <a-text id="js--bedrag" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.35 -0.5" value="Bedrag: €5,-"></a-text>
-      <a-text id="js--productTitel" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.30 -0.5" value="Producten:"></a-text>
-      <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.25 -0.5"></a-text>
-      <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.20 -0.5"></a-text>
-      <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.15 -0.5"></a-text>
-      <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.10 -0.5"></a-text>
-    </a-camera>
+                <!-- <a-obj-model class="js--schapitem js--interact" src="#banaan-obj" mtl="#banaan-mtl" scale="0.07 0.07 0.07" rotation="0 90 0" position="0.1 -0.15 -0.22"></a-obj-model>
+                <a-obj-model class="js--schapitem js--interact" src="#appel-obj" mtl="#appel-mtl" scale="0.06 0.06 0.06" rotation="0 180 0" position="0.1 -0.15 -0.18"></a-obj-model>
+                <a-obj-model class="js--schapitem js--interact" src="#sinaasappel-obj" mtl="#sinaasappel-mtl" scale="0.07 0.07 0.07" rotation="0 180 0" position="0.1 -0.11 -0.20"></a-obj-model> -->
+                <a-text id="js--bedrag" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.35 -0.5" value="Bedrag: €5,-"></a-text>
+                <a-text id="js--productTitel" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.30 -0.5" value="Producten:"></a-text>
+                <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.25 -0.5"></a-text>
+                <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.20 -0.5"></a-text>
+                <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.15 -0.5"></a-text>
+                <a-text class="js--producten" width="1" height="1" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.10 -0.5"></a-text>
+                      </a-camera>
+        </a-entity>
+
+      
+    
 
 
 
@@ -204,7 +203,7 @@
 
 
 
-    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model></a-obj-model>
+    <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="-2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
 
     <a-obj-model class="js--schappen" src="#schappen-obj" mtl="#schappen-mtl" position="2.7 1.25 -1" scale="0.8 0.5 0.5" rotation="0 -90 0"></a-obj-model>
@@ -251,7 +250,7 @@
     <a-obj-model class="js--interact" id="js--contant-kassa" src="#kassa-obj" mtl="#kassa-mtl" position="-2 -0.3 12" scale="0.65 0.6 0.5" rotation="0 90 0"></a-obj-model>
 
 <!-- ============================= Medewerker =================================-->
-<a-obj-model id="js--cassiere" src="#cassiere-obj" mtl="#cassiere-mtl" #position="-3 0.2 13" position="-3 0 13" scale="0.03 0.03 0.03" rotation="0 100 0">
+<a-obj-model id="js--cassiere" src="#cassiere-obj" mtl="#cassiere-mtl" position="-3 0 13" scale="0.03 0.03 0.03" rotation="0 100 0">
 </a-obj-model>
 <!-- <a-box id="js--cassiere" class="js--interact" color="pink" width="0.5" depth="0.5" height="1.6" position="-3.3 0 13"></a-box> -->
 

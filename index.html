@@ -19,7 +19,7 @@
                 <a-asset-item id="menu-start" src="./models/START.gltf"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="menu-verken" src="./models/VERKEN.gltf"></a-asset-item><!--Gemaakt door Max Osewoudt-->
                 <a-asset-item id="menu-voorlezen" src="./models/UitlegVoorlezen.gltf"></a-asset-item><!--Gemaakt door Max Osewoudt-->
-                <a-asset-item id="uitleg-herhalen" src="./models/Uitleghh.gltf"></a-asset-item><!--Gemaakt door Max Osewoudt-->
+                <!-- <a-asset-item id="uitleg-herhalen" src="./models/Uitleghh.gltf"></a-asset-item>Gemaakt door Max Osewoudt -->
 
                 <!--#########################      MEUBELS       #####################################################-->
                 <a-asset-item id="stoel-gltf" src="./models/Stoel.gltf"></a-asset-item><!--Gemaakt door Dogukan Kalemli-->
@@ -90,8 +90,8 @@
 
                 <!--#########################      TEXTURES & IMAGES       #####################################################-->
                 <img id="lucht" src="./img/Sky1.jpg" alt="sky"> <!--CREDTITS: Pexels-->
-                <img id="Clouds" src="./img/Clouds.jpg"> <!--CREDTITS: Shutterstock-->
-                <img id="Clear" src="./img/Clear.jpg"><!--CREDTITS: Shutterstock-->
+                <img id="Clouds" src="./img/Clouds.jpg" alt="bewolkte lucht"> <!--CREDTITS: Shutterstock-->
+                <img id="Clear" src="./img/Clear.jpg" alt="Heldere hemel"><!--CREDTITS: Shutterstock-->
                 <img id="asfalt" src="./img/textures/Weg.jpg" alt="asfalt"> <!--CREDTITS: Alex Woods - BRON: https://unsplash.com/photos/ee5Pqx_OTlQ-->
                 <img id="stoep" src="./img/textures/Stoep.jpg" alt="stoep"> <!--CREDTITS: ArthurHidden - BRON: https://www.freepik.com/free-photo/cobblestone-pavement-road-with-edge-courses-sidewalk-texture_9859479.htm#page=1&query=sidewalk%20texture&position=0-->
 
@@ -138,47 +138,43 @@
                     cursor = "fuse: true; fuseTimeout: 2000"
                     material = "color: black; shader: flat"
                     geometry = "primitive: ring; radiusInner: 0.015; radiusOuter: 0.025"
-                    raycaster = "objects: .js--interact, #opRood">
+                    raycaster = "objects: .js--interact">
                 </a-cursor>
-                <a-text id="js--bedrag" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="3.75 50 -3" value="Bedrag: €5,-"></a-text>
-                <a-text id="js--productTitel" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="3.75 50 -3" value="Producten:"></a-text>
-                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="3.75 1.75 -3"></a-text>
-                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="3.75 1.5 -3"></a-text>
-                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="3.75 1.25 -3"></a-text>
-                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="3.75 1 -3"></a-text>
+                <a-text id="js--bedrag" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.35 -0.5" value="Bedrag: €5,-"></a-text>
+                <a-text id="js--productTitel" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.30 -0.5" value="Producten:"></a-text>
+                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.25 -0.5"></a-text>
+                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.20 -0.5"></a-text>
+                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.15 -0.5"></a-text>
+                <a-text class="js--producten" width="5" height="5" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="0.5 0.10 -0.5"></a-text>
             </a-camera>
         </a-entity>
         <!-- </a-entity> -->
 
         <!--#################################### LOOPTEGELS #########################################################-->
-        <a-obj-model src="#kruis-obj" id="js--appear" class="js--place js--interact" position="-70 -50 -3"></a-obj-model>
+        <a-obj-model src="#kruis-obj" id="js--appear" class="js--place js--interact" position="-70 -50 -3"></a-obj-model><!--0-->
         <a-entity id="js--moeder" class="js--interact" gltf-model="#moeder-gltf" scale="0.125 0.125 0.125" position="-55 1 3" rotation="0 270 0"></a-entity>
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-32 1.2 -5"></a-obj-model> <!--2: Hal-->
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 -5"></a-obj-model> <!--3: Meeting robot-->
-        <a-obj-model src="#kruis-obj" id="js--loopNaar120" class="js--place js--interact" position="-2 0.85 20"></a-obj-model> <!--4: door laten lopen naar 120-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-32 1.2 -5"></a-obj-model> <!--2: Hal-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 -5"></a-obj-model> <!--3: Meeting robot-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" id="js--loopNaar120" class="js--place js--interact" position="-2 1.5 20"></a-obj-model> <!--4: door laten lopen naar 120-->
 
 
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 120"></a-obj-model> <!--5: Tussenstop-->
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 140"></a-obj-model> <!--6: Door laten lopen naar 280-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 120"></a-obj-model> <!--5: Tussenstop-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 140"></a-obj-model> <!--6: Door laten lopen naar 280-->
 
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 280"></a-obj-model> <!--7: Tussenstop-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 280"></a-obj-model> <!--7: Tussenstop-->
 
-        <a-obj-model src="#kruis-obj" class="js--place js--interact opRood" position="-2 1 293"></a-obj-model> <!--8: STOPLICHT-->
-        <a-obj-model src="#kruis-obj" id="Cylinder" class="js--place js--interact opRood" position="-2 -50 293"></a-obj-model> <!--9: overkant-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1 293"></a-obj-model> <!--8: STOPLICHT-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" id="Cylinder" class="js--place js--interact opRood" position="-2 -50 293"></a-obj-model> <!--9: overkant-->
 
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 335"></a-obj-model> <!--10: naar 415-->
-        <!--<a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 355"></a-obj-model>
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 375"></a-obj-model>
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 385"></a-obj-model>
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 395"></a-obj-model> -->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 335"></a-obj-model> <!--10: naar 415-->
 
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 415"></a-obj-model> <!--11: tussenstop-->
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 435"></a-obj-model> <!--12: naar 460-->
-        <!-- <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 415"></a-obj-model>
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 445"></a-obj-model> -->
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="-2 0.85 460"></a-obj-model> <!--13: oversteek-->
-        <a-obj-model src="#kruis-obj" id="oversteken" class="js--place js--interact" rotation="0 0 20" position="28 1.2 460"></a-obj-model> <!--overkant-->
-        <a-obj-model src="#kruis-obj" class="js--place js--interact" position="39 0.85 462" link="href: winkel.html; title: Winkel"></a-obj-model> <!--15: redirecten naar supermarkt.html-->
+
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 415"></a-obj-model> <!--11: tussenstop-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 435"></a-obj-model> <!--12: naar 460-->
+
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="-2 1.5 460"></a-obj-model> <!--13: oversteek-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" id="oversteken" class="js--place js--interact" rotation="0 0 20" position="28 1.2 460"></a-obj-model> <!--overkant-->
+        <a-obj-model src="#kruis-obj" scale="1.2 1.2 1.2" class="js--place js--interact" position="39 1.5 462" link="href: winkel.html; title: Winkel"></a-obj-model> <!--15: redirecten naar supermarkt.html-->
 
         <a-link href="winkel.html" title="Winkel"></a-link>
 
