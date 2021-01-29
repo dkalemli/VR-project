@@ -22,19 +22,19 @@ function setSky(){
   console.log("Het weer is: " + weer);
   if(weer == "Clouds"){
     sky.setAttribute("src", "#Clouds");
-    sky.setAttribute("position", "0 100 0");
+    sky.setAttribute("position", "100 100 0");
   }
   else if(weer == "Thunderstorm"){
     sky.setAttribute("src", "#Clouds");
-    sky.setAttribute("position", "0 100 0");
+    sky.setAttribute("position", "100 100 0");
   }
   else if(weer == "Drizzle"){
     sky.setAttribute("src", "#Clouds");
-    sky.setAttribute("position", "0 100 0");
+    sky.setAttribute("position", "100 100 0");
   }
   else if(weer == "Rain"){
     sky.setAttribute("src", "#Clouds");
-    sky.setAttribute("position", "0 100 0");
+    sky.setAttribute("position", "100 100 0");
   }
   else if(weer == "Clear"){
     sky.setAttribute("src", "#Clear");
@@ -110,7 +110,7 @@ for (let i = 0; i < places.length; i++) {
       console.log(places[5]);
     }
 
-    else if(i == 1){
+    if(i == 1){
       setTimeout(function(){
         robotKennismaking();
         robotPraat = document.getElementById("js--robot");
@@ -118,7 +118,7 @@ for (let i = 0; i < places.length; i++) {
       }, 3000);
     }
 
-    else if(i == 2){
+    if(i == 2){
       skySound = document.getElementById("js--AchtergrSound");
       skySound.components.sound.playSound();
       robotPraat.components.sound.stopSound();
@@ -129,7 +129,7 @@ for (let i = 0; i < places.length; i++) {
       }, 2000);
     }
 
-    else if(i == 3){
+    if(i == 3){
       if(afstand < 35){
         att.valueTegel4 = "property: position; dur: " + 10000 + "; easing: linear; to: -2 5 120";
         console.log(att.valueTegel4);
@@ -137,7 +137,7 @@ for (let i = 0; i < places.length; i++) {
       }
     }
 
-    else if(i == 5){
+    if(i == 5){
       if(afstand < 35){
         att.valueTegel4 = "property: position; dur: " + 12000 + "; easing: linear; to: -2 5 285";
         console.log(att.valueTegel4);
@@ -145,7 +145,7 @@ for (let i = 0; i < places.length; i++) {
       }
     }
 
-    else if(i == 7){
+    if(i == 7){
       console.log("ik ben bij het stoplicht.");
       setTimeout(function(){
         voiceStoplicht = document.getElementById("js--voice-stoplicht");
@@ -154,7 +154,7 @@ for (let i = 0; i < places.length; i++) {
       opGroen();
     }
 
-    else if(i == 9){
+    if(i == 9){
       if(afstand < 35){
         att.valueTegel4 = "property: position; dur: " + 14000 + "; easing: linear; to: -2 5 415";
         console.log(att.valueTegel4);
@@ -162,7 +162,7 @@ for (let i = 0; i < places.length; i++) {
       }
     }
 
-    else if(i == 11){
+    if(i == 11){
       if(afstand < 35){
         att.valueTegel4 = "property: position; dur: " + 8000 + "; easing: linear; to: -2 5 460";
         console.log(att.valueTegel4);
@@ -170,7 +170,7 @@ for (let i = 0; i < places.length; i++) {
       }
     }
 
-    else if(i == 12){
+    if(i == 12){
       setTimeout(function(){
         voiceOversteken = document.getElementById("js--voice-oversteken");
         console.log("Ik praat nu - robot zegt uitkijken");
@@ -178,7 +178,7 @@ for (let i = 0; i < places.length; i++) {
       }, 3000);
     }
 
-    else if(i == 13){
+    if(i == 13){
       console.log("ik ga nu oversteken.");
       zebrapad();
       zebrapadB();
