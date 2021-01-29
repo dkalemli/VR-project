@@ -383,8 +383,8 @@ for (i = 0; i < producten.length; i++) {
   producten[i].setAttribute("value", gekozenProducten[i]);
 }
 
-bedrag.setAttribute("position", {x:"3.75", y:"2.25", z:"-3"});
-productTitel.setAttribute("position", {x:"3.75", y:"2", z:"-3"});
+bedrag.setAttribute("position", {x:"2", y:"2.25", z:"-3"});
+productTitel.setAttribute("position", {x:"2", y:"2", z:"-3"});
 
 });
 }
