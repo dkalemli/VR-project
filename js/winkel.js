@@ -18,6 +18,8 @@
   let totaalbedrag = 0;
   let saldo = 5.00;
 
+  let producten = document.getElementsByClassName("js--producten");
+
 
   let banaan = document.getElementById("js--banaan");
   let appel = document.getElementById("js--appel");
@@ -109,6 +111,7 @@
           if (items_array[j][3] == productlijst[i]) {
             items_array[j][0].classList.add("js--interact");
             console.log(items_array[j][0]);
+            producten[i].setAttribute("value", items_array[j][3]);
           }
         }
       }
@@ -226,16 +229,16 @@ zet_in_mandje();
     totaalbedrag = totaalbedrag.toFixed(2);
     //totaalbedrag = Math.round(totaalbedrag);
     console.log("Dat wordt dan " + totaalbedrag + " euro");
-    cassiere.innerHTML = '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Goedemiddag, dat wordt dan ' + totaalbedrag + ' euro alstublieft."></a-text>';
+    cassiere.innerHTML = '<a-text class="js--menu" width="2" height="2" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Goedemiddag, dat wordt dan ' + totaalbedrag + ' euro alstublieft."></a-text>';
     setTimeout(function(){
       cassiere.innerHTML = "";
-      cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="door een paar seconden naar mij te kijken kun je het geld aan mij geven."></a-text>';
+      cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="door een paar seconden naar mij te kijken kun je het geld aan mij geven."></a-text>';
     }, 3000);
     cassiere.addEventListener('click', function(evt){
       if(totaalbedrag <= saldo){
         console.log("Je hebt betaald. Dankjewel en tot ziens!");
         cassiere.innerHTML = "";
-        cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="white" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Je hebt betaald! Dankjewel en graag tot ziens."></a-text>';
+        cassiere.innerHTML += '<a-text class="js--menu" width="2" height="2" color="black" opacity="1.0" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt" position="1 2 0" rotation="0 110 0" value="Je hebt betaald! Dankjewel en graag tot ziens."></a-text>';
         saldo = saldo - totaalbedrag;
         console.log("Saldo = " + saldo.toFixed(2));
         setTimeout(function(){
