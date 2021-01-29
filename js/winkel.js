@@ -1,4 +1,4 @@
-window.onload = () =>{
+
   const scene = document.getElementById('js--scene');
   const camera = document.getElementById('js--camera');
   const loopband = document.getElementById('js--pin-kassa');
@@ -238,4 +238,4 @@ zet_in_mandje();
     });
   }
   opLoopBand();
-};
+
